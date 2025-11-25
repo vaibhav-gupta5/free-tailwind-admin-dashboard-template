@@ -1,16 +1,16 @@
 <mat-card class="cardWithShadow theme-card">
-  <div class="p-24">
-    <mat-card-title class="m-b-0">Menu</mat-card-title>
+  <div class="p-6">
+    <mat-card-title class="mb-0">Menu</mat-card-title>
   </div>
-  <mat-card-content class="b-t-1">
+  <mat-card-content class="border-t border-border">
     <div class="row">
       <div class="col-sm-6 col-lg-4">
-        <mat-card class="b-1 shadow-none">
-          <div class="p-16">
+        <mat-card class="border! border-border! shadow-none">
+          <div class="p-4">
             <mat-card-title>Basic</mat-card-title>
           </div>
-          <mat-card-content class="b-t-1">
-            <button mat-flat-button color="primary" class="m-t-8" [matMenuTriggerFor]="menu">
+          <mat-card-content class="border-t border-border">
+            <button mat-flat-button color="primary" class="mt-2" [matMenuTriggerFor]="menu">
               Menu
             </button>
             <mat-menu #menu="matMenu" class="cardWithShadow">
@@ -21,14 +21,14 @@
         </mat-card>
       </div>
       <div class="col-sm-6 col-lg-4">
-        <mat-card class="b-1 shadow-none">
-          <div class="p-16">
+        <mat-card class="border! border-border! shadow-none">
+          <div class="p-4">
             <mat-card-title>with Icons</mat-card-title>
           </div>
-          <mat-card-content class="b-t-1">
+          <mat-card-content class="border-t border-border">
             <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
               <mat-icon>
-                <i-tabler name="dots" class="icon-20"></i-tabler>
+                <i-tabler name="dots"></i-tabler>
               </mat-icon>
             </button>
             <mat-menu #menu="matMenu" class="cardWithShadow">
@@ -49,12 +49,12 @@
         </mat-card>
       </div>
       <div class="col-sm-6 col-lg-4">
-        <mat-card class="b-1 shadow-none">
-          <div class="p-16">
+        <mat-card class="border! border-border! shadow-none">
+          <div class="p-4">
             <mat-card-title>Nested Menu</mat-card-title>
           </div>
-          <mat-card-content class="b-t-1">
-            <button mat-flat-button color="primary" [matMenuTriggerFor]="animals" class="m-t-8">
+          <mat-card-content class="border-t border-border">
+            <button mat-flat-button color="primary" [matMenuTriggerFor]="animals" class="mt-2">
               Animal index
             </button>
             <mat-menu class="cardWithShadow" #animals="matMenu">
@@ -115,14 +115,14 @@
       </div>
 
       <div class="col-12">
-        <mat-card class="b-1 shadow-none">
-          <div class="p-16">
+        <mat-card class="border! border-border! shadow-none">
+          <div class="p-4">
             <mat-card-title>Positions</mat-card-title>
           </div>
-          <mat-card-content class="b-t-1">
-            <div class="row">
+          <mat-card-content class="border-t border-border">
+            <div class="row gap-y-4">
               <div class="col-sm-3">
-                <button mat-flat-button color="primary" class="w-100" [matMenuTriggerFor]="aboveMenu">
+                <button mat-flat-button color="primary" class="w-full" [matMenuTriggerFor]="aboveMenu">
                   Above
                 </button>
                 <mat-menu class="cardWithShadow" #aboveMenu="matMenu" yPosition="above">
@@ -131,7 +131,7 @@
                 </mat-menu>
               </div>
               <div class="col-sm-3">
-                <button mat-flat-button color="accent" class="w-100" [matMenuTriggerFor]="belowMenu">
+                <button mat-flat-button color="accent" class="w-full" [matMenuTriggerFor]="belowMenu">
                   Below
                 </button>
                 <mat-menu class="cardWithShadow" #belowMenu="matMenu" yPosition="below">
@@ -140,7 +140,7 @@
                 </mat-menu>
               </div>
               <div class="col-sm-3">
-                <button mat-flat-button color="warn" class="w-100" [matMenuTriggerFor]="beforeMenu">
+                <button mat-flat-button color="warn" class="w-full" [matMenuTriggerFor]="beforeMenu">
                   Before
                 </button>
                 <mat-menu class="cardWithShadow" #beforeMenu="matMenu" xPosition="before">
@@ -149,7 +149,7 @@
                 </mat-menu>
               </div>
               <div class="col-sm-3">
-                <button mat-flat-button color="primary" class="w-100" [matMenuTriggerFor]="afterMenu">
+                <button mat-flat-button color="primary" class="w-full" [matMenuTriggerFor]="afterMenu">
                   After
                 </button>
                 <mat-menu class="cardWithShadow" #afterMenu="matMenu" xPosition="after">

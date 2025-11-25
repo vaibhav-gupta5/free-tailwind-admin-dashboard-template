@@ -11,6 +11,7 @@
     display: flex;
     width: max-content;
     animation: marquee 25s linear infinite;
+    gap: 0;
 }
 
 .marquee-item {
