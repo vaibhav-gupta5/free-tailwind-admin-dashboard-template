@@ -1,16 +1,14 @@
-<div class="blank-layout-container justify-center items-center bg-light">
-  <div class="relative row w-full h-full bg-gredient justify-center">
-    <div class="col-lg-4 flex items-center">
-      <mat-card class="cardWithShadow boxed-auth">
+<div class="blank-layout-container justify-center items-center bg-lightprimary">
+  <div class="relative w-full h-full bg-gredient justify-center">
+    <div class="h-full flex items-center sm:px-0 px-3">
+      <mat-card class="cardWithShadow boxed-auth mb-0!">
         <mat-card-content class="p-32">
           <div class="text-center flex justify-center">
             <a [routerLink]="['/dashboard']">
               <img src="./assets/images/logos/dark-logo.svg" class="align-middle m-2" alt="logo" />
             </a>
           </div>
-
           <div class="mt-8 text-center">Your Social Campaigns</div>
-
           <form class="mt-8">
             <mat-label class="mat-subtitle-2 text-sm font-semibold mb-3 block">Name</mat-label>
             <mat-form-field appearance="outline" class="w-full" color="primary">
@@ -29,7 +27,6 @@
             <a [routerLink]="['/']" mat-flat-button color="primary" class="w-full">
               Sign Up
             </a>
-            <!-- input -->
           </form>
           <span class="block font-medium text-center mt-6">Already have an Account?
 

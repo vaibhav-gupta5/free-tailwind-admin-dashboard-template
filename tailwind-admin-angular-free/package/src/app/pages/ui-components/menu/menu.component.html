@@ -3,9 +3,9 @@
     <mat-card-title class="mb-0">Menu</mat-card-title>
   </div>
   <mat-card-content class="border-t border-border">
-    <div class="row">
-      <div class="col-sm-6 col-lg-4">
-        <mat-card class="border! border-border! shadow-none">
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12 sm:col-span-6 lg:col-span-4">
+        <mat-card class="border! border-border! shadow-none mb-0!">
           <div class="p-4">
             <mat-card-title>Basic</mat-card-title>
           </div>
@@ -20,8 +20,8 @@
           </mat-card-content>
         </mat-card>
       </div>
-      <div class="col-sm-6 col-lg-4">
-        <mat-card class="border! border-border! shadow-none">
+      <div class="col-span-12 sm:col-span-6 lg:col-span-4">
+        <mat-card class="border! border-border! shadow-none mb-0!">
           <div class="p-4">
             <mat-card-title>with Icons</mat-card-title>
           </div>
@@ -48,8 +48,8 @@
           </mat-card-content>
         </mat-card>
       </div>
-      <div class="col-sm-6 col-lg-4">
-        <mat-card class="border! border-border! shadow-none">
+      <div class="col-span-12 sm:col-span-6 lg:col-span-4">
+        <mat-card class="border! border-border! shadow-none mb-0!">
           <div class="p-4">
             <mat-card-title>Nested Menu</mat-card-title>
           </div>
@@ -114,14 +114,14 @@
         </mat-card>
       </div>
 
-      <div class="col-12">
-        <mat-card class="border! border-border! shadow-none">
+      <div class="col-span-12">
+        <mat-card class="border! border-border! shadow-none mb-0!">
           <div class="p-4">
             <mat-card-title>Positions</mat-card-title>
           </div>
           <mat-card-content class="border-t border-border">
-            <div class="row gap-y-4">
-              <div class="col-sm-3">
+            <div class="grid grid-cols-12 gap-y-4 gap-6">
+              <div class="col-span-12 sm:col-span-3">
                 <button mat-flat-button color="primary" class="w-full" [matMenuTriggerFor]="aboveMenu">
                   Above
                 </button>
@@ -130,7 +130,7 @@
                   <button mat-menu-item>Item 2</button>
                 </mat-menu>
               </div>
-              <div class="col-sm-3">
+              <div class="col-span-12 sm:col-span-3">
                 <button mat-flat-button color="accent" class="w-full" [matMenuTriggerFor]="belowMenu">
                   Below
                 </button>
@@ -139,7 +139,7 @@
                   <button mat-menu-item>Item 2</button>
                 </mat-menu>
               </div>
-              <div class="col-sm-3">
+              <div class="col-span-12 sm:col-span-3">
                 <button mat-flat-button color="warn" class="w-full" [matMenuTriggerFor]="beforeMenu">
                   Before
                 </button>
@@ -148,7 +148,7 @@
                   <button mat-menu-item>Item 2</button>
                 </mat-menu>
               </div>
-              <div class="col-sm-3">
+              <div class="col-span-12 sm:col-span-3">
                 <button mat-flat-button color="primary" class="w-full" [matMenuTriggerFor]="afterMenu">
                   After
                 </button>

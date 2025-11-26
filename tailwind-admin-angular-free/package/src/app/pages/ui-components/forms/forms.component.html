@@ -4,15 +4,15 @@
   </div>
   <mat-card-content class="border-t border-border">
     <form>
-      <div class="row">
-        <div class="col-lg-6">
+      <div class="grid grid-cols-12 gap-x-6">
+        <div class="col-span-12 lg:col-span-6">
           <!-- input -->
           <mat-label class="font-semibold mb-2 block">Your Name</mat-label>
           <mat-form-field appearance="outline" class="w-full" color="primary">
             <input matInput placeholder="your name " />
           </mat-form-field>
         </div>
-        <div class="col-lg-6">
+        <div class="col-span-12 lg:col-span-6">
           <mat-label class="font-semibold mb-2 block">Country</mat-label>
           <mat-form-field appearance="outline" class="w-full">
             <mat-select [(value)]="selectedCountry">
@@ -24,14 +24,14 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <div class="col-lg-6">
+        <div class="col-span-12 lg:col-span-6">
           <!-- input -->
           <mat-label class="font-semibold mb-2 block">Email</mat-label>
           <mat-form-field appearance="outline" class="w-full" color="primary">
             <input matInput type="email" placeholder="your email" />
           </mat-form-field>
         </div>
-        <div class="col-lg-6">
+        <div class="col-span-12 lg:col-span-6">
           <mat-label class="font-semibold mb-2 block">State</mat-label>
           <mat-form-field appearance="outline" class="w-full">
             <mat-select [(value)]="selectedState">
@@ -43,14 +43,14 @@
             </mat-select>
           </mat-form-field>
         </div>
-        <div class="col-lg-6">
+        <div class="col-span-12 lg:col-span-6">
           <!-- input -->
           <mat-label class="font-semibold mb-2 block">Password</mat-label>
           <mat-form-field appearance="outline" class="w-full" color="primary">
             <input matInput type="password" placeholder="your password" />
           </mat-form-field>
         </div>
-        <div class="col-lg-6">
+        <div class="col-span-12 lg:col-span-6">
           <mat-label class="font-semibold mb-2 block">City</mat-label>
           <mat-form-field appearance="outline" class="w-full">
             <mat-select [(value)]="selectedCity">

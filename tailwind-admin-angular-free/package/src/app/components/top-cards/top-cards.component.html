@@ -1,7 +1,7 @@
 <div class="marquee-container">
   <div class="marquee-content">
     <div class="marquee-item" *ngFor="let topcard of topcards">
-      <mat-card class="shadow-none text-center bg-light-{{ topcard.color }}">
+      <mat-card class="shadow-none text-center mb-0! bg-light-{{ topcard.color }}">
         <mat-card-content>
           <img [src]="topcard.img" alt="{{ topcard.title }}" width="40" class="mx-auto w-auto" />
           <h4 class="text-sm font-semibold text-{{ topcard.color }} mt-2!">
@@ -16,7 +16,7 @@
 
     <!-- duplicate for seamless loop -->
     <div class="marquee-item" *ngFor="let topcard of topcards">
-      <mat-card class="shadow-none text-center bg-light-{{ topcard.color }}">
+      <mat-card class="shadow-none text-center mb-0! bg-light-{{ topcard.color }}">
         <mat-card-content>
           <img [src]="topcard.img" alt="{{ topcard.title }}" width="40" class="mx-auto w-auto" />
           <h4 class="text-sm font-semibold text-{{ topcard.color }} mt-2!">
