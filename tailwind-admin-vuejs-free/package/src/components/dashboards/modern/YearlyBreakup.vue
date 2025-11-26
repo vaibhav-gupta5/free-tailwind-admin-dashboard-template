@@ -6,7 +6,7 @@ import { Icon } from '@iconify/vue'
 import Card from '@/components/ui/card/Card.vue'
 
 // The data structure, same as React version
-const chartOptions = ref({
+const chartOptions: any = ref({
   chart: {
     type: 'donut',
     fontFamily: 'inherit',
@@ -96,15 +96,11 @@ const series = ref([38, 40, 25])
 
       <div class="lg:col-span-6 md:col-span-6 col-span-4">
         <div class="w-full max-w-[300px]">
-          <VueApexCharts
-            :options="chartOptions"
-            :series="series"
-            type="donut"
-          />
+          <VueApexCharts :options="chartOptions" :series="series" type="donut" />
         </div>
-      </div> 
+      </div>
 
-      
+
     </div>
   </Card>
 </template>

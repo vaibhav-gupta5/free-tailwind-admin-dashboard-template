@@ -60,7 +60,7 @@ const chartDataByMonth: Record<string, ChartByYear> = {
 }
 
 // Base chart options
-const baseChartOptions = {
+const baseChartOptions: any = {
   chart: {
     toolbar: { show: false },
     type: 'bar' as const,
