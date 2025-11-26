@@ -1,16 +1,25 @@
-<p align="center">
+<p>
    <a href="https://tailwind-admin.com/" target="_blank">
       <img src="https://tailwind-admin.github.io/tailwind-admin-documentation/assets/images/logo.svg" alt="tailwind-admin-logo" width="90px" height="90px">
    </a>
 </p>
 
-<h1 align="center">
-   <a href="https://tailwind-admin.com/" target="_blank" align="center">
-      Tailwind Admin Dashboard Template
-   </a>
-</h1>
+# 🚀 Free Tailwind Admin Dashboard Template  
+### Multi-Framework UI Kit for **Next.js, React, Angular & Vue**
 
-<p align="center">Download most useful and comprehensive 🚀 Free admin template built for developers 🛠</p>
+A **free, open-source Tailwind CSS admin dashboard template** built for modern web developers.  
+Use it to rapidly build dashboards, SaaS apps, admin panels, CRM systems, and internal tools.
+
+⭐ If you find this useful, please consider giving it a star — it helps the project grow! 🛠
+
+## 🔥 Key Features
+
+✅ Built with **Tailwind CSS**  
+✅ Supports:
+- **Next.js** : <a href="https://next-free.tailwind-admin.com/" target="_blank">Live Demo</a>
+- **React** : <a href="https://react-free.tailwind-admin.com/" target="_blank">Live Demo</a>
+- **Angular** : <a href="https://angular-free.tailwind-admin.com/" target="_blank">Live Demo</a>
+- **Vue** : <a href="https://vue-free.tailwind-admin.com/" target="_blank">Live Demo</a>
 
 
 [![Tailwind Admin Template Demo Screenshot](https://tailwind-admin.github.io/tailwind-admin-documentation/assets/images/Free-dashboard.png)](https://tailwind-admin.com)
@@ -101,10 +110,15 @@ npm install
 
 Once the dependencies are installed, you can start a local development server to preview the template: 
 
+For React / Next /Vue
 ```bash
 npm run dev
 ```
 
+For Angular
+```bash
+ng serve
+```
 ---
 
 ## 📝 Documentation
@@ -190,4 +204,15 @@ Follow these simple steps to start contributing:
    git push origin feature/your-feature-name
 
 ---
+
+🌟 Show Your Support
+
+If this project helped you:
+
+⭐ Star this repository
+🍴 Fork it
+🧠 Share it with other developers
+
+Your support helps this project grow faster!
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
