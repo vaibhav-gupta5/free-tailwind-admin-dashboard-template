@@ -1,8 +1,6 @@
-
-
 .sidebar-wrapper [data-state="collapsed"] {
   .logo {
-   width: 40px;
+    width: 40px;
     overflow: hidden;
     padding-left: 5px;
     transition: none;
@@ -67,10 +65,6 @@
   border-radius: var(--radius-md);
 }
 
-.sidebar ul li a.router-link-active {
-  background-color: var(--color-primary)!important;
-  color: white;
-}
 
 .sidebar .collapse-menu li button {
   padding: 22px 12px;
@@ -89,13 +83,14 @@
   border-color: var(--color-primary);
 }
 
-.sidebar .collapse-menu > li > .collapse-content > ul > li:hover {
+.sidebar .collapse-menu>li>.collapse-content>ul>li:hover {
   background-color: var(--color-lightprimary);
 }
 
-.sidebar .collapse-menu > li > .collapse-content > ul > li:hover a {
+.sidebar .collapse-menu>li>.collapse-content>ul>li:hover a {
   color: var(--color-primary);
 }
-.sidebar .collapse-menu > li > .collapse-content > ul > li:hover a .dot {
+
+.sidebar .collapse-menu>li>.collapse-content>ul>li:hover a .dot {
   border-color: var(--color-primary);
 }
