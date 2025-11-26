@@ -1,0 +1,678 @@
+export interface menu {
+  header?: string;
+  title?: string;
+  icon?: any;
+  to?: string;
+  chip?: string;
+  chipBgColor?: string;
+  chipColor?: string;
+  chipVariant?: string;
+  chipIcon?: string;
+  children?: menu[];
+  disabled?: boolean;
+  type?: string;
+  subCaption?: string;
+  isPro?: boolean
+}
+
+const sidebarItem: menu[] = [
+  { header: "Home" },
+  {
+    title: "Modern",
+    icon: "home-smile-linear",
+    to: "/",
+    isPro: false,
+  },
+  {
+    title: "eCommerce",
+    icon: "bag-5-linear",
+    to: "https://vuejs.tailwind-admin.com/dashboards/eCommerce",
+    isPro: true,
+  },
+  {
+    title: "Music",
+    icon: "music-note-linear",
+    to: "https://vuejs.tailwind-admin.com/dashboards/music",
+    isPro: true,
+  },
+
+  {
+    title: 'General',
+    icon: 'chart-linear',
+    to: 'https://vuejs.tailwind-admin.com/dashboards/general',
+    isPro: true,
+  },
+  {
+    title: 'Front Pages',
+    icon: 'document-linear',
+    children: [
+      {
+
+        title: 'Homepage',
+        to: 'https://vuejs.tailwind-admin.com/frontend-pages/homepage',
+        isPro: true,
+      },
+      {
+
+        title: 'About Us',
+        to: 'https://vuejs.tailwind-admin.com/frontend-pages/about',
+        isPro: true,
+      },
+      {
+
+        title: 'Blog',
+        to: 'https://vuejs.tailwind-admin.com/frontend-pages/blog/post',
+        isPro: true,
+      },
+      {
+
+        title: 'Blog Details',
+        to: 'https://vuejs.tailwind-admin.com/frontend-pages/blog/early-black-friday-amazon-deals-cheap-tvs-headphones',
+        isPro: true,
+      },
+
+      {
+
+        title: 'Portfolio',
+        to: 'https://vuejs.tailwind-admin.com/frontend-pages/portfolio',
+        isPro: true,
+      },
+      {
+
+        title: 'Pricing',
+        to: 'https://vuejs.tailwind-admin.com/frontend-pages/pricing',
+        isPro: true,
+      },
+      {
+
+        title: 'Contact Us',
+        to: 'https://vuejs.tailwind-admin.com/frontend-pages/contact',
+        isPro: true,
+      },
+    ],
+  },
+
+  { header: "PAGES" },
+  {
+    title: 'Table',
+    icon: 'server-linear',
+    to: '/utilities/table',
+    isPro: false,
+
+  },
+  {
+    title: 'Form',
+    icon: 'document-add-linear',
+    to: '/utilities/form',
+    isPro: false,
+
+  }, {
+    title: 'User Profile',
+    icon: 'user-circle-linear',
+    to: '/user-profile',
+    isPro: false,
+
+  },
+  { header: "Apps" },
+
+  {
+    title: 'AI',
+    icon: 'star-circle-linear',
+    children: [
+
+      {
+        title: 'Chat',
+        to: 'https://vuejs.tailwind-admin.com/apps/ai/chat-ai',
+        isPro: true,
+      },
+      {
+        title: 'Image ',
+        to: 'https://vuejs.tailwind-admin.com/apps/ai/image-generator',
+        isPro: true,
+      },
+    ]
+  },
+  {
+    title: 'Blog',
+    icon: 'sort-by-alphabet-linear',
+    to: '/',
+    children: [
+      {
+        title: 'Blog Posts',
+        to: '/apps/blog/post',
+        isPro: false,
+      },
+      {
+        title: 'Blog Details',
+        to: '/apps/blog/early-black-friday-amazon-deals-cheap-tvs-headphones',
+        isPro: false,
+      }
+    ]
+  },
+  {
+    title: "User Profile",
+
+    icon: "user-circle-linear",
+    children: [
+      {
+        title: "Profile",
+        to: "https://vuejs.tailwind-admin.com/apps/user-profile/profile",
+        isPro: true,
+      },
+      {
+
+        title: "Followers",
+        to: "https://vuejs.tailwind-admin.com/apps/user-profile/followers",
+        isPro: true,
+      },
+      {
+
+        title: "Friends",
+        to: "https://vuejs.tailwind-admin.com/apps/user-profile/friends",
+        isPro: true,
+      },
+      {
+
+        title: "Gallery",
+        to: "https://vuejs.tailwind-admin.com/apps/user-profile/gallery",
+        isPro: true,
+      },
+    ],
+  },
+  {
+    title: 'Invoice',
+    icon: 'bill-check-outline',
+    to: '/',
+    children: [
+      {
+        title: 'List',
+        to: 'https://vuejs.tailwind-admin.com/apps/invoice',
+        isPro: true,
+      },
+      {
+        title: 'Details',
+        to: 'https://vuejs.tailwind-admin.com/apps/invoice/details/102',
+        isPro: true,
+      },
+      {
+        title: 'Create',
+        to: 'https://vuejs.tailwind-admin.com/apps/invoice/create',
+        isPro: true,
+      },
+      {
+        title: 'Edit',
+        to: 'https://vuejs.tailwind-admin.com/apps/invoice/edit/102',
+        isPro: true,
+      }
+    ]
+  },
+  {
+    title: "Ecommerce",
+    icon: "cart-large-2-linear",
+    children: [
+      {
+
+        title: "Shop",
+        to: "https://vuejs.tailwind-admin.com/apps/ecommerce/shop",
+        isPro: true,
+      },
+      {
+
+        title: "Details",
+        to: "https://vuejs.tailwind-admin.com/apps/ecommerce/detail/3",
+        isPro: true,
+      },
+      {
+
+        title: "List",
+        to: "https://vuejs.tailwind-admin.com/apps/ecommerce/list",
+        isPro: true,
+      },
+      {
+
+        title: "Checkout",
+        to: "https://vuejs.tailwind-admin.com/apps/ecommerce/checkout",
+        isPro: true,
+      },
+      {
+
+        title: "Add Product",
+        to: "https://vuejs.tailwind-admin.com/apps/ecommerce/addproduct",
+        isPro: true,
+      },
+      {
+
+        title: "Edit Product",
+        to: "https://vuejs.tailwind-admin.com/apps/ecommerce/editproduct",
+        isPro: true,
+      },
+    ],
+  },
+  {
+    title: 'Chats',
+    icon: 'dialog-linear',
+    to: 'https://vuejs.tailwind-admin.com/apps/chats',
+    isPro: true,
+  },
+  {
+    title: 'Kanban',
+    icon: 'dialog-linear',
+    to: 'https://vuejs.tailwind-admin.com/apps/kanban',
+    isPro: true,
+  },
+  {
+    title: 'Notes',
+    icon: 'notes-linear',
+    to: '/apps/notes',
+    isPro: false,
+  },
+  {
+    title: 'Calendar',
+    icon: 'calendar-linear',
+    to: 'https://vuejs.tailwind-admin.com/apps/calendar',
+    isPro: true,
+  },
+  {
+    title: 'Contacts',
+    icon: 'users-group-rounded-linear',
+    to: 'https://vuejs.tailwind-admin.com/apps/contacts',
+    isPro: true,
+  },
+  {
+    title: 'Tickets',
+    icon: 'ticker-star-linear',
+    to: '/apps/tickets',
+    isPro: false,
+  },
+  {
+    title: 'Email',
+    icon: 'letter-linear',
+    to: 'https://vuejs.tailwind-admin.com/apps/email',
+    isPro: true,
+  },
+
+  {
+    title: 'Customers',
+    icon: 'user-circle-outline',
+    to: 'https://vuejs.tailwind-admin.com/table/user-table',
+    isPro: true,
+  },
+
+  {
+    title: 'Orders',
+    icon: 'clapperboard-edit-linear',
+    to: 'https://vuejs.tailwind-admin.com/table/orders-table',
+    isPro: true,
+  },
+
+
+
+  { header: "Pages" },
+
+
+  {
+    title: 'Account Setting',
+    icon: 'settings-minimalistic-linear',
+    to: 'https://vuejs.tailwind-admin.com/theme-pages/account-settings',
+    isPro: true,
+  },
+  {
+    title: 'FAQ',
+    icon: 'question-circle-linear',
+    to: 'https://vuejs.tailwind-admin.com/theme-pages/faq',
+    isPro: true,
+  },
+  {
+    title: 'Pricing',
+    icon: 'tag-price-linear',
+    to: 'https://vuejs.tailwind-admin.com/theme-pages/pricing',
+    isPro: true,
+  },
+  {
+    title: 'Rollbase Access',
+    icon: 'accessibility-linear',
+    to: 'https://vuejs.tailwind-admin.com/theme-pages/casl',
+    isPro: true,
+  },
+  {
+    title: 'Landingpage',
+    icon: 'three-squares-linear',
+    to: 'https://vuejs.tailwind-admin.com/landingpage',
+    isPro: true,
+  },
+  {
+    title: 'Integrations',
+    icon: 'home-add-linear',
+    to: 'https://vuejs.tailwind-admin.com/theme-pages/integration',
+    isPro: true,
+  },
+  {
+    title: 'API Keys',
+    icon: 'key-linear',
+    to: 'https://vuejs.tailwind-admin.com/theme-pages/apikey',
+    isPro: true,
+  },
+  { header: "UI BLOCKS" },
+  {
+    title: 'Cards',
+    icon: 'card-linear',
+    to: 'https://vuejs.tailwind-admin.com/ui-blocks/cards',
+    isPro: true,
+  },
+  {
+    title: 'Banners',
+    icon: 'object-scan-linear',
+    to: 'https://vuejs.tailwind-admin.com/ui-blocks/banners',
+    isPro: true,
+  },
+  {
+    title: 'Charts',
+    icon: 'pie-chart-2-linear',
+    to: 'https://vuejs.tailwind-admin.com/ui-blocks/charts',
+    isPro: true,
+
+  },
+
+  { header: "Charts" },
+  {
+    title: "ApexCharts",
+    icon: "pie-chart-3-linear",
+    children: [
+      {
+        title: 'Line Chart',
+        to: 'https://vuejs.tailwind-admin.com/charts/apex-charts/line',
+        isPro: true,
+      },
+      {
+        title: 'Area Chart',
+        to: 'https://vuejs.tailwind-admin.com/charts/apex-charts/area',
+        isPro: true,
+      }, {
+        title: 'Gradient Chart',
+        to: 'https://vuejs.tailwind-admin.com/charts/apex-charts/gradient',
+        isPro: true,
+      },
+      {
+        title: 'Candlestick',
+        to: 'https://vuejs.tailwind-admin.com/charts/apex-charts/candlestick',
+        isPro: true,
+      }, {
+        title: 'Column Chart',
+        to: 'https://vuejs.tailwind-admin.com/charts/apex-charts/column',
+        isPro: true,
+      },
+      {
+        title: 'Doughnut & Pie',
+        to: 'https://vuejs.tailwind-admin.com/charts/apex-charts/doughnut',
+        isPro: true,
+      },
+      {
+        title: 'Radial & Radar',
+        to: 'https://vuejs.tailwind-admin.com/charts/apex-charts/radialbar',
+        isPro: true,
+      },
+
+    ]
+
+  },
+
+  {
+    title: "Shadcn Charts",
+    icon: "chart-2-linear",
+    to: "#",
+    children: [
+      {
+        title: 'Line Chart',
+        to: 'https://vuejs.tailwind-admin.com/charts/shadcn/linechart',
+        isPro: true,
+      },
+      {
+        title: 'Area Chart',
+        to: 'https://vuejs.tailwind-admin.com/charts/shadcn/areachart',
+        isPro: true,
+      },
+      {
+        title: 'Bar Chart',
+        to: 'https://vuejs.tailwind-admin.com/charts/shadcn/barchart',
+        isPro: true,
+      },
+      {
+        title: 'Pie Chart',
+        to: 'https://vuejs.tailwind-admin.com/charts/shadcn/piechart',
+        isPro: true,
+      },
+    ]
+  },
+  { header: "FORM" },
+  {
+    title: "Form Elements",
+    icon: "code-file-linear",
+    to: "https://vuejs.tailwind-admin.com/components/form/checkbox",
+    isPro: true,
+
+  },
+
+  {
+    title: "Form Layouts",
+    icon: "file-favourite-linear",
+    to: "https://vuejs.tailwind-admin.com/forms/form-layouts",
+    isPro: true,
+
+  },
+  {
+    title: "Form Horizontal",
+    icon: "code-file-linear",
+    to: "https://vuejs.tailwind-admin.com/forms/form-horizontal",
+    isPro: true,
+
+  },
+  {
+    title: "Form Vertical",
+    icon: "video-frame-linear",
+    to: "https://vuejs.tailwind-admin.com/forms/form-vertical",
+    isPro: true,
+
+  },
+  {
+    title: "Form Validation",
+    icon: "folder-security-linear",
+    to: "https://vuejs.tailwind-admin.com/forms/form-validation",
+    isPro: true,
+
+  },
+
+  { header: "Tables" },
+  {
+    title: "Shadcn Tables",
+    icon: "tablet-linear",
+    to: "#",
+
+    children: [
+      {
+        title: 'Basic Table',
+        to: 'https://vuejs.tailwind-admin.com/shadcn-tables/basic',
+        isPro: true,
+      },
+      {
+        title: 'Hover Table',
+        to: 'https://vuejs.tailwind-admin.com/shadcn-tables/hover',
+        isPro: true,
+      }, {
+        title: 'Editable Table',
+        to: 'https://vuejs.tailwind-admin.com/shadcn-tables/edit',
+        isPro: true,
+      }
+    ]
+
+  },
+  {
+    title: "Data Tables",
+    icon: "bedside-table-3-linear",
+    to: "#",
+
+    children: [
+
+      {
+        title: 'Basic Table',
+        to: 'https://vuejs.tailwind-admin.com/table/basic-table',
+        isPro: true,
+      }, {
+        title: 'Column Pining',
+        to: 'https://vuejs.tailwind-admin.com/table/column-table',
+        isPro: true,
+      },
+      {
+        title: 'Reactive',
+        to: 'https://vuejs.tailwind-admin.com/table/reactive-table',
+        isPro: true,
+      }
+    ]
+
+  },
+  { header: "Ui" },
+  {
+    title: 'Ui Elements',
+    to: 'https://vuejs.tailwind-admin.com/components/ui/alert',
+    isPro: true,
+    icon: "palette-round-linear",
+  },
+  { header: "Icons" },
+  {
+    title: 'Solar Icon',
+    to: '/icons/solar',
+    isPro: false,
+    icon: "smile-circle-linear",
+  },
+
+  { header: 'Auth' },
+  {
+    title: 'Login',
+    icon: 'login-2-linear',
+    to: '#',
+
+    children: [
+      {
+        title: 'Side Login',
+        to: 'https://vuejs.tailwind-admin.com/auth/auth1/login',
+        isPro: true,
+      },
+      {
+        title: 'Boxed Login',
+        to: '/auth/login2',
+        isPro: false,
+      }
+    ]
+  },
+  {
+    title: 'Register',
+    icon: 'user-plus-rounded-linear',
+    to: '#',
+    isPro: true,
+    children: [
+      {
+        title: 'Side Register',
+        to: 'https://vuejs.tailwind-admin.com/auth/auth1/register',
+        isPro: true,
+      },
+      {
+        title: 'Boxed Register',
+        to: '/auth/register2',
+        isPro: false,
+      }
+    ]
+  },
+
+  {
+    title: 'Forgot Password',
+    icon: 'password-linear',
+    to: '#',
+
+    children: [
+      {
+        title: 'Side Forgot',
+        to: 'https://vuejs.tailwind-admin.com/auth/auth1/forgot-password',
+        isPro: true,
+      },
+      {
+        title: 'Boxed Forgot',
+        to: 'https://vuejs.tailwind-admin.com/auth/forgot-password2',
+        isPro: true,
+      }
+    ]
+  },
+
+  {
+    title: 'Two Steps',
+    icon: 'shield-keyhole-minimalistic-linear',
+    to: '#',
+
+    children: [
+      {
+        title: 'Side Two Steps',
+        to: 'https://vuejs.tailwind-admin.com/auth/auth1/two-steps',
+        isPro: true,
+      },
+      {
+        title: 'Boxed 2 Steps',
+        to: 'https://vuejs.tailwind-admin.com/auth/two-step2',
+        isPro: true,
+      }
+    ]
+  },
+  {
+    title: 'Error',
+    icon: 'link-broken-minimalistic-linear',
+    to: 'https://vuejs.tailwind-admin.com/auth/error',
+    isPro: true,
+  },
+  {
+    title: 'Maintenance',
+    icon: 'settings-linear',
+    to: 'https://vuejs.tailwind-admin.com/auth/maintenance',
+    isPro: true,
+  },
+  { header: "Other" },
+
+
+  {
+    title: "Disabled",
+    icon: "forbidden-circle-linear",
+    disabled: true,
+    to: "#",
+    isPro: false,
+  },
+  {
+    title: "Sub Caption",
+    icon: "star-fall-minimalistic-2-linear",
+    subCaption: "This is the subtitle",
+    to: "#",
+    isPro: false,
+  },
+  {
+    title: "Chip",
+    icon: "shield-check-linear",
+    chip: "9",
+    chipColor: "surface",
+    chipBgColor: "primary",
+    to: "#",
+    isPro: false,
+  },
+  {
+    title: "Outlined",
+    icon: "smile-circle-linear",
+    chip: "outline",
+    chipColor: "primary",
+    chipVariant: "outline",
+    to: "#",
+    isPro: false,
+  },
+  {
+    title: "External Link",
+    icon: "link-broken-minimalistic-linear",
+    to: "https://google.com",
+    type: "external",
+    isPro: false,
+  },
+];
+
+export default sidebarItem;
