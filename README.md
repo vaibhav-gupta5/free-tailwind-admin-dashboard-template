@@ -60,7 +60,7 @@ Built for speed, customization, and scalability, Tailwind Admin is fully respons
 - **Available in React & Next.js**  
   Choose between React or server-rendered Next.js versions based on your project requirements.
 
-- **Shadcn UI Integration**  
+- **Shadcn UI Integration for React, Nextjs and Vue**  
   Leverages Shadcn UI for beautifully crafted, accessible, and themeable UI components built on top of Radix and Tailwind CSS.
 ---
 ## 🛠️ Notable Libraries and Tools
@@ -87,7 +87,7 @@ Welcome to the **Tailwind Admin Dashboard Template**! This guide will walk you t
 The easiest way to get started is by cloning the repository or download the zip file. You can do this with the following command:
 
 ```bash
-git clone https://github.com/Tailwind-Admin/Tailwind-admin-free.git
+git clone https://github.com/Tailwind-Admin/free-tailwind-admin-dashboard-template
 ```
 
 #### 2. **Select A Technology Version**
