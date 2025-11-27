@@ -129,50 +129,6 @@ Welcome to the **Tailwind Admin Dashboard Template** documentation! Whether you'
 
 👉 **[React.js :- Click here to read the full documentation](https://tailwind-admin.github.io/tailwind-admin-documentation/free-documentation/react/index.html)**
 
----
-
-## 💎 Pro Version
-
-The Pro Version of the **Tailwind Admin Dashboard Template** comes packed with essential features—ideal for personal projects, prototypes, or small-scale applications. When you're ready to level up, the Pro Version unlocks a powerful suite of extras, including multiple theme options, advanced UI widgets, real-time notifications, priority support, and a host of other premium tools designed to supercharge your development workflow.
-
-<div style="display: flex; gap: 10px; align-items: center;">
-  <a href="https://nextjs.tailwind-admin.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Try_the_Demo-Click_Here-blue" alt="Try the Demo">
-  </a>
-  <a href="https://tailwind-admin.com/pricing" target="_blank">
-    <img src="https://img.shields.io/badge/Download_Now-Click_Here-green" alt="Download Now">
-  </a>
-</div>
-
-[![Tailwind Admin Dashboard Template Screenshot](https://tailwind-admin.github.io/tailwind-admin-documentation/assets/images/Premium-dashboard.png)](https://tailwind-admin.com/#demos)
-
----
-
-## ⚖️ Free vs Pro Version Comparison
-
-The **Free Version** of the **Tailwind Admin Dashboard Template** provides a solid set of features, perfect for personal projects or small applications. However, for businesses or developers looking to unlock more advanced functionality, the **Pro Version** offers exciting features like **multiple themes**, **advanced widgets**, **real-time notifications**, **priority support**, and much more. 
-
-
-#### Check out the comparison below to see the key differences between the two versions:
-
-| **Feature**                      | **Free Version**                       | **Pro Version**                                      |
-|-----------------------------------|----------------------------------------|-----------------------------------------------------|
-| **Demo**                          | [![Try the Demo](https://img.shields.io/badge/Try_the_Demo-Click_Here-blue)](https://next-free.tailwind-admin.com/)                               | [![Try the Demo](https://img.shields.io/badge/Try_the_Demo-Click_Here-blue)](https://nextjs.tailwind-admin.com/)                                              |
-| **Download**                      | [![Download Now](https://img.shields.io/badge/Download_Now-Click_Here-green)](https://tailwind-admin.com/#pricing)                                | [![Download Now](https://img.shields.io/badge/Download_Now-Click_Here-green)](https://tailwind-admin.com/pricing)                                          |
-| **Responsive Design**             | ✅ Yes                                 | ✅ Yes                                              |
-| **Pre-designed Pages**            | ✅ Basic Pages                         | ✅ Advanced Pages (more layouts & options)           |
-| **Widgets**                       | ✅ Basic Widgets                       | ✅ Advanced Widgets (e.g., weather, charts, maps)    |
-| **Themes**                        | ✅ Default Theme, Dark Mode                | ✅ Multiple Themes, Custom Color Skins, and Dark Modes |
-| **Customization**                 | ✅ Limited Customization               | ✅ Full Customization (Complete theme and UI flexibility) |
-| **Support**                       | ✅ Community Support                   | ✅ Priority Support with Direct Contact             |
-| **Additional Components**         | ❌ Limited                             | ✅ Additional Components (Forms, Buttons, More UI Elements) |
-| **Advanced Data Visualization**   | ❌ Basic Charts                        | ✅ Advanced Data Visualizations (graphs, complex charts) |
-| **Multi-Language Support**        | ❌ Not available                       | ✅ Built-in support for multiple languages          |
-| **User Permissions & Roles**      | ❌ No                                  | ✅ User roles and permissions management            |
-| **Customizable Dashboards**       | ❌ Not available                       | ✅ Drag-and-drop customizable dashboards            |
-| **Real-time Notifications**       | ❌ Not available                       | ✅ Real-time notifications for alerts & updates      |
-| **Advanced Analytics & Reporting**| ❌ Basic reports                       | ✅ Advanced analytics with custom reports and filters|
-
 
 ---
 
