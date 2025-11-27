@@ -27,11 +27,11 @@ Use it to rapidly build dashboards, SaaS apps, admin panels, CRM systems, and in
 
 ## 👋 Introduction
 
-**Tailwind Admin** is a modern, responsive, and free admin dashboard template built with **Tailwind CSS**, available in both **React** and **Next.js** versions. Designed with a focus on clean design, utility-first styling, and modular components, it's a solid foundation for building powerful web apps quickly and efficiently.
+**Tailwindadmin** is a modern, responsive, and free admin dashboard template built with **Tailwind CSS**, available in both **React** and **Next.js** versions. Designed with a focus on clean design, utility-first styling, and modular components, it's a solid foundation for building powerful web apps quickly and efficiently.
 
-Whether you're developing a **SaaS dashboard**, **eCommerce back office**, **analytics interface**, or **internal admin tool**, Tailwind Admin provides a flexible and developer-friendly starting point. It includes a variety of pre-designed pages, reusable UI components, and layout options to help you get up and running fast.
+Whether you're developing a **SaaS dashboard**, **eCommerce back office**, **analytics interface**, or **internal admin tool**, Tailwindadmin provides a flexible and developer-friendly starting point. It includes a variety of pre-designed pages, reusable UI components, and layout options to help you get up and running fast.
 
-Built for speed, customization, and scalability, Tailwind Admin is fully responsive, easy to extend, and optimized for modern frontend development workflows.
+Built for speed, customization, and scalability, Tailwindadmin is fully responsive, easy to extend, and optimized for modern frontend development workflows.
 
 
 ### 🔑 Key Features
