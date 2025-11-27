@@ -32,6 +32,7 @@ export interface MenuItem {
 import { uniqueId } from 'lodash';
 
 const SidebarContent: MenuItem[] = [
+  // ==================== NON-PRO SECTIONS ====================
   {
     heading: 'Home',
     children: [
@@ -42,104 +43,9 @@ const SidebarContent: MenuItem[] = [
         url: '/',
         isPro: false,
       },
-      {
-        name: 'Ecommerce',
-        icon: 'solar:bag-5-linear',
-        id: uniqueId(),
-        url: 'https://react.tailwind-admin.com/dashboards/eCommerce',
-        isPro: true,
-      },
-      {
-        name: 'Music',
-        icon: 'solar:music-note-linear',
-        id: uniqueId(),
-        url: 'https://react.tailwind-admin.com/dashboards/music',
-        isPro: true,
-      },
-      {
-        name: 'General',
-        icon: 'solar:chart-linear',
-        id: uniqueId(),
-        url: 'https://react.tailwind-admin.com/dashboards/general',
-        isPro: true,
-      },
-      {
-        name: 'Front Pages',
-        id: uniqueId(),
-        icon: 'solar:document-linear',
-        children: [
-          {
-            id: uniqueId(),
-            name: 'Homepage',
-            url: 'https://react.tailwind-admin.com/frontend-pages/homepage',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'About Us',
-            url: 'https://react.tailwind-admin.com/frontend-pages/about',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Blog',
-            url: 'https://react.tailwind-admin.com/frontend-pages/blog/post',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Blog Details',
-            url: 'https://react.tailwind-admin.com/frontend-pages/blog/detail/as-yen-tumbles-gadget-loving-japan-goes-for-secondhand-iphones-',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Contact Us',
-            url: 'https://react.tailwind-admin.com/frontend-pages/contact',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Portfolio',
-            url: 'https://react.tailwind-admin.com/frontend-pages/portfolio',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Pricing',
-            url: 'https://react.tailwind-admin.com/frontend-pages/pricing',
-            isPro: true,
-          },
-        ],
-      },
     ],
   },
-  {
-    heading: 'AI',
-    children: [
-      {
-        name: 'Ai Table Builder',
-        icon: 'solar:server-linear',
-        id: uniqueId(),
-        url: 'https://tailwindbuilder.ai/table-builder',
-        isPro: false,
-      },
-      {
-        name: 'Ai Form Builder',
-        icon: 'solar:document-add-linear',
-        id: uniqueId(),
-        url: 'https://tailwindbuilder.ai/form-builder',
-        isPro: false,
-      },
-      {
-        id: uniqueId(),
-        name: 'Ai Chart Builder',
-        icon: 'solar:pie-chart-2-linear',
-        url: 'https://tailwindbuilder.ai/chart-builder',
-        isPro: false,
-      },
-    ],
-  },
+ 
   {
     heading: 'pages',
     children: [
@@ -155,7 +61,6 @@ const SidebarContent: MenuItem[] = [
         id: uniqueId(),
         url: '/utilities/form',
       },
-
       {
         id: uniqueId(),
         name: 'User Profile',
@@ -168,25 +73,6 @@ const SidebarContent: MenuItem[] = [
   {
     heading: 'Apps',
     children: [
-      {
-        name: 'AI',
-        id: uniqueId(),
-        icon: 'solar:star-circle-linear',
-        children: [
-          {
-            id: uniqueId(),
-            name: 'Chat',
-            url: 'https://react.tailwind-admin.com/apps/chat-ai',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Image',
-            url: 'https://react.tailwind-admin.com/apps/image-ai',
-            isPro: true,
-          },
-        ],
-      },
       {
         id: uniqueId(),
         name: 'Notes',
@@ -220,159 +106,31 @@ const SidebarContent: MenuItem[] = [
           },
         ],
       },
+    ],
+  },
+   {
+    heading: 'AI',
+    children: [
       {
+        name: 'Ai Table Builder',
+        icon: 'solar:server-linear',
         id: uniqueId(),
-        name: 'Contacts',
-        icon: 'solar:users-group-rounded-linear',
-        url: 'https://react.tailwind-admin.com/apps/contacts',
-        isPro: true,
+        url: 'https://tailwindbuilder.ai/table-builder',
+        isPro: false,
       },
       {
-        name: 'Ecommerce',
+        name: 'Ai Form Builder',
+        icon: 'solar:document-add-linear',
         id: uniqueId(),
-        icon: 'solar:cart-large-2-linear',
-        children: [
-          {
-            id: uniqueId(),
-            name: 'Shop',
-            url: 'https://react.tailwind-admin.com/apps/ecommerce/shop',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Details',
-            url: 'https://react.tailwind-admin.com/apps/ecommerce/detail/3',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'List',
-            url: 'https://react.tailwind-admin.com/apps/ecommerce/list',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Checkout',
-            url: 'https://react.tailwind-admin.com/apps/ecommerce/checkout',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Add Product',
-            url: 'https://react.tailwind-admin.com/apps/ecommerce/addproduct',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Edit Product',
-            url: 'https://react.tailwind-admin.com/apps/ecommerce/editproduct',
-            isPro: true,
-          },
-        ],
-      },
-      {
-        name: 'User Profile',
-        id: uniqueId(),
-        icon: 'solar:user-circle-linear',
-        children: [
-          {
-            id: uniqueId(),
-            name: 'Profile',
-            url: 'https://react.tailwind-admin.com/apps/user-profile/profile',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Followers',
-            url: 'https://react.tailwind-admin.com/apps/user-profile/followers',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Friends',
-            url: 'https://react.tailwind-admin.com/apps/user-profile/friends',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Gallery',
-            url: 'https://react.tailwind-admin.com/apps/user-profile/gallery',
-            isPro: true,
-          },
-        ],
-      },
-      {
-        name: 'Invoice',
-        id: uniqueId(),
-        icon: 'solar:bill-list-linear',
-        children: [
-          {
-            id: uniqueId(),
-            name: 'List',
-            url: 'https://react.tailwind-admin.com/apps/invoice/list',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Details',
-            url: 'https://react.tailwind-admin.com/apps/invoice/detail/PineappleInc',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Create',
-            url: 'https://react.tailwind-admin.com/apps/invoice/create',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Edit',
-            url: 'https://react.tailwind-admin.com/apps/invoice/edit/PineappleInc',
-            isPro: true,
-          },
-        ],
+        url: 'https://tailwindbuilder.ai/form-builder',
+        isPro: false,
       },
       {
         id: uniqueId(),
-        name: 'Chats',
-        icon: 'solar:dialog-linear',
-        url: 'https://react.tailwind-admin.com/apps/chats',
-        isPro: true,
-      },
-      {
-        id: uniqueId(),
-        name: 'Calendar',
-        icon: 'solar:calendar-linear',
-        url: 'https://react.tailwind-admin.com/apps/calendar',
-        isPro: true,
-      },
-      {
-        id: uniqueId(),
-        name: 'Email',
-        icon: 'solar:letter-linear',
-        url: 'https://react.tailwind-admin.com/apps/email',
-        isPro: true,
-      },
-      {
-        id: uniqueId(),
-        name: 'Kanban',
-        icon: 'solar:server-minimalistic-linear',
-        url: 'https://react.tailwind-admin.com/apps/kanban',
-        isPro: true,
-      },
-      {
-        id: uniqueId(),
-        name: 'Customers',
-        icon: 'solar:bedside-table-2-linear',
-        url: 'https://react.tailwind-admin.com/react-tables/user-table',
-        isPro: true,
-      },
-      {
-        id: uniqueId(),
-        name: 'Orders',
-        icon: 'solar:bedside-table-4-linear',
-        url: 'https://react.tailwind-admin.com/react-tables/orders-table',
-        isPro: true,
+        name: 'Ai Chart Builder',
+        icon: 'solar:pie-chart-2-linear',
+        url: 'https://tailwindbuilder.ai/chart-builder',
+        isPro: false,
       },
     ],
   },
@@ -466,67 +224,6 @@ const SidebarContent: MenuItem[] = [
           },
         ],
       },
-      {
-        name: 'Animated Comp',
-        id: uniqueId(),
-        icon: 'solar:reel-linear',
-        children: [
-          {
-            id: uniqueId(),
-            name: 'Button',
-            url: 'https://tailwind-admin.com/animated-components/buttons',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Card',
-            url: 'https://tailwind-admin.com/animated-components/cards',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Text',
-            url: 'https://tailwind-admin.com/animated-components/text',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Tables',
-            url: 'https://tailwind-admin.com/animated-components/tables',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Tooltip',
-            url: 'https://tailwind-admin.com/animated-components/tooltip',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Lists',
-            url: 'https://tailwind-admin.com/animated-components/lists',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Links',
-            url: 'https://tailwind-admin.com/animated-components/links',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Slider',
-            url: 'https://tailwind-admin.com/animated-components/slider',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Forms',
-            url: 'https://tailwind-admin.com/animated-components/forms',
-            isPro: true,
-          },
-        ],
-      },
     ],
   },
   {
@@ -581,30 +278,6 @@ const SidebarContent: MenuItem[] = [
         children: [
           {
             id: uniqueId(),
-            name: 'Forms Layouts',
-            url: 'https://react.tailwind-admin.com/forms/form-layouts',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Forms Horizontal',
-            url: 'https://react.tailwind-admin.com/forms/form-horizontal',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Forms Vertical',
-            url: 'https://react.tailwind-admin.com/forms/form-vertical',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Form Validation',
-            url: 'https://react.tailwind-admin.com/forms/form-validation',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
             name: 'Form Examples',
             url: 'https://tailwind-admin.com/components/shadcn/generated-forms/form-examples',
           },
@@ -617,31 +290,6 @@ const SidebarContent: MenuItem[] = [
             id: uniqueId(),
             name: 'Form Wizard',
             url: 'https://tailwind-admin.com/components/shadcn/generated-forms/form-wizard',
-          },
-        ],
-      },
-      {
-        name: 'Form Addons',
-        id: uniqueId(),
-        icon: 'solar:file-favourite-linear',
-        children: [
-          {
-            id: uniqueId(),
-            name: 'Select2',
-            url: 'https://react.tailwind-admin.com/forms/form-select2',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Autocomplete',
-            url: 'https://react.tailwind-admin.com/forms/form-autocomplete',
-            isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Dropzone',
-            url: 'https://react.tailwind-admin.com/forms/form-dropzone',
-            isPro: true,
           },
         ],
       },
@@ -883,6 +531,430 @@ const SidebarContent: MenuItem[] = [
             id: uniqueId(),
             name: 'Total Earnings Chart',
             url: 'https://tailwind-admin.com/ui-blocks/chart#totalearningschart',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'Icons',
+    children: [
+      {
+        id: uniqueId(),
+        name: 'Iconify Icons',
+        icon: 'solar:structure-linear',
+        url: '/icons/iconify',
+        isPro: false,
+      },
+    ],
+  },
+  {
+    heading: 'Auth',
+    children: [
+      {
+        name: 'Login',
+        id: uniqueId(),
+        icon: 'solar:login-2-linear',
+        children: [
+          {
+            id: uniqueId(),
+            name: 'Boxed Login',
+            url: '/auth/auth2/login',
+            isPro: false,
+          },
+        ],
+      },
+      {
+        name: 'Register',
+        id: uniqueId(),
+        icon: 'solar:user-plus-rounded-linear',
+        children: [
+          {
+            id: uniqueId(),
+            name: 'Boxed Register',
+            url: '/auth/auth2/register',
+            isPro: false,
+          },
+        ],
+      },
+    ],
+  },
+  // ==================== PRO SECTIONS ====================
+  {
+    heading: 'Home',
+    children: [
+      {
+        name: 'Ecommerce',
+        icon: 'solar:bag-5-linear',
+        id: uniqueId(),
+        url: 'https://react.tailwind-admin.com/dashboards/eCommerce',
+        isPro: true,
+      },
+      {
+        name: 'Music',
+        icon: 'solar:music-note-linear',
+        id: uniqueId(),
+        url: 'https://react.tailwind-admin.com/dashboards/music',
+        isPro: true,
+      },
+      {
+        name: 'General',
+        icon: 'solar:chart-linear',
+        id: uniqueId(),
+        url: 'https://react.tailwind-admin.com/dashboards/general',
+        isPro: true,
+      },
+      {
+        name: 'Front Pages',
+        id: uniqueId(),
+        icon: 'solar:document-linear',
+        children: [
+          {
+            id: uniqueId(),
+            name: 'Homepage',
+            url: 'https://react.tailwind-admin.com/frontend-pages/homepage',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'About Us',
+            url: 'https://react.tailwind-admin.com/frontend-pages/about',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Blog',
+            url: 'https://react.tailwind-admin.com/frontend-pages/blog/post',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Blog Details',
+            url: 'https://react.tailwind-admin.com/frontend-pages/blog/detail/as-yen-tumbles-gadget-loving-japan-goes-for-secondhand-iphones-',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Contact Us',
+            url: 'https://react.tailwind-admin.com/frontend-pages/contact',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Portfolio',
+            url: 'https://react.tailwind-admin.com/frontend-pages/portfolio',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Pricing',
+            url: 'https://react.tailwind-admin.com/frontend-pages/pricing',
+            isPro: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'Apps',
+    children: [
+      {
+        name: 'AI',
+        id: uniqueId(),
+        icon: 'solar:star-circle-linear',
+        children: [
+          {
+            id: uniqueId(),
+            name: 'Chat',
+            url: 'https://react.tailwind-admin.com/apps/chat-ai',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Image',
+            url: 'https://react.tailwind-admin.com/apps/image-ai',
+            isPro: true,
+          },
+        ],
+      },
+      {
+        id: uniqueId(),
+        name: 'Contacts',
+        icon: 'solar:users-group-rounded-linear',
+        url: 'https://react.tailwind-admin.com/apps/contacts',
+        isPro: true,
+      },
+      {
+        name: 'Ecommerce',
+        id: uniqueId(),
+        icon: 'solar:cart-large-2-linear',
+        children: [
+          {
+            id: uniqueId(),
+            name: 'Shop',
+            url: 'https://react.tailwind-admin.com/apps/ecommerce/shop',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Details',
+            url: 'https://react.tailwind-admin.com/apps/ecommerce/detail/3',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'List',
+            url: 'https://react.tailwind-admin.com/apps/ecommerce/list',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Checkout',
+            url: 'https://react.tailwind-admin.com/apps/ecommerce/checkout',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Add Product',
+            url: 'https://react.tailwind-admin.com/apps/ecommerce/addproduct',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Edit Product',
+            url: 'https://react.tailwind-admin.com/apps/ecommerce/editproduct',
+            isPro: true,
+          },
+        ],
+      },
+      {
+        name: 'User Profile',
+        id: uniqueId(),
+        icon: 'solar:user-circle-linear',
+        children: [
+          {
+            id: uniqueId(),
+            name: 'Profile',
+            url: 'https://react.tailwind-admin.com/apps/user-profile/profile',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Followers',
+            url: 'https://react.tailwind-admin.com/apps/user-profile/followers',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Friends',
+            url: 'https://react.tailwind-admin.com/apps/user-profile/friends',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Gallery',
+            url: 'https://react.tailwind-admin.com/apps/user-profile/gallery',
+            isPro: true,
+          },
+        ],
+      },
+      {
+        name: 'Invoice',
+        id: uniqueId(),
+        icon: 'solar:bill-list-linear',
+        children: [
+          {
+            id: uniqueId(),
+            name: 'List',
+            url: 'https://react.tailwind-admin.com/apps/invoice/list',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Details',
+            url: 'https://react.tailwind-admin.com/apps/invoice/detail/PineappleInc',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Create',
+            url: 'https://react.tailwind-admin.com/apps/invoice/create',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Edit',
+            url: 'https://react.tailwind-admin.com/apps/invoice/edit/PineappleInc',
+            isPro: true,
+          },
+        ],
+      },
+      {
+        id: uniqueId(),
+        name: 'Chats',
+        icon: 'solar:dialog-linear',
+        url: 'https://react.tailwind-admin.com/apps/chats',
+        isPro: true,
+      },
+      {
+        id: uniqueId(),
+        name: 'Calendar',
+        icon: 'solar:calendar-linear',
+        url: 'https://react.tailwind-admin.com/apps/calendar',
+        isPro: true,
+      },
+      {
+        id: uniqueId(),
+        name: 'Email',
+        icon: 'solar:letter-linear',
+        url: 'https://react.tailwind-admin.com/apps/email',
+        isPro: true,
+      },
+      {
+        id: uniqueId(),
+        name: 'Kanban',
+        icon: 'solar:server-minimalistic-linear',
+        url: 'https://react.tailwind-admin.com/apps/kanban',
+        isPro: true,
+      },
+      {
+        id: uniqueId(),
+        name: 'Customers',
+        icon: 'solar:bedside-table-2-linear',
+        url: 'https://react.tailwind-admin.com/react-tables/user-table',
+        isPro: true,
+      },
+      {
+        id: uniqueId(),
+        name: 'Orders',
+        icon: 'solar:bedside-table-4-linear',
+        url: 'https://react.tailwind-admin.com/react-tables/orders-table',
+        isPro: true,
+      },
+    ],
+  },
+  {
+    heading: 'UI ELEMENTS',
+    children: [
+      {
+        name: 'Animated Comp',
+        id: uniqueId(),
+        icon: 'solar:reel-linear',
+        children: [
+          {
+            id: uniqueId(),
+            name: 'Button',
+            url: 'https://tailwind-admin.com/animated-components/buttons',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Card',
+            url: 'https://tailwind-admin.com/animated-components/cards',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Text',
+            url: 'https://tailwind-admin.com/animated-components/text',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Tables',
+            url: 'https://tailwind-admin.com/animated-components/tables',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Tooltip',
+            url: 'https://tailwind-admin.com/animated-components/tooltip',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Lists',
+            url: 'https://tailwind-admin.com/animated-components/lists',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Links',
+            url: 'https://tailwind-admin.com/animated-components/links',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Slider',
+            url: 'https://tailwind-admin.com/animated-components/slider',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Forms',
+            url: 'https://tailwind-admin.com/animated-components/forms',
+            isPro: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    heading: 'FORM ELEMENTS',
+    children: [
+      {
+        name: 'Form layouts',
+        id: uniqueId(),
+        icon: 'solar:documents-linear',
+        children: [
+          {
+            id: uniqueId(),
+            name: 'Forms Layouts',
+            url: 'https://react.tailwind-admin.com/forms/form-layouts',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Forms Horizontal',
+            url: 'https://react.tailwind-admin.com/forms/form-horizontal',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Forms Vertical',
+            url: 'https://react.tailwind-admin.com/forms/form-vertical',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Form Validation',
+            url: 'https://react.tailwind-admin.com/forms/form-validation',
+            isPro: true,
+          },
+        ],
+      },
+      {
+        name: 'Form Addons',
+        id: uniqueId(),
+        icon: 'solar:file-favourite-linear',
+        children: [
+          {
+            id: uniqueId(),
+            name: 'Select2',
+            url: 'https://react.tailwind-admin.com/forms/form-select2',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Autocomplete',
+            url: 'https://react.tailwind-admin.com/forms/form-autocomplete',
+            isPro: true,
+          },
+          {
+            id: uniqueId(),
+            name: 'Dropzone',
+            url: 'https://react.tailwind-admin.com/forms/form-dropzone',
+            isPro: true,
           },
         ],
       },
@@ -1137,18 +1209,6 @@ const SidebarContent: MenuItem[] = [
     ],
   },
   {
-    heading: 'Icons',
-    children: [
-      {
-        id: uniqueId(),
-        name: 'Iconify Icons',
-        icon: 'solar:structure-linear',
-        url: '/icons/iconify',
-        isPro: false,
-      },
-    ],
-  },
-  {
     heading: 'Auth',
     children: [
       {
@@ -1169,12 +1229,6 @@ const SidebarContent: MenuItem[] = [
             url: 'https://react.tailwind-admin.com/auth/auth1/login',
             isPro: true,
           },
-          {
-            id: uniqueId(),
-            name: 'Boxed Login',
-            url: '/auth/auth2/login',
-            isPro: false,
-          },
         ],
       },
       {
@@ -1187,12 +1241,6 @@ const SidebarContent: MenuItem[] = [
             name: 'Side Register',
             url: 'https://react.tailwind-admin.com/auth/auth1/register',
             isPro: true,
-          },
-          {
-            id: uniqueId(),
-            name: 'Boxed Register',
-            url: '/auth/auth2/register',
-            isPro: false,
           },
         ],
       },
