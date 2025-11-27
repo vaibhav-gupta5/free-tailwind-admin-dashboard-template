@@ -10,7 +10,7 @@
 A **free, open-source Tailwind CSS admin dashboard template** built for modern web developers.  
 Use it to rapidly build dashboards, SaaS apps, admin panels, CRM systems, and internal tools.
 
-⭐ If you find this useful, please consider giving it a star — it helps the project grow! 🛠
+## ⭐ If you find this useful, please consider giving it a star — it helps the project grow! 🛠
 
 ## 🔥 Key Features
 
