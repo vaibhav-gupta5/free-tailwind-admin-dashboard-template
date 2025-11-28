@@ -7,7 +7,8 @@ import SidebarLayout from '../sidebar/Sidebar';
 import { useTheme } from 'src/components/provider/theme-provider';
 import { Input } from 'src/components/ui/input';
 import { Sheet, SheetContent, SheetTitle } from 'src/components/ui/sheet';
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+import Search from './Search';
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -73,14 +74,22 @@ const Header = () => {
           </span>
 
           <div className="hidden xl:flex items-center gap-2">
-            <button
-              onClick={() => setSearchOpen(!isOpen)}
-              className="p-2 rounded-full hover:bg-gray-200 transition"
-            >
-              <Icon icon="solar:magnifer-linear" width="20" height="20" />
-            </button>
+            {/* <div className="relative">
+              <Icon
+                icon="solar:magnifer-linear"
+                width="18"
+                height="18"
+                className="absolute left-3 top-1/2 -translate-y-1/2"
+              />
 
-            {searchOpen && <Input id="search-input" type="text" placeholder="Search..." />}
+              <Input
+                id="search-input"
+                type="text"
+                placeholder="Search..."
+                className="rounded-xl pl-10"
+              />
+            </div> */}
+            <Search />
           </div>
 
           {/* mobile-logo */}
@@ -90,14 +99,14 @@ const Header = () => {
 
           <div className="xl:!block !hidden md:!hidden">
             <div className="flex gap-0 items-center">
-              <div className="relative lg:block hidden group w-fit shadow-grid-shadow bg-[radial-gradient(100%_707.08%_at_0%_0%,#15CEBD_0%,#548AFE_33.82%,#E02FD6_72.12%,#FDB54E_100%)] p-0.5 rounded-full">
+              {/* <div className="relative lg:block hidden group w-fit shadow-grid-shadow bg-[radial-gradient(100%_707.08%_at_0%_0%,#15CEBD_0%,#548AFE_33.82%,#E02FD6_72.12%,#FDB54E_100%)] p-0.5 rounded-full">
                 <a
                   href={'https://tailwind-admin.com/#pricing'}
                   className="flex items-center gap-2.5 px-3 py-1.5 bg-white dark:bg-dark rounded-full transition-all dark:hover:bg-[radial-gradient(100%_707.08%_at_0%_0%,#15CEBD36_0%,#548AFE36_33.82%,#E02FD636_72.12%,#FDB54E36_100%)] group hover:bg-[radial-gradient(100%_707.08%_at_0%_0%,#15CEBD36_0%,#548AFE36_33.82%,#E02FD636_72.12%,#FDB54E36_100%)]"
                 >
                   <p className="card-title text-base">Check Pro Version</p>
                 </a>
-              </div>
+              </div> */}
 
               {/* Theme Toggle */}
               {theme === 'light' ? (
@@ -182,3 +191,13 @@ const Header = () => {
 };
 
 export default Header;
+
+{
+  /* <button
+              onClick={() => setSearchOpen(!isOpen)}
+              className="p-2 rounded-full hover:bg-gray-200 transition"
+            >
+              <Icon icon="solar:magnifer-linear" width="20" height="20" />
+            </button>
+            {searchOpen && <Input id="search-input" type="text" placeholder="Search..." />} */
+}
