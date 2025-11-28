@@ -60,7 +60,7 @@ const Profile = () => {
               size="sm"
               className="w-full rounded-md py-0 border-primary text-primary hover:bg-lightprimary hover:text-primary"
             >
-              <Link to="/auth/auth1/login">Logout</Link>
+              <Link to="/auth/auth2/login">Logout</Link>
             </Button>
           </div>
         </DropdownMenuContent>

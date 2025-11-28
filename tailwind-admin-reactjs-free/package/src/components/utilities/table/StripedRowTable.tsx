@@ -1,7 +1,3 @@
-import CardBox from 'src/components/shared/CardBox';
-
-import { TbDotsVertical } from 'react-icons/tb';
-import { Icon } from '@iconify/react/dist/iconify.js';
 import {
   Table,
   TableBody,
@@ -10,18 +6,19 @@ import {
   TableHeader,
   TableRow,
 } from 'src/components/ui/table';
-
 import { Badge } from 'src/components/ui/badge';
+import { TablePerformersData } from './tableData';
+import CardBox from 'src/components/shared/CardBox';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from 'src/components/ui/dropdown-menu';
-import { TablePerformersData } from './tableData';
+import { TbDotsVertical } from 'react-icons/tb';
+import { Icon } from '@iconify/react';
 
-const TableComp = () => {
-  /*Table Action*/
+function StripedRowTable() {
   const tableActionData = [
     {
       icon: 'solar:add-circle-outline',
@@ -36,11 +33,11 @@ const TableComp = () => {
       listtitle: 'Delete',
     },
   ];
+
   return (
     <CardBox>
-      <h3 className="text-xl font-semibold mb-4">Basic Table</h3>
-
-      <div className="flex flex-col border rounded-md border-ld">
+      <h3 className="text-xl font-semibold mb-2">Striped-Row Table</h3>
+      <div className="flex flex-col border rounded-md border-ld ">
         <div className="-m-1.5 overflow-x-auto">
           <div className="p-1.5 min-w-full inline-block align-middle">
             <div className="overflow-x-auto">
@@ -56,9 +53,12 @@ const TableComp = () => {
 
                 <TableBody>
                   {TablePerformersData.map((item, index) => (
-                    <TableRow key={index} className="border-b border-defaultBorder">
+                    <TableRow
+                      key={index}
+                      className="group/row bg-transparentodd:bg-transparent even:bg-lightprimary dark:even:bg-lightprimary"
+                    >
                       {/* Assigned */}
-                      <TableCell className=" min-w-[200px]">
+                      <TableCell className="ps-3 min-w-[200px]">
                         <div className="flex gap-3 items-center">
                           <img
                             src={item.profileImg}
@@ -114,6 +114,6 @@ const TableComp = () => {
       </div>
     </CardBox>
   );
-};
+}
 
-export default TableComp;
+export default StripedRowTable;

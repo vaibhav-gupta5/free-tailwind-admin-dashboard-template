@@ -974,22 +974,7 @@ const SidebarContent: MenuItem[] = [
             url: 'https://react.tailwind-admin.com/shadcn-tables/basic',
             isPro: true,
           },
-          {
-            name: 'Striped Row Table',
-            id: uniqueId(),
-            url: 'https://react.tailwind-admin.com/shadcn-tables/striped-row',
-            isPro: true,
-          }, {
-            name: 'Hover Table',
-            id: uniqueId(),
-            url: 'https://react.tailwind-admin.com/shadcn-tables/hover',
-            isPro: true,
-          }, {
-            name: 'Checkbox Table',
-            id: uniqueId(),
-            url: 'https://react.tailwind-admin.com/shadcn-tables/checkbox',
-            isPro: true,
-          },
+
         ],
       },
       {
