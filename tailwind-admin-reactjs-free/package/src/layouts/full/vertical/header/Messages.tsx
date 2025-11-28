@@ -1,15 +1,22 @@
-"use client"
+'use client';
 
-import { Icon } from "@iconify/react"
-import * as MessagesData from "./Data"
-import SimpleBar from "simplebar-react"
-import "simplebar-react/dist/simplebar.min.css"
-import { Link } from "react-router"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "src/components/ui/dropdown-menu"
+import { Icon } from '@iconify/react';
+import * as MessagesData from './Data';
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
+import { Link } from 'react-router';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from 'src/components/ui/dropdown-menu';
+import { Badge } from 'src/components/ui/badge';
+import { Button } from 'src/components/ui/button';
 
 const Messages = () => {
   return (
-    <div className="relative group/menu px-4 sm:px-15">
+    <div className="relative group/menu px-4 sm:px-15 ">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <div className="relative">
@@ -22,27 +29,33 @@ const Messages = () => {
 
         <DropdownMenuContent
           align="end"
-          className="w-screen sm:w-[300px] py-6 rounded-sm"
+          className="w-screen sm:w-[300px] py-6 rounded-sm border border-ld"
         >
           <div className="flex items-center px-6 justify-between">
             <h3 className="mb-0 text-lg font-semibold text-ld">Notification</h3>
-            {/* <Badge color={"primary"}>5 new</Badge> */}
+            <Badge color={'primary'}>5 new</Badge>
           </div>
 
           <SimpleBar className="max-h-80 mt-3">
             {MessagesData.MessagesLink.map((links, index) => (
               <DropdownMenuItem
+                className="px-6 py-3 flex justify-between items-center bg-hover group/link w-full"
                 key={index}
-                asChild
-                className="px-6 py-3 flex justify-between items-center bg-hover group/link w-full cursor-pointer"
               >
                 <Link to="#">
                   <div className="flex items-center">
+                    <span className="flex-shrink-0 relative">
+                      <img
+                        src={links.avatar}
+                        width={45}
+                        height={45}
+                        alt="tailwindadmin"
+                        className="rounded-full"
+                      />
+                    </span>
                     <div className="ps-4">
-                      <h5 className="mb-1 text-sm group-hover/link:text-primary">
-                        {links.title}
-                      </h5>
-                      <span className="text-xs block truncate text-darklink">
+                      <h5 className="mb-1 text-sm  group-hover/link:text-primary">{links.title}</h5>
+                      <span className="text-xs block  truncate text-darklink">
                         {links.subtitle}
                       </span>
                     </div>
@@ -51,10 +64,16 @@ const Messages = () => {
               </DropdownMenuItem>
             ))}
           </SimpleBar>
+
+          <div className="pt-5 px-6">
+            <Button variant={'outline'} className="w-full">
+              See All Notifications
+            </Button>
+          </div>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
-  )
-}
+  );
+};
 
-export default Messages
+export default Messages;

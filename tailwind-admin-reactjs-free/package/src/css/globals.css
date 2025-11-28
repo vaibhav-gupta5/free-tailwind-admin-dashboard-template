@@ -48,6 +48,7 @@ body{
 
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
+
   --color-info: var(--color-info);
   --color-success: var(--color-success);
   --color-warning: var(--color-warning);
@@ -78,6 +79,11 @@ body{
   --color-slateGray: var(--color-slateGray);
   --color-breadcrumbColor: var(--color-breadcrumbColor);
 }
+
+
+
+
+
 
 @layer base {
 

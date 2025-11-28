@@ -5,7 +5,7 @@ import FullLogo from '../../shared/logo/FullLogo';
 import Profile from './Profile';
 import SidebarLayout from '../sidebar/Sidebar';
 import { useTheme } from 'src/components/provider/theme-provider';
-// import { Input } from 'src/components/ui/input';
+
 import { Sheet, SheetContent, SheetTitle } from 'src/components/ui/sheet';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import Search from './Search';
@@ -15,7 +15,6 @@ const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [mobileMenu, setMobileMenu] = useState('');
   const [isOpen, setIsOpen] = useState(false);
-  // const [searchOpen, setSearchOpen] = useState(false);
 
   const handleScroll = useEffectEvent(() => {
     if (window.scrollY > 50) {
@@ -74,21 +73,6 @@ const Header = () => {
           </span>
 
           <div className="hidden xl:flex items-center gap-2">
-            {/* <div className="relative">
-              <Icon
-                icon="solar:magnifer-linear"
-                width="18"
-                height="18"
-                className="absolute left-3 top-1/2 -translate-y-1/2"
-              />
-
-              <Input
-                id="search-input"
-                type="text"
-                placeholder="Search..."
-                className="rounded-xl pl-10"
-              />
-            </div> */}
             <Search />
           </div>
 
@@ -191,13 +175,3 @@ const Header = () => {
 };
 
 export default Header;
-
-{
-  /* <button
-              onClick={() => setSearchOpen(!isOpen)}
-              className="p-2 rounded-full hover:bg-gray-200 transition"
-            >
-              <Icon icon="solar:magnifer-linear" width="20" height="20" />
-            </button>
-            {searchOpen && <Input id="search-input" type="text" placeholder="Search..." />} */
-}

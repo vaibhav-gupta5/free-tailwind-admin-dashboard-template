@@ -1,31 +1,40 @@
+import React, { useEffect, useContext } from 'react';
 
-import React, { useEffect, useContext } from "react";
-
-import { FaQuoteLeft } from "react-icons/fa";
-import { GoDot } from "react-icons/go";
-import { Icon } from "@iconify/react";
-import { format } from "date-fns";
-import { uniqueId } from "lodash";
-import CardBox from "src/components/shared/CardBox";
-import BlogComment from "./BlogCommnets";
+import { FaQuoteLeft } from 'react-icons/fa';
+import { GoDot } from 'react-icons/go';
+import { Icon } from '@iconify/react';
+import { format } from 'date-fns';
+import { uniqueId } from 'lodash';
+import CardBox from 'src/components/shared/CardBox';
+import BlogComment from './BlogCommnets';
 import { BlogContext, BlogContextProps } from '../../../../context/BlogContext/index';
-import { useLocation } from "react-router";
-import { BlogType } from "src/types/apps/blog";
-import { Badge } from "src/components/ui/badge";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "src/components/ui/tooltip";
-import { Avatar, AvatarFallback, AvatarImage } from "src/components/ui/avatar";
-import { Separator } from "src/components/ui/separator";
-import { Textarea } from "src/components/ui/textarea";
-import { Button } from "src/components/ui/button";
-
+import { useLocation } from 'react-router';
+import { BlogType } from 'src/types/apps/blog';
+import { Badge } from 'src/components/ui/badge';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from 'src/components/ui/tooltip';
+import { Avatar, AvatarFallback, AvatarImage } from 'src/components/ui/avatar';
+import { Separator } from 'src/components/ui/separator';
+import { Textarea } from 'src/components/ui/textarea';
+import { Button } from 'src/components/ui/button';
 
 const BlogDetailData = () => {
   const { posts, setLoading, addComment }: BlogContextProps = useContext(BlogContext);
   const location = useLocation();
   const pathName = location.pathname;
   const getTitle: string | any = pathName.split('/').pop();
-  const post = posts.find((p) => p.title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '') === getTitle);
-  const [replyTxt, setReplyTxt] = React.useState("");
+  const post = posts.find(
+    (p) =>
+      p.title
+        .toLowerCase()
+        .replace(/ /g, '-')
+        .replace(/[^\w-]+/g, '') === getTitle,
+  );
+  const [replyTxt, setReplyTxt] = React.useState('');
 
   const onSubmit = () => {
     if (!post || !post.id) return;
@@ -69,7 +78,9 @@ const BlogDetailData = () => {
                   className="w-full object-cover object-center "
                 />
               </div>
-              <Badge variant={"gray"} className="absolute bottom-8 end-6">2 min Read</Badge>
+              <Badge variant={'gray'} className="absolute bottom-8 end-6">
+                2 min Read
+              </Badge>
             </div>
             <div className="flex justify-between items-center -mt-11 px-6 w-fit">
               <div>
@@ -78,9 +89,7 @@ const BlogDetailData = () => {
                     <TooltipTrigger asChild>
                       <Avatar className="h-10 w-10">
                         <AvatarImage src={post?.author.avatar} alt={post?.author.name} />
-                        <AvatarFallback>
-                          {post?.author?.name?.[0] || "?"}
-                        </AvatarFallback>
+                        <AvatarFallback>{post?.author?.name?.[0] || '?'}</AvatarFallback>
                       </Avatar>
                     </TooltipTrigger>
                     <TooltipContent>{post?.author.name}</TooltipContent>
@@ -100,17 +109,11 @@ const BlogDetailData = () => {
                     {post?.view}
                   </div>
                   <div className="flex gap-2 items-center text-darklink text-[15px]">
-                    <Icon icon="tabler:message-2"
-                      height="18"
-                      className="text-ld"
-                    />{" "}
+                    <Icon icon="tabler:message-2" height="18" className="text-ld" />{' '}
                     {post?.comments?.length || 0}
                   </div>
                   <div className="ms-auto flex gap-2 items-center  text-darklink text-[15px]">
-                    <GoDot
-                      size="16"
-                      className="text-ld"
-                    />
+                    <GoDot size="16" className="text-ld" />
                     <small>
                       {post && post.createdAt ? format(new Date(post.createdAt), 'E, MMM d') : ''}
                     </small>
@@ -122,33 +125,27 @@ const BlogDetailData = () => {
             <div className="px-6 pb-6">
               <h2 className="md:text-3xl text-2xl pb-5">Title of the paragraph</h2>
               <p className="text-darklink">
-                But you cannot figure out what it is or what it can do. MTA web
-                directory is the simplest way in which one can bid on a link, or
-                a few links if they wish to do so. The link directory on MTA
-                displays all of the links it currently has, and does so in
-                alphabetical order, which makes it much easier for someone to
-                find what they are looking for if it is something specific and
-                they do not want to go through all the other sites and links as
-                well. It allows you to start your bid at the bottom and slowly
-                work your way to the top of the list
+                But you cannot figure out what it is or what it can do. MTA web directory is the
+                simplest way in which one can bid on a link, or a few links if they wish to do so.
+                The link directory on MTA displays all of the links it currently has, and does so in
+                alphabetical order, which makes it much easier for someone to find what they are
+                looking for if it is something specific and they do not want to go through all the
+                other sites and links as well. It allows you to start your bid at the bottom and
+                slowly work your way to the top of the list
               </p>
               <br></br>
               <p className="text-darklink">
-                Gigure out what it is or what it can do. MTA web directory is
-                the simplest way in which one can bid on a link, or a few links
-                if they wish to do so. The link directory on MTA displays all of
-                the links it currently has, and does so in alphabetical order,
-                which makes it much easier for someone to find what they are
-                looking for if it is something specific and they do not want to
-                go through all the other sites and links as well. It allows you
-                to start your bid at the bottom and slowly work your way to the
-                top of the
+                Gigure out what it is or what it can do. MTA web directory is the simplest way in
+                which one can bid on a link, or a few links if they wish to do so. The link
+                directory on MTA displays all of the links it currently has, and does so in
+                alphabetical order, which makes it much easier for someone to find what they are
+                looking for if it is something specific and they do not want to go through all the
+                other sites and links as well. It allows you to start your bid at the bottom and
+                slowly work your way to the top of the
               </p>
               <br></br>
               <p>
-                <b className="text-ld">
-                  This is strong text.
-                </b>
+                <b className="text-ld">This is strong text.</b>
               </p>
               <i>This is italic text.</i>
               <Separator className="my-8 bg-gray-200 dark:bg-gray-700" />
@@ -170,10 +167,7 @@ const BlogDetailData = () => {
               <Separator className="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700" />
               <h3 className="text-xl mb-3">Quotes</h3>
               <div className="pt-5 pb-4 px-4 rounded-md border-s-2 border-primary bg-lightgray dark:bg-darkmuted flex gap-1 items-start">
-                <FaQuoteLeft
-                  size={20}
-                  className="text-ld -mt-1"
-                />
+                <FaQuoteLeft size={20} className="text-ld -mt-1" />
                 <h2 className="text-base font-bold">
                   Life is short, Smile while you still have teeth!
                 </h2>
@@ -188,11 +182,7 @@ const BlogDetailData = () => {
               onChange={(e) => setReplyTxt(e.target.value)}
               placeholder="Write your comment..."
             />
-            <Button
-              variant="default"
-              className="w-fit mt-3 rounded-md"
-              onClick={onSubmit}
-            >
+            <Button variant="default" className="w-fit mt-3 rounded-md" onClick={onSubmit}>
               Post Comment
             </Button>
             <div className="mt-6">
@@ -204,9 +194,7 @@ const BlogDetailData = () => {
               </div>
               <div>
                 {post?.comments?.map((comment: BlogType | any) => {
-                  return (
-                    <BlogComment key={comment.id} comment={comment} />
-                  );
+                  return <BlogComment key={comment.id} comment={comment} />;
                 })}
               </div>
             </div>

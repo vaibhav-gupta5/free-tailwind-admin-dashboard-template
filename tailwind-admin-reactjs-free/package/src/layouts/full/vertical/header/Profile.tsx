@@ -1,12 +1,17 @@
-"use client"
+'use client';
 
-import { Icon } from "@iconify/react"
-import * as profileData from "./Data"
-import SimpleBar from "simplebar-react"
-import { Link } from "react-router"
-import profileimg from "src/assets/images/profile/user-1.jpg"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "src/components/ui/dropdown-menu"
-import { Button } from "src/components/ui/button"
+import { Icon } from '@iconify/react';
+import * as profileData from './Data';
+import SimpleBar from 'simplebar-react';
+import { Link } from 'react-router';
+import profileimg from 'src/assets/images/profile/user-1.jpg';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from 'src/components/ui/dropdown-menu';
+import { Button } from 'src/components/ui/button';
 
 const Profile = () => {
   return (
@@ -14,19 +19,13 @@ const Profile = () => {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <span className="hover:text-primary hover:bg-lightprimary rounded-full flex justify-center items-center cursor-pointer group-hover/menu:bg-lightprimary group-hover/menu:text-primary">
-            <img
-              src={profileimg}
-              alt="logo"
-              height="35"
-              width="35"
-              className="rounded-full"
-            />
+            <img src={profileimg} alt="logo" height="35" width="35" className="rounded-full" />
           </span>
         </DropdownMenuTrigger>
 
         <DropdownMenuContent
           align="end"
-          className="w-screen sm:w-[200px] pb-6 pt-4 rounded-sm"
+          className="w-screen sm:w-[200px] pb-6 pt-4 rounded-sm border border-ld"
         >
           <SimpleBar>
             {profileData.profileDD.map((items, index) => (
@@ -61,13 +60,13 @@ const Profile = () => {
               size="sm"
               className="w-full rounded-md py-0 border-primary text-primary hover:bg-lightprimary hover:text-primary"
             >
-              <Link to="/auth/login">Logout</Link>
+              <Link to="/auth/auth1/login">Logout</Link>
             </Button>
           </div>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

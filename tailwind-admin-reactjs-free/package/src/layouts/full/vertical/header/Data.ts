@@ -262,10 +262,10 @@ const profileDD: ProfileType[] = [
   },
   {
     img: taskIcon,
-    title: 'My Tasks',
-    subtitle: 'To-do and Daily tasks',
+    title: 'My Blogs',
+    subtitle: 'Stories, insights, and updates',
     icon: "tabler:list-check",
-    url: '/',
+    url: '/apps/blog/post',
   },
 ];
 

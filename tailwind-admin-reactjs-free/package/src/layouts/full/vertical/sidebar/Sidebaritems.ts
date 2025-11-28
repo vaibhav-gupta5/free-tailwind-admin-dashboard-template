@@ -45,12 +45,12 @@ const SidebarContent: MenuItem[] = [
       },
     ],
   },
- 
+
   {
     heading: 'pages',
     children: [
       {
-        name: 'Table',
+        name: 'Tables',
         icon: 'solar:server-linear',
         id: uniqueId(),
         url: '/utilities/table',
@@ -108,7 +108,7 @@ const SidebarContent: MenuItem[] = [
       },
     ],
   },
-   {
+  {
     heading: 'AI',
     children: [
       {
@@ -972,6 +972,22 @@ const SidebarContent: MenuItem[] = [
             name: 'Basic Table',
             id: uniqueId(),
             url: 'https://react.tailwind-admin.com/shadcn-tables/basic',
+            isPro: true,
+          },
+          {
+            name: 'Striped Row Table',
+            id: uniqueId(),
+            url: 'https://react.tailwind-admin.com/shadcn-tables/striped-row',
+            isPro: true,
+          }, {
+            name: 'Hover Table',
+            id: uniqueId(),
+            url: 'https://react.tailwind-admin.com/shadcn-tables/hover',
+            isPro: true,
+          }, {
+            name: 'Checkbox Table',
+            id: uniqueId(),
+            url: 'https://react.tailwind-admin.com/shadcn-tables/checkbox',
             isPro: true,
           },
         ],
