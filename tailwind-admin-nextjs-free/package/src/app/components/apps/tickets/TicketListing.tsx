@@ -24,7 +24,13 @@ import {
 } from "@/components/ui/tooltip";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const TicketListing = ({ tickets, deleteTicket, searchTickets, ticketSearch, filter }: any) => {
+const TicketListing = ({
+  tickets,
+  deleteTicket,
+  searchTickets,
+  ticketSearch,
+  filter,
+}: any) => {
   const [showCreateForm, setShowCreateForm] = useState(false);
   const router = useRouter();
 
@@ -36,7 +42,8 @@ const TicketListing = ({ tickets, deleteTicket, searchTickets, ticketSearch, fil
     switch (filter) {
       case "total_tickets":
         return tickets.filter(
-          (c) => !c.deleted && c.ticketTitle.toLowerCase().includes(ticketSearch)
+          (c) =>
+            !c.deleted && c.ticketTitle.toLowerCase().includes(ticketSearch)
         );
       case "Pending":
         return tickets.filter(
@@ -124,7 +131,7 @@ const TicketListing = ({ tickets, deleteTicket, searchTickets, ticketSearch, fil
 
                 <TableCell className="max-w-md">
                   <h6 className="text-base truncate">{ticket.ticketTitle}</h6>
-                  <p className="text-sm text-muted-foreground truncate">
+                  <p className="text-sm text-muted-foreground truncate dark:text-darklink">
                     {ticket.ticketDescription}
                   </p>
                 </TableCell>
@@ -142,7 +149,10 @@ const TicketListing = ({ tickets, deleteTicket, searchTickets, ticketSearch, fil
                 </TableCell>
 
                 <TableCell>
-                  <Badge variant={`${ticketBadge(ticket)}`} className={` rounded-md`}>
+                  <Badge
+                    variant={`${ticketBadge(ticket)}`}
+                    className={` rounded-md`}
+                  >
                     {ticket.Status}
                   </Badge>
                 </TableCell>

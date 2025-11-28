@@ -28,6 +28,7 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "@svgr/rollup": "8.1.0",
     "@tabler/icons-react": "^3.34.1",
+    "@tanstack/react-table": "^8.21.3",
     "apexcharts": "^5.3.5",
     "chance": "^1.1.13",
     "class-variance-authority": "^0.7.1",
