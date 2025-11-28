@@ -67,10 +67,11 @@ export function toTitleCase(str: string) {
 }
 
 interface DynamicTableProps {
-  data: Array<Record<string, any>>;
+  // data: Array<Record<string, any>>;
+  data?: Array<Record<string, any>>;
 }
 
-export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
+const DataTable: React.FC<DynamicTableProps> = ({ data = [] }) => {
   const [globalFilter, setGlobalFilter] = useState("");
   const [sorting, setSorting] = useState<SortingState>([]);
 
@@ -386,12 +387,12 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
   return (
     <CardBox>
       <div>
-        {data.length === 0 ? (
+        {data?.length === 0 ? (
           <p className="text-center py-8 text-gray-500">No data available.</p>
         ) : (
           <>
             {/* Search + Download */}
-            <div className="p-4 pt-0 flex items-center justify-between flex-wrap gap-4">
+            <div className="pb-4 pt-0 flex items-center justify-between flex-wrap gap-4">
               <h3 className="text-xl font-semibold mb-2">
                 Employee Data Table
               </h3>
@@ -540,3 +541,5 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
     </CardBox>
   );
 };
+
+export default DataTable;
