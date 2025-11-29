@@ -40,10 +40,16 @@ const MainRoutes = [
                 component: () => import('../views/icons/Solar.vue')
             },
             {
-                name: 'Table',
-                path: '/utilities/table',
-                component: () => import('../views/utilities/Table.vue')
-            }, {
+                name: 'Shadcn Table',
+                path: '/shadcn-table/basic',
+                component: () => import('../views/shadcn-tables/BasicTable.vue')
+            },
+            {
+                name: 'Shadcn Hover Table',
+                path: '/shadcn-table/hover',
+                component: () => import('../views/shadcn-tables/HoverTable.vue')
+            },
+            {
                 name: 'Form',
                 path: '/utilities/form',
                 component: () => import('../views/utilities/Form.vue')

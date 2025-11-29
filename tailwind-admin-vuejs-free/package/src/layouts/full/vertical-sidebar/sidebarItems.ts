@@ -23,6 +23,138 @@ const sidebarItem: menu[] = [
     to: "/",
     isPro: false,
   },
+
+
+  { header: "PAGES" },
+  {
+    title: "Shadcn Tables",
+    icon: "tablet-linear",
+    to: "#",
+
+    children: [
+      {
+        title: 'Basic Table',
+        to: '/shadcn-table/basic',
+        isPro: false,
+      },
+      {
+        title: 'Hover Table',
+        to: '/shadcn-table/hover',
+        isPro: false,
+      },
+
+    ]
+
+  },
+  {
+    title: 'Form',
+    icon: 'document-add-linear',
+    to: '/utilities/form',
+    isPro: false,
+
+  }, {
+    title: 'User Profile',
+    icon: 'user-circle-linear',
+    to: '/user-profile',
+    isPro: false,
+
+  },
+  { header: "Apps" },
+  {
+    title: 'Blog',
+    icon: 'sort-by-alphabet-linear',
+    to: '/',
+    children: [
+      {
+        title: 'Blog Posts',
+        to: '/apps/blog/post',
+        isPro: false,
+      },
+      {
+        title: 'Blog Details',
+        to: '/apps/blog/early-black-friday-amazon-deals-cheap-tvs-headphones',
+        isPro: false,
+      }
+    ]
+  },
+  {
+    title: 'Notes',
+    icon: 'notes-linear',
+    to: '/apps/notes',
+    isPro: false,
+  },
+  {
+    title: 'Tickets',
+    icon: 'ticker-star-linear',
+    to: '/apps/tickets',
+    isPro: false,
+  },
+
+
+
+
+
+
+
+
+  { header: "Tables" },
+  {
+    title: "Shadcn Tables",
+    icon: "tablet-linear",
+    to: "#",
+
+    children: [
+      {
+        title: 'Basic Table',
+        to: '/shadcn-table/basic',
+        isPro: false,
+      },
+      {
+        title: 'Hover Table',
+        to: '/shadcn-table/hover',
+        isPro: false,
+      }
+    ]
+
+  },
+
+  { header: "Icons" },
+  {
+    title: 'Solar Icon',
+    to: '/icons/solar',
+    isPro: false,
+    icon: "smile-circle-linear",
+  },
+
+  { header: 'Auth' },
+  {
+    title: 'Login',
+    icon: 'login-2-linear',
+    to: '#',
+
+    children: [
+      {
+        title: 'Boxed Login',
+        to: '/auth/login2',
+        isPro: false,
+      }
+    ]
+  },
+  {
+    title: 'Register',
+    icon: 'user-plus-rounded-linear',
+    to: '#',
+    isPro: true,
+    children: [
+      {
+        title: 'Boxed Register',
+        to: '/auth/register2',
+        isPro: false,
+      }
+    ]
+  },
+
+  { header: "Home" },
   {
     title: "eCommerce",
     icon: "bag-5-linear",
@@ -94,25 +226,20 @@ const sidebarItem: menu[] = [
 
   { header: "PAGES" },
   {
-    title: 'Table',
-    icon: 'server-linear',
-    to: '/utilities/table',
-    isPro: false,
+    title: "Shadcn Tables",
+    icon: "tablet-linear",
+    to: "#",
+
+    children: [
+      {
+        title: 'Editable Table',
+        to: 'https://vuejs.tailwind-admin.com/shadcn-tables/edit',
+        isPro: true,
+      }
+    ]
 
   },
-  {
-    title: 'Form',
-    icon: 'document-add-linear',
-    to: '/utilities/form',
-    isPro: false,
 
-  }, {
-    title: 'User Profile',
-    icon: 'user-circle-linear',
-    to: '/user-profile',
-    isPro: false,
-
-  },
   { header: "Apps" },
 
   {
@@ -132,23 +259,7 @@ const sidebarItem: menu[] = [
       },
     ]
   },
-  {
-    title: 'Blog',
-    icon: 'sort-by-alphabet-linear',
-    to: '/',
-    children: [
-      {
-        title: 'Blog Posts',
-        to: '/apps/blog/post',
-        isPro: false,
-      },
-      {
-        title: 'Blog Details',
-        to: '/apps/blog/early-black-friday-amazon-deals-cheap-tvs-headphones',
-        isPro: false,
-      }
-    ]
-  },
+
   {
     title: "User Profile",
 
@@ -260,12 +371,7 @@ const sidebarItem: menu[] = [
     to: 'https://vuejs.tailwind-admin.com/apps/kanban',
     isPro: true,
   },
-  {
-    title: 'Notes',
-    icon: 'notes-linear',
-    to: '/apps/notes',
-    isPro: false,
-  },
+
   {
     title: 'Calendar',
     icon: 'calendar-linear',
@@ -278,12 +384,7 @@ const sidebarItem: menu[] = [
     to: 'https://vuejs.tailwind-admin.com/apps/contacts',
     isPro: true,
   },
-  {
-    title: 'Tickets',
-    icon: 'ticker-star-linear',
-    to: '/apps/tickets',
-    isPro: false,
-  },
+
   {
     title: 'Email',
     icon: 'letter-linear',
@@ -306,10 +407,7 @@ const sidebarItem: menu[] = [
   },
 
 
-
-  { header: "Pages" },
-
-
+  { header: "Pro Pages" },
   {
     title: 'Account Setting',
     icon: 'settings-minimalistic-linear',
@@ -416,6 +514,8 @@ const sidebarItem: menu[] = [
 
   },
 
+
+
   {
     title: "Shadcn Charts",
     icon: "chart-2-linear",
@@ -489,15 +589,6 @@ const sidebarItem: menu[] = [
 
     children: [
       {
-        title: 'Basic Table',
-        to: 'https://vuejs.tailwind-admin.com/shadcn-tables/basic',
-        isPro: true,
-      },
-      {
-        title: 'Hover Table',
-        to: 'https://vuejs.tailwind-admin.com/shadcn-tables/hover',
-        isPro: true,
-      }, {
         title: 'Editable Table',
         to: 'https://vuejs.tailwind-admin.com/shadcn-tables/edit',
         isPro: true,
@@ -505,6 +596,7 @@ const sidebarItem: menu[] = [
     ]
 
   },
+
   {
     title: "Data Tables",
     icon: "bedside-table-3-linear",
@@ -536,13 +628,7 @@ const sidebarItem: menu[] = [
     isPro: true,
     icon: "palette-round-linear",
   },
-  { header: "Icons" },
-  {
-    title: 'Solar Icon',
-    to: '/icons/solar',
-    isPro: false,
-    icon: "smile-circle-linear",
-  },
+
 
   { header: 'Auth' },
   {
@@ -556,13 +642,9 @@ const sidebarItem: menu[] = [
         to: 'https://vuejs.tailwind-admin.com/auth/auth1/login',
         isPro: true,
       },
-      {
-        title: 'Boxed Login',
-        to: '/auth/login2',
-        isPro: false,
-      }
     ]
   },
+
   {
     title: 'Register',
     icon: 'user-plus-rounded-linear',
@@ -574,11 +656,6 @@ const sidebarItem: menu[] = [
         to: 'https://vuejs.tailwind-admin.com/auth/auth1/register',
         isPro: true,
       },
-      {
-        title: 'Boxed Register',
-        to: '/auth/register2',
-        isPro: false,
-      }
     ]
   },
 
@@ -631,6 +708,10 @@ const sidebarItem: menu[] = [
     to: 'https://vuejs.tailwind-admin.com/auth/maintenance',
     isPro: true,
   },
+
+
+
+
   { header: "Other" },
 
 

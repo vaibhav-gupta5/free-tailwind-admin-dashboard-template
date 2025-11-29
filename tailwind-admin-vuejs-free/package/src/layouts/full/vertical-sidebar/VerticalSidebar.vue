@@ -58,14 +58,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <Sidebar
-    data-slot="sidebar"
-    collapsible="icon"
-    class="sidebar  bg-card pb-6"
-    :class="{ 'shadow-sm z-[41] fixed': isHovered }"
-    side= "left"
-   
-  >
+  <Sidebar data-slot="sidebar" collapsible="icon" class="sidebar  bg-card pb-6"
+    :class="{ 'shadow-sm z-[41] fixed': isHovered }" side="left">
     <!-- Brand Logo -->
     <SidebarHeader class="pt-6 pb-5 relative whitespace-nowrap">
       <LayoutLogo />
@@ -78,34 +72,29 @@ onMounted(() => {
           <!---Menu Loop -->
           <template v-for="item in sidebarItems" :key="item.title">
             <!--If Has Caption-->
-            <LayoutVerticalSidebarNavGroup
-              v-if="item.header"
-              :item="item"
-            />
+            <LayoutVerticalSidebarNavGroup v-if="item.header" :item="item" />
             <!---If Has Child -->
-            <LayoutVerticalSidebarNavCollapse
-              :item="item"
-              :level="0"
-              v-else-if="item.children"
-            />
+            <LayoutVerticalSidebarNavCollapse :item="item" :level="0" v-else-if="item.children" />
 
             <LayoutVerticalSidebarNavItems v-else :item="item" />
           </template>
           <!---Menu Loop End-->
         </SidebarMenu>
-          <div class="mt-9 px-6 overflow-hidden">
-                <div class="flex w-full bg-lightprimary rounded-lg p-6">
-                  <div class="lg:w-1/2 w-full">
-                    <h5 class="text-base text-charcoal">
-                      Haven't Account?
-                    </h5>
-                    <Button color="primary"  size="sm"   as="a" target="_blank" href="https://tailwind-admin.com/#pricing" class="whitespace-nowrap mt-2 text-[13px]">Get Pro</Button>
-                  </div>
-                  <div class="lg:w-1/2 w-full -mt-4 ml-[26px] scale-[1.2] shrink-0">
-                    <img :src="rocket" alt="rocket" />
-                  </div>
-                </div>
-              </div>
+        <div class="mt-9 px-6 overflow-hidden">
+          <div class="flex w-full bg-lightprimary rounded-lg p-6">
+            <div class="lg:w-1/2 w-full">
+              <h5 class="text-base text-charcoal">
+                Haven't Account?
+              </h5>
+              <Button color="primary" size="sm" as="a" target="_blank" href="#"
+                class="whitespace-nowrap mt-2 text-[13px]">Get
+                Pro</Button>
+            </div>
+            <div class="lg:w-1/2 w-full -mt-4 ml-[26px] scale-[1.2] shrink-0">
+              <img :src="rocket" alt="rocket" />
+            </div>
+          </div>
+        </div>
       </simplebar>
     </SidebarContent>
   </Sidebar>
