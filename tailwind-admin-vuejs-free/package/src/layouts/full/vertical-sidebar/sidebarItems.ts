@@ -90,34 +90,6 @@ const sidebarItem: menu[] = [
     isPro: false,
   },
 
-
-
-
-
-
-
-
-  { header: "Tables" },
-  {
-    title: "Shadcn Tables",
-    icon: "tablet-linear",
-    to: "#",
-
-    children: [
-      {
-        title: 'Basic Table',
-        to: '/shadcn-table/basic',
-        isPro: false,
-      },
-      {
-        title: 'Hover Table',
-        to: '/shadcn-table/hover',
-        isPro: false,
-      }
-    ]
-
-  },
-
   { header: "Icons" },
   {
     title: 'Solar Icon',
