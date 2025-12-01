@@ -4,10 +4,10 @@ import { ref } from 'vue';
 import BaseBreadcrumb from '@/components/shared/BaseBreadcrumb.vue';
 
 
-const page = ref({ title: " Table " });
+const page = ref({ title: " Forms " });
 const breadcrumbs = ref([
   {
-    text: "Table",
+    text: "Forms",
     disabled: true,
     href: "#",
   },
@@ -18,9 +18,6 @@ const breadcrumbs = ref([
 <template>
 
 
- <BaseBreadcrumb
-    :title="page.title"
-    :breadcrumbs="breadcrumbs"
-  ></BaseBreadcrumb>
-  <Form/>
+  <BaseBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></BaseBreadcrumb>
+  <Form />
 </template>

@@ -21,6 +21,14 @@ const { item } = props;
 const route = useRoute();
 
 /**
+ * Utility function to check if a path is an external URL (starts with http:// or https://).
+ * @param url The URL string to check.
+ */
+const isExternalLink = (url: string) => {
+  return url && (url.startsWith('http://') || url.startsWith('https://'));
+};
+
+/**
  * Determines if the current group is active (i.e., if any of its children's routes 
  * start with the current path). This keeps the group open when navigating deep.
  */
@@ -37,7 +45,6 @@ watch(isActiveGroup, (val) => {
   isOpen.value = val;
 });
 
-// The handleClick function was removed as link handling is now declarative in the template.
 </script>
 
 <template>
@@ -64,8 +71,10 @@ watch(isActiveGroup, (val) => {
             <SidebarMenuSubItem v-if="!child.children" asChild
               class="w-full transition-all duration-200 ease-in-out hover:translate-x-1 hover:bg-transparent!">
 
-              <component :is="child.isPro ? 'a' : 'router-link'" :href="child.isPro ? child.to : undefined"
-                :to="!child.isPro ? child.to : undefined" :target="child.isPro ? '_blank' : undefined"
+              <component :is="isExternalLink(child.to) || child.isPro ? 'a' : 'router-link'"
+                :href="isExternalLink(child.to) || child.isPro ? child.to : undefined"
+                :to="!(isExternalLink(child.to) || child.isPro) ? child.to : undefined"
+                :target="isExternalLink(child.to) || child.isPro ? '_blank' : undefined"
                 class="flex text-sm items-center gap-5 w-full whitespace-nowrap cursor-pointer bg-transparent! hover:bg-transparent!"
                 :class="{
                   'text-primary ': route.path === child.to,

@@ -32,7 +32,7 @@ import Card from "@/components/ui/card/Card.vue";
                                 <h5 class="whitespace-nowrap text-base">
                                     {{ item.name }}
                                 </h5>
-                                <p class="text-sm  whitespace-nowrap">
+                                <p class="text-sm  whitespace-nowrap text-muted">
                                     {{ item.post }}
                                 </p>
                             </div>
@@ -55,7 +55,7 @@ import Card from "@/components/ui/card/Card.vue";
                                     :class="`bg-${team.color} text-white`">
                                     <AvatarFallback :class="`bg-${team.color} `">{{
                                         team.text
-                                        }}</AvatarFallback>
+                                    }}</AvatarFallback>
                                 </Avatar>
                             </div>
                         </div>
