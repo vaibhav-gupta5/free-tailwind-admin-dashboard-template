@@ -4,7 +4,7 @@
    </a>
 </p>
 
-# 🚀 Free Tailwind Admin Dashboard Template  
+# 🚀 Free Tailwind Admin Dashboard Template (Shadcn UI) 
 ### Multi-Framework UI Kit for **Next.js, React, Angular & Vue**
 
 A **free, open-source Tailwind CSS admin dashboard template** built for modern web developers.  
