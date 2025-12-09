@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MaterialModule } from 'src/app/material.module';
 
@@ -13,7 +13,7 @@ interface topcards {
 
 @Component({
   selector: 'app-top-cards',
-  imports: [MaterialModule, CarouselModule, CommonModule],
+  imports: [MaterialModule, CarouselModule],
   templateUrl: './top-cards.component.html',
 })
 export class AppTopCardsComponent {
