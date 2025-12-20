@@ -12,7 +12,7 @@ import BlogComment from './BlogCommnets'
 import {
   BlogContext,
   BlogContextProps,
-} from '../../../../context/blogContext/index'
+} from '../../../../context/blog-context/index'
 import { BlogType } from '@/app/(DashboardLayout)/types/blog'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
@@ -113,7 +113,11 @@ const BlogDetailData = () => {
               <h2 className='md:text-4xl text-2xl my-6'>{post.title}</h2>
               <div className='flex gap-3'>
                 <div className='flex gap-2 items-center text-muted-foreground text-[15px]'>
-                  <Icon icon='tabler:eye' height='18' className='text-foreground' />
+                  <Icon
+                    icon='tabler:eye'
+                    height='18'
+                    className='text-foreground'
+                  />
                   {post.view || 0}
                 </div>
                 <div className='flex gap-2 items-center text-muted-foreground text-[15px]'>

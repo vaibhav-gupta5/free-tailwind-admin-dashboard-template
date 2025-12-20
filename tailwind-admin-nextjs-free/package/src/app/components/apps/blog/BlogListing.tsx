@@ -3,7 +3,7 @@
 import { useContext } from 'react'
 import { orderBy } from 'lodash'
 import BlogCard from './BlogCard'
-import { BlogContext } from '../../../context/blogContext'
+import { BlogContext } from '@/app/context/blog-context'
 import BlogFeaturedCard from './BlogFeaturedCard'
 import { BlogPostType } from '@/app/(DashboardLayout)/types/blog'
 

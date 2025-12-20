@@ -1,7 +1,7 @@
 import BreadcrumbComp from '@/app/(DashboardLayout)/layout/shared/breadcrumb/BreadcrumbComp'
 import BlogDetailData from '@/app/components/apps/blog/detail'
 import React from 'react'
-import { BlogProvider } from '@/app/context/blogContext/index'
+import { BlogProvider } from '@/app/context/blog-context/index'
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Blog Details',
