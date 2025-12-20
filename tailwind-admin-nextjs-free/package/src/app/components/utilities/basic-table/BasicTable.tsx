@@ -67,7 +67,7 @@ const BasicTable = () => {
                     {PerformersData.map((item, index) => (
                       <TableRow
                         key={index}
-                        className="border-b border-defaultBorder"
+                        className="border-b border-border"
                       >
                         {/* Assigned */}
                         <TableCell className="min-w-[200px]">
