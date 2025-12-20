@@ -55,10 +55,10 @@ const Notifications = () => {
                       />
                     </span>
                     <div className="ps-4">
-                      <h5 className="mb-1 text-sm  group-hover/link:text-primary">
+                      <h5 className="mb-1 text-sm group-hover/link:text-primary">
                         {item.title}
                       </h5>
-                      <span className="text-xs block  truncate text-darklink">
+                      <span className="text-xs block truncate text-muted-foreground">
                         {item.subtitle}
                       </span>
                     </div>

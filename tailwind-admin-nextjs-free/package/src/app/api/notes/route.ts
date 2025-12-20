@@ -1,5 +1,4 @@
-import { NextResponse } from 'next/server';
-
+import { NextResponse, NextRequest } from 'next/server'
 
 let NotesData = [
   {
@@ -34,73 +33,85 @@ let NotesData = [
     datef: '2023-06-03T23:28:56.782Z',
     deleted: false,
   },
-];
+]
 
-const resetNotes = [...NotesData];
+const resetNotes = [...NotesData]
 
 // GET request to retrieve Notes data
-export async function GET(req:any){
-  let isBrowserRefreshed = req.headers.get('browserrefreshed');
- try{
-   if(isBrowserRefreshed === "false"){
-     return NextResponse.json({status:200 , msg:"Success" , data: NotesData})
-   }else{
-     NotesData = resetNotes;
-     return NextResponse.json({status:200 , msg:"Success" , data:NotesData })
-   }
- }catch(error){
-   return NextResponse.json({status:400 , msg:"Internal server error",error})
- }
-}
-
-
-// DELETE endpoint for deleting a note
-export async function DELETE(req:any){
-  try{
-    const { id } = await req.json();
-    const remainingNotes = NotesData.filter((note) => note.id !== parseInt(id));
-    NotesData = remainingNotes;
-    return NextResponse.json({status:200 , msg:"Success" , data:NotesData})
-  }catch(error){
-    return NextResponse.json({status:400,msg:"Internal server error",error})
+export async function GET(req: NextRequest) {
+  let isBrowserRefreshed = req.headers.get('browserrefreshed')
+  try {
+    if (isBrowserRefreshed === 'false') {
+      return NextResponse.json({ status: 200, msg: 'Success', data: NotesData })
+    } else {
+      NotesData = resetNotes
+      return NextResponse.json({ status: 200, msg: 'Success', data: NotesData })
+    }
+  } catch (error) {
+    return NextResponse.json({
+      status: 400,
+      msg: 'Internal server error',
+      error,
+    })
   }
 }
 
+// DELETE endpoint for deleting a note
+export async function DELETE(req: NextRequest) {
+  try {
+    const { id } = await req.json()
+    const remainingNotes = NotesData.filter((note) => note.id !== parseInt(id))
+    NotesData = remainingNotes
+    return NextResponse.json({ status: 200, msg: 'Success', data: NotesData })
+  } catch (error) {
+    return NextResponse.json({
+      status: 400,
+      msg: 'Internal server error',
+      error,
+    })
+  }
+}
 
 //  POST endpoint for adding a new note
-const currentDate = new Date();
-export async function POST(req:any){
-  try{
-    const { title, color } = await req.json();
+const currentDate = new Date()
+export async function POST(req: NextRequest) {
+  try {
+    const { title, color } = await req.json()
     const newNote = {
       id: NotesData.length + 1,
       title,
       color,
       deleted: false,
       datef: currentDate.toISOString(),
-    };
-    NotesData.push(newNote);
-    return NextResponse.json({status:200 , msg:"Success" , data:NotesData})
-  }catch(error){
-    return NextResponse.json({status:400,msg:"Internal server error",error})
+    }
+    NotesData.push(newNote)
+    return NextResponse.json({ status: 200, msg: 'Success', data: NotesData })
+  } catch (error) {
+    return NextResponse.json({
+      status: 400,
+      msg: 'Internal server error',
+      error,
+    })
   }
 }
-
 
 // PUT endpoint for updating a note
-export async function PUT(req:any){
-  try{
-    const { id, title, color } = await req.json();
-    const index = NotesData.findIndex((note) => note.id === id);
-  
+export async function PUT(req: NextRequest) {
+  try {
+    const { id, title, color } = await req.json()
+    const index = NotesData.findIndex((note) => note.id === id)
+
     if (index !== -1) {
-      NotesData[index] = { ...NotesData[index], title, color };
-      return NextResponse.json({status:200 , msg:"Success" , data:NotesData})
+      NotesData[index] = { ...NotesData[index], title, color }
+      return NextResponse.json({ status: 200, msg: 'Success', data: NotesData })
     } else {
-      return NextResponse.json({status:400,msg:"Note not found"})
+      return NextResponse.json({ status: 400, msg: 'Note not found' })
     }
-  }catch(error){
-    return NextResponse.json({status:400,msg:"Internal server error",error})
+  } catch (error) {
+    return NextResponse.json({
+      status: 400,
+      msg: 'Internal server error',
+      error,
+    })
   }
 }
-

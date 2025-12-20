@@ -13,8 +13,12 @@ import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { TbCheck } from 'react-icons/tb'
 
+interface Color {
+  disp: string
+}
+
 interface Props {
-  colors: any[]
+  colors: Color[]
   addNote: (note: { title: string; color: string }) => void
 }
 

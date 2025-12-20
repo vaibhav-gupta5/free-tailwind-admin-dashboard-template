@@ -2,10 +2,13 @@
 import dynamic from "next/dynamic";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import CardBox from "../shared/CardBox";
+import { ApexOptions } from "apexcharts";
+
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
+
 const MonthlyEarning = () => {
-    const ChartData: any = {
+    const ChartData: ApexOptions = {
         series: [
             {
                 name: 'monthly earnings',
@@ -75,8 +78,8 @@ const MonthlyEarning = () => {
                                 <span className="rounded-full p-1 bg-lighterror dark:bg-darkerror flex items-center justify-center ">
                                     <Icon icon='tabler:arrow-down-right' className="text-error" />
                                 </span>
-                                <p className="text-dark dark:text-darklink  mb-0">+9%</p>
-                                <p className=" dark:text-darklink mb-0 ">last year</p>
+                                <p className="text-muted-foreground  mb-0">+9%</p>
+                                <p className="text-muted-foreground mb-0 ">last year</p>
                             </div>
                         </div>
                     </div>

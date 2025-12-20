@@ -3,10 +3,10 @@ import { uniqueId } from 'lodash'
 export interface ChildItem {
   id?: number | string
   name?: string
-  icon?: any
+  icon?: string
   children?: ChildItem[]
-  item?: any
-  url?: any
+  item?: unknown
+  url?: string
   color?: string
   disabled?: boolean
   subtitle?: string
@@ -18,12 +18,12 @@ export interface ChildItem {
 export interface MenuItem {
   heading?: string
   name?: string
-  icon?: any
-  id?: number
+  icon?: string
+  id?: number | string
   to?: string
   items?: MenuItem[]
   children?: ChildItem[]
-  url?: any
+  url?: string
   disabled?: boolean
   subtitle?: string
   badgeType?: string
@@ -974,7 +974,6 @@ const SidebarContent: MenuItem[] = [
             url: 'https://react.tailwind-admin.com/shadcn-tables/basic',
             isPro: true,
           },
-
         ],
       },
       {
@@ -1292,6 +1291,6 @@ const SidebarContent: MenuItem[] = [
       },
     ],
   },
-];
+]
 
-export default SidebarContent;
+export default SidebarContent

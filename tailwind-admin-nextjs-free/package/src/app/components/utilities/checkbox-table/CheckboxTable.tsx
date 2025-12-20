@@ -4,7 +4,6 @@ import { TbDotsVertical } from "react-icons/tb";
 import Image from "next/image";
 import CardBox from "@/app/components/shared/CardBox";
 import { Icon } from "@iconify/react/dist/iconify.js";
-
 import {
   Table,
   TableBody,
@@ -21,8 +20,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
 import { PerformersData } from "../tableData";
+import { Checkbox } from "@/components/ui/checkbox";
 
-function HoverTable() {
+function CheckboxTable() {
   const tableActionData = [
     {
       icon: "solar:add-circle-outline",
@@ -40,7 +40,7 @@ function HoverTable() {
 
   return (
     <CardBox>
-      <h3 className="text-xl font-semibold mb-2">Hover Table</h3>
+      <h3 className="text-xl font-semibold mb-2">Checkbox Table</h3>
       <div className="flex flex-col border rounded-md border-ld ">
         <div className="-m-1.5 overflow-x-auto">
           <div className="p-1.5 min-w-full inline-block align-middle">
@@ -48,6 +48,7 @@ function HoverTable() {
               <Table>
                 <TableHeader>
                   <TableRow>
+                    <TableHead className="text-sm font-semibold ">#</TableHead>
                     <TableHead className="text-sm font-semibold ">
                       Assigned
                     </TableHead>
@@ -65,23 +66,26 @@ function HoverTable() {
 
                 <TableBody>
                   {PerformersData.map((item, index) => (
-                    <TableRow
-                      key={index}
-                      className="group/row hover:bg-lightprimary  cursor-pointer"
-                    >
+                    <TableRow key={index}>
+                      <TableCell className="whitespace-nowrap">
+                        <Checkbox />
+                      </TableCell>
+
                       {/* Assigned */}
                       <TableCell className="ps-3 min-w-[200px]">
                         <div className="flex gap-3 items-center">
-                          <img
+                          <Image
                             src={item.profileImg}
                             alt="profile"
+                            width={40}
+                            height={40}
                             className="h-10 w-10 rounded-full"
                           />
                           <div>
                             <h6 className="text-sm font-semibold mb-1">
                               {item.username}
                             </h6>
-                            <p className="text-xs text-slateGray font-medium">
+                            <p className="text-xs text-muted-foreground font-medium">
                               {item.designation}
                             </p>
                           </div>
@@ -90,7 +94,7 @@ function HoverTable() {
 
                       {/* Project */}
                       <TableCell>
-                        <p className="text-charcoal text-sm font-medium">
+                        <p className="text-muted-foreground text-sm font-medium">
                           {item.project}
                         </p>
                       </TableCell>
@@ -137,4 +141,4 @@ function HoverTable() {
   );
 }
 
-export default HoverTable;
+export default CheckboxTable;

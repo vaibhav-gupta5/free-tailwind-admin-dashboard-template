@@ -2,55 +2,44 @@
 import { Textarea } from "@/components/ui/textarea";
 import React, { useEffect, useState } from "react";
 import { TbCheck } from "react-icons/tb";
+import { NotesType } from "@/app/(DashboardLayout)/types/apps/notes";
 
-interface colorsType {
+interface ColorType {
   lineColor: string;
-  disp: string | any;
-  id: any;
-}
-
-interface Note {
-  id: any;
-  title: string;
-  content?: string;
-  color: string;
+  disp: string;
+  id: number;
 }
 
 interface NoteContentProps {
-  note: any | any;
-  updateNote: (id: any, title: string, color: string) => void;
+  note: NotesType | null;
+  updateNote: (id: number, title: string, color: string) => void;
 }
 
 const NoteContent: React.FC<NoteContentProps> = ({ note, updateNote }) => {
-  const [initialTitle, setInitialTitle] = useState("");
-  const [updatedTitle, setUpdatedTitle] = useState("");
+  const [title, setTitle] = useState("");
   const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
-    if (note) {
-      setInitialTitle(note.title);
-      setUpdatedTitle(note.title);
-    }
+    if (note?.title) setTitle(note.title);
   }, [note]);
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setUpdatedTitle(e.target.value);
+    setTitle(e.target.value);
     setIsEditing(true);
   };
 
   const handleColorChange = (color: string) => {
     if (!note) return;
-    const titleToUse = isEditing ? updatedTitle : initialTitle;
-    updateNote(note.id, titleToUse, color);
+    updateNote(note.id, title, color);
   };
 
   const handleBlur = () => {
     if (!note) return;
     setIsEditing(false);
-    updateNote(note.id, updatedTitle, note.color);
+    updateNote(note.id, title, note.color || "primary");
   };
 
-  const colorvariation: colorsType[] = [
+  const colorOptions: ColorType[] = [
     { id: 1, lineColor: "warning", disp: "warning" },
     { id: 2, lineColor: "primary", disp: "primary" },
     { id: 3, lineColor: "error", disp: "error" },
@@ -60,36 +49,35 @@ const NoteContent: React.FC<NoteContentProps> = ({ note, updateNote }) => {
 
   if (!note) {
     return (
-      <div className="text-center w-full py-6 text-2xl text-darklink">
+      <div className="text-center w-full py-6 text-2xl text-muted-foreground">
         Select a Note
       </div>
     );
   }
 
   return (
-    <div className="flex flex-grow p-6">
+    <div className="flex grow p-6">
       <div className="w-full">
         <Textarea
-          id="outlined-multiline-static"
           placeholder="Edit Note"
           rows={5}
-          value={isEditing ? updatedTitle : initialTitle}
+          value={title}
           onChange={handleTitleChange}
-          className="w-full p-6 form-control-textarea"
           onBlur={handleBlur}
+          className="w-full p-6 form-control-textarea"
         />
         <br />
         <h6 className="text-base mb-3">Change Note Color</h6>
         <div className="flex gap-2 items-center">
-          {colorvariation.map((color1) => (
+          {colorOptions.map((color) => (
             <div
-              className={`h-7 w-7 flex justify-center items-center rounded-full cursor-pointer bg-${color1?.disp}`}
-              key={color1.id}
-              onClick={() => handleColorChange(color1.disp)}
+              key={color.id}
+              onClick={() => handleColorChange(color.disp)}
+              className={`h-7 w-7 flex justify-center items-center rounded-full cursor-pointer 
+                ${note.color === color.disp ? "border-2 border-black" : ""} 
+                bg-${color.disp}`}
             >
-              {note.color === color1.disp ? (
-                <TbCheck width="18" className="text-white" />
-              ) : null}
+              {note.color === color.disp && <TbCheck size={18} className="text-white" />}
             </div>
           ))}
         </div>

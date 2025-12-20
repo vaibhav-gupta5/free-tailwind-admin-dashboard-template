@@ -4,7 +4,6 @@ import { TbDotsVertical } from "react-icons/tb";
 import Image from "next/image";
 import CardBox from "@/app/components/shared/CardBox";
 import { Icon } from "@iconify/react/dist/iconify.js";
-
 import {
   Table,
   TableBody,
@@ -84,7 +83,7 @@ const BasicTable = () => {
                               <h6 className="text-sm font-semibold mb-1">
                                 {item.username}
                               </h6>
-                              <p className="text-xs text-slateGray font-medium">
+                              <p className="text-xs text-muted-foreground font-medium">
                                 {item.designation}
                               </p>
                             </div>
@@ -93,7 +92,7 @@ const BasicTable = () => {
 
                         {/* Project */}
                         <TableCell>
-                          <p className="text-charcoal text-sm font-medium">
+                          <p className="text-muted-foreground text-sm font-medium">
                             {item.project}
                           </p>
                         </TableCell>

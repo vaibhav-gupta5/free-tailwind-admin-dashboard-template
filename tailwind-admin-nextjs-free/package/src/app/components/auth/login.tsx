@@ -17,7 +17,7 @@ export const Login = () => {
             <div className='flex justify-center mb-4'>
               <FullLogo />
             </div>
-            <p className='text-sm text-charcoal text-center mb-6'>
+            <p className='text-sm text-muted-foreground text-center mb-6'>
               Your Social Campaigns
             </p>
             <div>
@@ -65,7 +65,7 @@ export const Login = () => {
               <Link href='/'>Sign In</Link>
             </Button>
             <div className='flex items center gap-2 justify-center mt-6 flex-wrap'>
-              <p className='text-base font-medium text-link dark:text-darklink'>
+              <p className='text-base font-medium text-muted-foreground'>
                 New to TailwindAdmin?
               </p>
               <Link

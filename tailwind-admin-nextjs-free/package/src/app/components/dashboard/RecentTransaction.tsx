@@ -56,7 +56,7 @@ export const RecentTransaction = () => {
     <CardBox className="h-full w-full">
       <div className="flex flex-col">
         <h5 className="card-title">Recent Transactions</h5>
-        <p className="text-sm text-bodytext dark:text-darklink font-normal">
+        <p className="text-sm text-muted-foreground font-normal">
           How to secure recent transactions
         </p>
       </div>
@@ -65,7 +65,7 @@ export const RecentTransaction = () => {
           return (
             <div key={item.key} className="flex gap-x-3">
               <div className="w-1/4 text-end">
-                <span className="font-medium dark:text-darklink">
+                <span className="font-medium text-muted-foreground">
                   {item.time}
                 </span>
               </div>
@@ -82,7 +82,7 @@ export const RecentTransaction = () => {
               </div>
               <div className="w-1/4 grow pt-0.5 pb-6">
                 {!item.isSale ? (
-                  <p className="font-medium dark:text-darklink">{item.desc}</p>
+                  <p className="font-medium text-muted-foreground">{item.desc}</p>
                 ) : (
                   <div>
                     <h6>New sale recorded </h6>

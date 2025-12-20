@@ -4,7 +4,7 @@ import { IconUser, IconMail, IconListCheck, IconProps, Icon } from '@tabler/icon
 //  Profile Data
 interface ProfileType {
   title: string;
-  img: any;
+  img: string;
   subtitle: string;
   url: string;
   icon: string

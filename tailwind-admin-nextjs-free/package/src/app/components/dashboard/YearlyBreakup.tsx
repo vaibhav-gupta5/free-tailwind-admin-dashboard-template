@@ -2,15 +2,15 @@
 import dynamic from "next/dynamic";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import CardBox from "../shared/CardBox";
+import { ApexOptions } from "apexcharts";
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const YearlyBreakup = () => {
 
-    const ChartData: any = {
+    const ChartData: ApexOptions = {
         series: [
             38, 40, 25
         ],
-        color: "#adb5bd",
         labels: ["2023", "2025", "2024"],
         chart: {
             type: "donut",
@@ -67,22 +67,22 @@ const YearlyBreakup = () => {
                                 <span className="rounded-full p-1 bg-lightsuccess dark:bg-darksuccess flex items-center justify-center ">
                                     <Icon icon="tabler:arrow-up-left" className="text-success" />
                                 </span>
-                                <p className="text-dark dark:text-darklink  mb-0">+9%</p>
-                                <p className="dark:text-darklink mb-0 ">last year</p>
+                                <p className="text-muted-foreground mb-0">+9%</p>
+                                <p className="text-muted-foreground mb-0 ">last year</p>
                             </div>
                         </div>
                         <div className="flex flex-wrap gap-4 items-center mt-4">
                             <div className="flex items-center">
                                 <Icon icon="tabler:point-filled" className="text-primary text-xl me-1" />
-                                <span className="text-xs  dark:text-darklink">2023</span>
+                                <span className="text-xs text-muted-foreground">2023</span>
                             </div>
                             <div className="flex items-center">
                                 <Icon icon="tabler:point-filled" className="text-secondary text-xl me-1" />
-                                <span className="text-xs  dark:text-darklink">2024</span>
+                                <span className="text-xs text-muted-foreground">2024</span>
                             </div>
                             <div className="flex items-center">
                                 <Icon icon="tabler:point-filled" className="text-lightprimary text-xl me-1" />
-                                <span className="text-xs  dark:text-darklink">2025</span>
+                                <span className="text-xs text-muted-foreground">2025</span>
                             </div>
                         </div>
                     </div>

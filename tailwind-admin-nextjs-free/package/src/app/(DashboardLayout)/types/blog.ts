@@ -1,30 +1,28 @@
 export type Profile = {
-  id?: string | number;
-  avatar?: string;
-  name?: string;
-  time?: string;
-};
+  id?: string | number
+  avatar?: string
+  name?: string
+  time?: string
+}
 
 export interface BlogType {
-  id?: string;
-  profile?: Profile;
-  time?: Date;
-  comment?: string;
-  replies?: any[];
+  id?: string
+  profile?: Profile
+  time?: Date
+  comment?: string
+  replies?: BlogType[]
 }
 
 export interface BlogPostType {
-  id?: number|any;
-  title?: any;
-  content?: string |any;
-  coverImg?: string |any;
-  createdAt?: Date;
-  view?: number;
-  share?: number;
-  category?: string |any;
-  featured?: boolean;
-  author?: Profile | any;
-  comments?: any[];
+  id?: string
+  title?: string
+  content?: string
+  coverImg?: string
+  createdAt?: Date
+  view?: number
+  share?: number
+  category?: string
+  featured?: boolean
+  author?: Profile
+  comments?: BlogType[]
 }
-
-

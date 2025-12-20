@@ -11,10 +11,10 @@ import AddNotes from './AddNotes'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent } from '@/components/ui/sheet'
 
-interface colorsType {
-  lineColor: string
-  disp: string | any
+interface ColorType {
   id: number
+  disp: string
+  lineColor?: string
 }
 
 const NotesApp = () => {
@@ -39,49 +39,27 @@ const NotesApp = () => {
     }
   }
 
-  const handleResetTickets = async () => {
+  const handleResetNotes = async () => {
     await fetch('/api/notes', {
       method: 'GET',
-      headers: {
-        browserRefreshed: 'true',
-      },
+      headers: { browserRefreshed: 'true' },
     })
     fetchNotes()
   }
 
-  const colorvariation: colorsType[] = [
-    {
-      id: 1,
-      lineColor: 'warning',
-      disp: 'warning',
-    },
-    {
-      id: 2,
-      lineColor: 'primary',
-      disp: 'primary',
-    },
-    {
-      id: 3,
-      lineColor: 'error',
-      disp: 'error',
-    },
-    {
-      id: 4,
-      lineColor: 'success',
-      disp: 'success',
-    },
-    {
-      id: 5,
-      lineColor: 'secondary',
-      disp: 'secondary',
-    },
+  const colorVariation: ColorType[] = [
+    { id: 1, lineColor: 'warning', disp: 'warning' },
+    { id: 2, lineColor: 'primary', disp: 'primary' },
+    { id: 3, lineColor: 'error', disp: 'error' },
+    { id: 4, lineColor: 'success', disp: 'success' },
+    { id: 5, lineColor: 'secondary', disp: 'secondary' },
   ]
 
   useEffect(() => {
     const isPageRefreshed = sessionStorage.getItem('isPageRefreshed')
     if (isPageRefreshed === 'true') {
       sessionStorage.removeItem('isPageRefreshed')
-      handleResetTickets()
+      handleResetNotes()
     } else {
       fetchNotes()
     }
@@ -92,27 +70,23 @@ const NotesApp = () => {
       sessionStorage.setItem('isPageRefreshed', 'true')
     }
     window.addEventListener('beforeunload', handleBeforeUnload)
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload)
-    }
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload)
   }, [])
 
-  const updateNote = (id: string, title: string, color: string) => {
-    setNotes((prev) =>
-      prev.map((note: any) =>
-        note.id === id ? { ...note, title, color } : note
-      )
+  const updateNote = (id: number, title: string, color: string) => {
+    setNotes(prev =>
+      prev.map(note => (note.id === id ? { ...note, title, color } : note))
     )
 
     fetch(`/api/notes/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, color }),
-    }).catch((err) => console.error('Failed to update note:', err))
+    }).catch(err => console.error('Failed to update note:', err))
   }
 
   useEffect(() => {
-    if (notes.length > 0 && !selectedNoteId) {
+    if (notes.length > 0 && selectedNoteId === null) {
       setSelectedNoteId(notes[0].id)
     }
   }, [notes, selectedNoteId])
@@ -124,18 +98,10 @@ const NotesApp = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(note),
       })
-
       const result = await response.json()
-      console.log('API POST response:', result)
-
-      if (Array.isArray(result.data)) {
-        setNotes(result.data)
-        setSelectedNoteId(result.data[result.data.length - 1].id)
-      } else {
-        const newNote: NotesType = result.data
-        setNotes((prev) => [...prev, newNote])
-        setSelectedNoteId(newNote.id)
-      }
+      const newNote: NotesType = result.data
+      setNotes(prev => [...prev, newNote])
+      setSelectedNoteId(newNote.id)
     } catch (err) {
       console.error('Failed to add note:', err)
     }
@@ -149,13 +115,14 @@ const NotesApp = () => {
           <Sheet open={isOpen} onOpenChange={handleClose}>
             <SheetContent
               side='left'
-              className='max-w-[320px] sm:max-w-[320px] w-full h-full lg:z-0 lg:hidden block'>
+              className='max-w-[320px] sm:max-w-[320px] w-full h-full lg:hidden block'
+            >
               <NotesSidebar
                 notes={notes}
                 loading={loading}
-                onSelectNote={(id: any) => setSelectedNoteId(id)}
-                onDeleteNote={(id: any) => {
-                  setNotes((prev) => prev.filter((n) => n.id !== id))
+                onSelectNote={(id: number) => setSelectedNoteId(id)}
+                onDeleteNote={(id: number) => {
+                  setNotes(prev => prev.filter(n => n.id !== id))
                   if (selectedNoteId === id) setSelectedNoteId(null)
                 }}
               />
@@ -165,9 +132,9 @@ const NotesApp = () => {
             <NotesSidebar
               notes={notes}
               loading={loading}
-              onSelectNote={(id: any) => setSelectedNoteId(id)}
-              onDeleteNote={(id: any) => {
-                setNotes((prev) => prev.filter((n) => n.id !== id))
+              onSelectNote={(id: number) => setSelectedNoteId(id)}
+              onDeleteNote={(id: number) => {
+                setNotes(prev => prev.filter(n => n.id !== id))
                 if (selectedNoteId === id) setSelectedNoteId(null)
               }}
             />
@@ -181,16 +148,17 @@ const NotesApp = () => {
               <Button
                 color={'lightprimary'}
                 onClick={() => setIsOpen(true)}
-                className='btn-circle p-0 lg:!hidden flex '>
+                className='btn-circle p-0 lg:!hidden flex'
+              >
                 <Icon icon='tabler:menu-2' height={18} />
               </Button>
               <h6 className='text-base'>Edit Note</h6>
             </div>
-            <AddNotes colors={colorvariation} addNote={addNote} />
+            <AddNotes colors={colorVariation} addNote={addNote} />
           </div>
 
           <NoteContent
-            note={notes.find((n: any) => n.id === selectedNoteId) || null}
+            note={notes.find(n => n.id === selectedNoteId) || null}
             updateNote={updateNote}
           />
         </div>

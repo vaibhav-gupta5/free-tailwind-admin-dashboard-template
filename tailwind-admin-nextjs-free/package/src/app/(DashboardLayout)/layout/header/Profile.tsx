@@ -42,9 +42,9 @@ const Profile = () => {
                   <div className='flex items-center gap-3 w-full'>
                     <Icon
                       icon={item.icon}
-                      className='text-lg text-slateGray group-hover/link:text-primary'
+                      className='text-lg text-muted-foreground group-hover/link:text-primary'
                     />
-                    <h5 className='mb-0 text-sm text-slateGray group-hover/link:text-primary'>
+                    <h5 className='mb-0 text-sm text-muted-foreground group-hover/link:text-primary'>
                       {item.title}
                     </h5>
                   </div>

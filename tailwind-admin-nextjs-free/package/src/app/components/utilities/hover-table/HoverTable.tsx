@@ -21,9 +21,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
 import { PerformersData } from "../tableData";
-import { Checkbox } from "@/components/ui/checkbox";
 
-function CheckboxTable() {
+function HoverTable() {
   const tableActionData = [
     {
       icon: "solar:add-circle-outline",
@@ -41,7 +40,7 @@ function CheckboxTable() {
 
   return (
     <CardBox>
-      <h3 className="text-xl font-semibold mb-2">Checkbox Table</h3>
+      <h3 className="text-xl font-semibold mb-2">Hover Table</h3>
       <div className="flex flex-col border rounded-md border-ld ">
         <div className="-m-1.5 overflow-x-auto">
           <div className="p-1.5 min-w-full inline-block align-middle">
@@ -49,7 +48,6 @@ function CheckboxTable() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="text-sm font-semibold ">#</TableHead>
                     <TableHead className="text-sm font-semibold ">
                       Assigned
                     </TableHead>
@@ -67,11 +65,10 @@ function CheckboxTable() {
 
                 <TableBody>
                   {PerformersData.map((item, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="whitespace-nowrap">
-                        <Checkbox />
-                      </TableCell>
-
+                    <TableRow
+                      key={index}
+                      className="group/row hover:bg-lightprimary  cursor-pointer"
+                    >
                       {/* Assigned */}
                       <TableCell className="ps-3 min-w-[200px]">
                         <div className="flex gap-3 items-center">
@@ -86,7 +83,7 @@ function CheckboxTable() {
                             <h6 className="text-sm font-semibold mb-1">
                               {item.username}
                             </h6>
-                            <p className="text-xs text-slateGray font-medium">
+                            <p className="text-xs text-muted-foreground font-medium">
                               {item.designation}
                             </p>
                           </div>
@@ -95,7 +92,7 @@ function CheckboxTable() {
 
                       {/* Project */}
                       <TableCell>
-                        <p className="text-charcoal text-sm font-medium">
+                        <p className="text-muted-foreground text-sm font-medium">
                           {item.project}
                         </p>
                       </TableCell>
@@ -142,4 +139,4 @@ function CheckboxTable() {
   );
 }
 
-export default CheckboxTable;
+export default HoverTable;

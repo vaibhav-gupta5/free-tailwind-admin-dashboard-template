@@ -72,16 +72,18 @@ function StripedRowTable() {
                       {/* Assigned */}
                       <TableCell className="ps-3 min-w-[200px]">
                         <div className="flex gap-3 items-center">
-                          <img
+                          <Image
                             src={item.profileImg}
                             alt="profile"
+                            width={40}
+                            height={40}
                             className="h-10 w-10 rounded-full"
                           />
                           <div>
                             <h6 className="text-sm font-semibold mb-1">
                               {item.username}
                             </h6>
-                            <p className="text-xs text-slateGray font-medium">
+                            <p className="text-xs text-muted-foreground font-medium">
                               {item.designation}
                             </p>
                           </div>
@@ -90,7 +92,7 @@ function StripedRowTable() {
 
                       {/* Project */}
                       <TableCell>
-                        <p className="text-charcoal text-sm font-medium">
+                        <p className="text-muted-foreground text-sm font-medium">
                           {item.project}
                         </p>
                       </TableCell>

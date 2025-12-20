@@ -16,8 +16,20 @@ import {
 } from 'tailwind-sidebar'
 import 'tailwind-sidebar/styles.css'
 
+interface SidebarItemType {
+  heading?: string
+  id?: number | string
+  name?: string
+  title?: string
+  icon?: string
+  url?: string
+  children?: SidebarItemType[]
+  disabled?: boolean
+  isPro?: boolean
+}
+
 const renderSidebarItems = (
-  items: any[],
+  items: SidebarItemType[],
   currentPath: string,
   onClose?: () => void,
   isSubItem: boolean = false
@@ -38,7 +50,7 @@ const renderSidebarItems = (
         <div className='mb-1' key={item.heading}>
           <AMMenu
             subHeading={item.heading}
-            ClassName='hide-menu leading-21 text-charcoal font-bold uppercase text-xs dark:text-darkcharcoal'
+            ClassName='hide-menu leading-21 text-sidebar-foreground dark:text-sidebar-foreground font-bold uppercase text-xs'
           />
         </div>
       )
@@ -51,7 +63,7 @@ const renderSidebarItems = (
           key={item.id}
           icon={iconElement}
           title={item.name}
-          ClassName='mt-0.5 text-link dark:text-darklink'>
+          ClassName='mt-0.5 text-sidebar-foreground dark:text-sidebar-foreground'>
           {renderSidebarItems(item.children, currentPath, onClose, true)}
         </AMSubmenu>
       )
@@ -61,10 +73,10 @@ const renderSidebarItems = (
     const linkTarget = item.url?.startsWith('https') ? '_blank' : '_self'
 
     const itemClassNames = isSubItem
-      ? `mt-0.5 text-link dark:text-darklink !hover:bg-transparent ${
+      ? `mt-0.5 text-sidebar-foreground dark:text-sidebar-foreground !hover:bg-transparent ${
           isSelected ? '!bg-transparent !text-primary' : ''
         } !px-1.5`
-      : `mt-0.5 text-link dark:text-darklink`
+      : `mt-0.5 text-sidebar-foreground dark:text-sidebar-foreground`
 
     return (
       <div onClick={onClose} key={index}>
@@ -103,7 +115,7 @@ const SidebarLayout = ({ onClose }: { onClose?: () => void }) => {
       width={'270px'}
       showTrigger={false}
       mode={sidebarMode}
-      className='fixed left-0 top-0 border border-border dark:border-darkborder bg-white dark:bg-dark z-10 h-screen'>
+      className='fixed left-0 top-0 border border-border bg-white dark:bg-dark z-10 h-screen'>
       {/* Logo */}
       <div className='px-6 flex items-center brand-logo overflow-hidden'>
         <AMLogo component={Link} href='/' img=''>
@@ -132,7 +144,7 @@ const SidebarLayout = ({ onClose }: { onClose?: () => void }) => {
           <div className='mt-9  overflow-hidden'>
             <div className='flex w-full bg-lightprimary rounded-lg p-6'>
               <div className='lg:w-1/2 w-full'>
-                <h5 className='text-base text-charcoal'>Haven't Account?</h5>
+                <h5 className='text-base text-sidebar-foreground'>Haven't Account?</h5>
                 <Button className='whitespace-nowrap mt-2 text-[13px]'>
                   Get Pro
                 </Button>

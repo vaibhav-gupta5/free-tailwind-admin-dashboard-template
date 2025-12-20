@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { format } from "date-fns";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 import { TicketType } from "@/app/(DashboardLayout)/types/ticket";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,13 +24,21 @@ import {
 } from "@/components/ui/tooltip";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const TicketListing = ({
+interface TicketListingProps {
+  tickets: TicketType[];
+  deleteTicket: (id: number) => void;
+  searchTickets: (term: string) => void;
+  ticketSearch: string;
+  filter: string;
+}
+
+const TicketListing: React.FC<TicketListingProps> = ({
   tickets,
   deleteTicket,
   searchTickets,
   ticketSearch,
   filter,
-}: any) => {
+}) => {
   const [showCreateForm, setShowCreateForm] = useState(false);
   const router = useRouter();
 
@@ -39,52 +47,29 @@ const TicketListing = ({
     filter: string,
     ticketSearch: string
   ) => {
-    switch (filter) {
-      case "total_tickets":
-        return tickets.filter(
-          (c) =>
-            !c.deleted && c.ticketTitle.toLowerCase().includes(ticketSearch)
-        );
-      case "Pending":
-        return tickets.filter(
-          (c) =>
-            !c.deleted &&
-            c.Status === "Pending" &&
-            c.ticketTitle.toLowerCase().includes(ticketSearch)
-        );
-      case "Closed":
-        return tickets.filter(
-          (c) =>
-            !c.deleted &&
-            c.Status === "Closed" &&
-            c.ticketTitle.toLowerCase().includes(ticketSearch)
-        );
-      case "Open":
-        return tickets.filter(
-          (c) =>
-            !c.deleted &&
-            c.Status === "Open" &&
-            c.ticketTitle.toLowerCase().includes(ticketSearch)
-        );
-      default:
-        return tickets;
-    }
+    const lowerSearch = ticketSearch.toLowerCase();
+
+    return tickets.filter(
+      (ticket) =>
+        !ticket.deleted &&
+        (filter === "total_tickets" || ticket.Status === filter) &&
+        ticket.ticketTitle.toLowerCase().includes(lowerSearch)
+    );
   };
 
-  const visibleTickets = getVisibleTickets(
-    tickets,
-    filter,
-    ticketSearch.toLowerCase()
-  );
+  const visibleTickets = getVisibleTickets(tickets, filter, ticketSearch);
 
   const ticketBadge = (ticket: TicketType) => {
-    return ticket.Status === "Open"
-      ? "lightSuccess"
-      : ticket.Status === "Closed"
-      ? "lightError"
-      : ticket.Status === "Pending"
-      ? "lightWarning"
-      : "default";
+    switch (ticket.Status) {
+      case "Open":
+        return "lightSuccess";
+      case "Closed":
+        return "lightError";
+      case "Pending":
+        return "lightWarning";
+      default:
+        return "default";
+    }
   };
 
   return (
@@ -131,7 +116,7 @@ const TicketListing = ({
 
                 <TableCell className="max-w-md">
                   <h6 className="text-base truncate">{ticket.ticketTitle}</h6>
-                  <p className="text-sm text-muted-foreground truncate dark:text-darklink">
+                  <p className="text-sm text-muted-foreground truncate">
                     {ticket.ticketDescription}
                   </p>
                 </TableCell>
@@ -149,10 +134,7 @@ const TicketListing = ({
                 </TableCell>
 
                 <TableCell>
-                  <Badge
-                    variant={`${ticketBadge(ticket)}`}
-                    className={` rounded-md`}
-                  >
+                  <Badge variant={`${ticketBadge(ticket)}`} className="rounded-md">
                     {ticket.Status}
                   </Badge>
                 </TableCell>

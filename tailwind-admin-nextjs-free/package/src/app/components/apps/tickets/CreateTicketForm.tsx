@@ -108,7 +108,7 @@ const CreateTicketForm = () => {
       <p>ID : {ticketId !== undefined ? ticketId : ""}</p>
       <p>Date : {formattedOrderDate}</p>
 
-      <div className="bg-lightgray dark:bg-gray-800/70 p-6 my-6 rounded-md">
+      <div className="bg-background p-6 my-6 rounded-md">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Ticket Title */}
           <div>
