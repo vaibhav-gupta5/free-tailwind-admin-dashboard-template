@@ -110,7 +110,7 @@ main {
   --secondary: #49beff;
   --secondary-foreground: var(--white);
   --muted: #f5f5f5;
-  --muted-foreground: #2a3547;
+  --muted-foreground: #5a6a85bf;
   --accent: var(--lightprimary);
   --accent-foreground: var(--primary);
   --destructive: var(--error);

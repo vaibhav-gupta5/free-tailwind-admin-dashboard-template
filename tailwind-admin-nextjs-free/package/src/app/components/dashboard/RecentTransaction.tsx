@@ -65,14 +65,14 @@ export const RecentTransaction = () => {
           return (
             <div key={item.key} className="flex gap-x-3">
               <div className="w-1/4 text-end">
-                <span className="font-medium text-muted-foreground">
+                <span className="font-medium text-foreground dark:text-muted-foreground">
                   {item.time}
                 </span>
               </div>
               <div
                 className={`relative ${
                   item.isLastItem ? "after:hidden" : null
-                } after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-defaultBorder`}
+                } after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-border`}
               >
                 <div className="relative z-1 w-7 h-7 flex justify-center items-center">
                   <div
@@ -82,7 +82,7 @@ export const RecentTransaction = () => {
               </div>
               <div className="w-1/4 grow pt-0.5 pb-6">
                 {!item.isSale ? (
-                  <p className="font-medium text-muted-foreground">{item.desc}</p>
+                  <p className="font-medium text-foreground dark:text-muted-foreground">{item.desc}</p>
                 ) : (
                   <div>
                     <h6>New sale recorded </h6>
