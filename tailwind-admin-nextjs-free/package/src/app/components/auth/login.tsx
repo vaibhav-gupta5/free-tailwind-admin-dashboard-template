@@ -18,7 +18,7 @@ export const Login = () => {
               <FullLogo />
             </div>
             <p className='text-sm text-muted-foreground text-center mb-6'>
-              Your Social Campaigns
+              Welcome to Tailwind-Admin
             </p>
             <div>
               <div className='mb-2 block'>

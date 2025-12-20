@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 import './css/globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
+import ServiceWorkerRegister from '@/app/components/service-worker/ServiceWorkerRegister'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -19,11 +20,13 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
+}) {  
   return (
     <html lang='en' suppressHydrationWarning>
       <head>
         <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#5d87ff" />
       </head>
       <body className={`${dmSans.className}`}>
         <ThemeProvider
@@ -31,6 +34,7 @@ export default function RootLayout({
           defaultTheme='system'
           enableSystem
           disableTransitionOnChange>
+          <ServiceWorkerRegister />
           {children}
         </ThemeProvider>
       </body>
