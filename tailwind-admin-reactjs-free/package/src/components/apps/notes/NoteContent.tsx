@@ -78,7 +78,7 @@ const NoteContent = () => {
 
   return (
     <>
-      <div className="flex flex-grow p-6">
+      <div className="flex grow p-6">
         {/* ------------------------------------------- */}
         {/* Edit notes */}
         {/* ------------------------------------------- */}
@@ -111,7 +111,7 @@ const NoteContent = () => {
             </div>
           </div>
         ) : (
-          <div className="text-center w-full py-6 text-2xl text-darklink">Select a Note</div>
+          <div className="text-center w-full py-6 text-2xl text-muted-foreground">Select a Note</div>
         )}
       </div>
     </>

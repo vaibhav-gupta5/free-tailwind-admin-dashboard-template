@@ -39,10 +39,10 @@ const Profile = () => {
                     <div className="ps-0 flex items-center gap-3 w-full">
                       <Icon
                         icon={items.icon}
-                        className="text-lg text-bodytext group-hover/link:text-primary"
+                        className="text-lg text-muted-foreground group-hover/link:text-primary"
                       />
                       <div className="w-3/4">
-                        <h5 className="mb-0 text-sm text-bodytext group-hover/link:text-primary">
+                        <h5 className="mb-0 text-sm text-muted-foreground group-hover/link:text-primary">
                           {items.title}
                         </h5>
                       </div>
@@ -57,8 +57,7 @@ const Profile = () => {
             <Button
               asChild
               variant="outline"
-              size="sm"
-              className="w-full rounded-md py-0 border-primary text-primary hover:bg-lightprimary hover:text-primary"
+              className="w-full rounded-md"
             >
               <Link to="/auth/auth2/login">Logout</Link>
             </Button>

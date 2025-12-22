@@ -67,14 +67,14 @@ function HoverTable() {
                           />
                           <div>
                             <h6 className="text-sm font-semibold mb-1">{item.username}</h6>
-                            <p className="text-xs text-slateGray font-medium">{item.designation}</p>
+                            <p className="text-xs text-muted-foreground font-medium">{item.designation}</p>
                           </div>
                         </div>
                       </TableCell>
 
                       {/* Project */}
                       <TableCell>
-                        <p className="text-charcoal text-sm font-medium">{item.project}</p>
+                        <p className="text-muted-foreground text-sm font-medium">{item.project}</p>
                       </TableCell>
 
                       {/* Priority */}

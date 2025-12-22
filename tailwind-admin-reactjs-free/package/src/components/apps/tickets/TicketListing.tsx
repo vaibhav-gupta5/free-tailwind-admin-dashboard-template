@@ -129,7 +129,7 @@ const TicketListing = () => {
                 <TableCell className="whitespace-nowrap">{ticket.Id}</TableCell>
                 <TableCell className="max-w-md">
                   <h6 className="text-base truncate line-clamp-1 ">{ticket.ticketTitle}</h6>
-                  <p className="text-sm text-muted-foreground truncate line-clamp-1 text-wrap sm:max-w-56 dark:text-darklink">
+                  <p className="text-sm text-muted-foreground truncate line-clamp-1 text-wrap sm:max-w-56">
                     {ticket.ticketDescription}
                   </p>
                 </TableCell>

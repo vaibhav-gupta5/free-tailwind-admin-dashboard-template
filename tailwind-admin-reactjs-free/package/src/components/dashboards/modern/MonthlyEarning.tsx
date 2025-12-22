@@ -72,8 +72,8 @@ const MonthlyEarning = () => {
                                 <span className="rounded-full p-1 bg-lighterror dark:bg-darkerror flex items-center justify-center ">
                                     <Icon icon='tabler:arrow-down-right' className="text-error" />
                                 </span>
-                                <p className="text-dark dark:text-darklink  mb-0">+9%</p>
-                                <p className=" dark:text-darklink mb-0 ">last year</p>
+                                <p className="text-muted-foreground mb-0">+9%</p>
+                                <p className="text-muted-foreground mb-0 ">last year</p>
                             </div>
                         </div>
                         <div className="lg:col-span-4 md:col-span-4 col-span-4">

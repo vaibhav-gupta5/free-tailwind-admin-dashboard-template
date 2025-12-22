@@ -61,6 +61,7 @@ export const ProductPerformance = () => {
       <div id="product" className="mb-6">
         <div>
           <h5 className="card-title">Product Performance</h5>
+          <p className="text-sm text-muted-foreground font-normal">Overview of product performance</p>
         </div>
       </div>
       <div className="flex flex-col">
@@ -80,20 +81,20 @@ export const ProductPerformance = () => {
 
                 <TableBody>
                   {PerformersData.map((item, index) => (
-                    <TableRow key={item.key} className="border-b border-defaultBorder">
+                    <TableRow key={item.key} className="border-b border-border">
                       <TableCell>
-                        <p className="text-charcoal font-medium text-sm">{index + 1}</p>
+                        <p className="text-muted-foreground font-medium text-sm">{index + 1}</p>
                       </TableCell>
 
                       <TableCell className="ps-0 min-w-[200px]">
                         <div>
                           <h6 className="text-sm font-semibold mb-1">{item.username}</h6>
-                          <p className="text-xs font-medium text-slateGray">{item.designation}</p>
+                          <p className="text-xs font-medium text-muted-foreground">{item.designation}</p>
                         </div>
                       </TableCell>
 
                       <TableCell>
-                        <p className="text-bodytext font-medium dark:text-darklink text-sm">
+                        <p className="font-medium text-sm text-muted-foreground">
                           {item.project}
                         </p>
                       </TableCell>
@@ -107,7 +108,7 @@ export const ProductPerformance = () => {
                       </TableCell>
 
                       <TableCell>
-                        <p className="dark:text-darklink text-link text-[15px] font-medium">
+                        <p className="text-[15px] font-medium text-muted-foreground">
                           {item.budget}
                         </p>
                       </TableCell>

@@ -104,15 +104,15 @@ const BlogDetailData = () => {
               <h2 className="md:text-4xl text-2xl my-6">{post?.title}</h2>
               <div>
                 <div className="flex gap-3">
-                  <div className="flex gap-2 items-center text-darklink text-[15px]">
+                  <div className="flex gap-2 items-center text-muted-foreground text-[15px]">
                     <Icon icon="tabler:eye" height="18" className="text-ld" />
                     {post?.view}
                   </div>
-                  <div className="flex gap-2 items-center text-darklink text-[15px]">
+                  <div className="flex gap-2 items-center text-muted-foreground text-[15px]">
                     <Icon icon="tabler:message-2" height="18" className="text-ld" />{' '}
                     {post?.comments?.length || 0}
                   </div>
-                  <div className="ms-auto flex gap-2 items-center  text-darklink text-[15px]">
+                  <div className="ms-auto flex gap-2 items-center text-muted-foreground text-[15px]">
                     <GoDot size="16" className="text-ld" />
                     <small>
                       {post && post.createdAt ? format(new Date(post.createdAt), 'E, MMM d') : ''}
@@ -121,10 +121,10 @@ const BlogDetailData = () => {
                 </div>
               </div>
             </div>
-            <Separator className="my-0 mb-4 bg-gray-200 dark:bg-gray-700" />
+            <Separator className="my-0 mb-4" />
             <div className="px-6 pb-6">
               <h2 className="md:text-3xl text-2xl pb-5">Title of the paragraph</h2>
-              <p className="text-darklink">
+              <p className="text-muted-foreground">
                 But you cannot figure out what it is or what it can do. MTA web directory is the
                 simplest way in which one can bid on a link, or a few links if they wish to do so.
                 The link directory on MTA displays all of the links it currently has, and does so in
@@ -134,7 +134,7 @@ const BlogDetailData = () => {
                 slowly work your way to the top of the list
               </p>
               <br></br>
-              <p className="text-darklink">
+              <p className="text-muted-foreground">
                 Gigure out what it is or what it can do. MTA web directory is the simplest way in
                 which one can bid on a link, or a few links if they wish to do so. The link
                 directory on MTA displays all of the links it currently has, and does so in
@@ -145,28 +145,28 @@ const BlogDetailData = () => {
               </p>
               <br></br>
               <p>
-                <b className="text-ld">This is strong text.</b>
+                <b className="text-foreground">This is strong text.</b>
               </p>
-              <i>This is italic text.</i>
-              <Separator className="my-8 bg-gray-200 dark:bg-gray-700" />
+              <i className="text-foreground">This is italic text.</i>
+              <Separator className="my-8" />
               <h3 className="text-xl mb-3">Unorder list</h3>
-              <ul className="list-disc pl-6">
+              <ul className="list-disc pl-6 text-muted-foreground">
                 <li>Gigure out what it is or</li>
                 <li>The links it currently</li>
                 <li>It allows you to start your bid</li>
               </ul>
 
-              <Separator className="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700" />
+              <Separator className="my-8" />
 
               <h3 className="text-xl mb-3">Order list</h3>
-              <ol className="list-decimal pl-6">
+              <ol className="list-decimal pl-6 text-muted-foreground">
                 <li>Gigure out what it is or</li>
                 <li>The links it currently</li>
                 <li>It allows you to start your bid</li>
               </ol>
-              <Separator className="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700" />
+              <Separator className="my-8" />
               <h3 className="text-xl mb-3">Quotes</h3>
-              <div className="pt-5 pb-4 px-4 rounded-md border-s-2 border-primary bg-lightgray dark:bg-darkmuted flex gap-1 items-start">
+              <div className="pt-5 pb-4 px-4 rounded-md border-s-2 border-primary bg-lightprimary flex gap-1 items-start">
                 <FaQuoteLeft size={20} className="text-ld -mt-1" />
                 <h2 className="text-base font-bold">
                   Life is short, Smile while you still have teeth!

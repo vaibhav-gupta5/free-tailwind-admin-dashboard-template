@@ -56,7 +56,7 @@ const TableComp = () => {
 
                 <TableBody>
                   {TablePerformersData.map((item, index) => (
-                    <TableRow key={index} className="border-b border-defaultBorder">
+                    <TableRow key={index} className="border-b border-border">
                       {/* Assigned */}
                       <TableCell className=" min-w-[200px]">
                         <div className="flex gap-3 items-center">
@@ -67,14 +67,14 @@ const TableComp = () => {
                           />
                           <div>
                             <h6 className="text-sm font-semibold mb-1">{item.username}</h6>
-                            <p className="text-xs text-slateGray font-medium">{item.designation}</p>
+                            <p className="text-xs text-muted-foreground font-medium">{item.designation}</p>
                           </div>
                         </div>
                       </TableCell>
 
                       {/* Project */}
                       <TableCell>
-                        <p className="text-charcoal text-sm font-medium">{item.project}</p>
+                        <p className="text-muted-foreground text-sm font-medium">{item.project}</p>
                       </TableCell>
 
                       {/* Priority */}

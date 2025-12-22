@@ -51,7 +51,7 @@ const Header = () => {
             onClick={() => {
               setIsOpen(true);
             }}
-            className="px-[15px] hover:text-primary dark:hover:text-primary text-foreground relative after:absolute after:w-10 after:h-10 after:rounded-full hover:after:bg-lightprimary  after:bg-transparent rounded-full xl:hidden flex justify-center items-center cursor-pointer"
+            className="px-[15px] hover:text-primary dark:hover:text-primary text-foreground dark:text-muted-foreground relative after:absolute after:w-10 after:h-10 after:rounded-full hover:after:bg-lightprimary  after:bg-transparent rounded-full xl:hidden flex justify-center items-center cursor-pointer"
           >
             <Icon icon="tabler:menu-2" height={20} width={20} />
           </div>

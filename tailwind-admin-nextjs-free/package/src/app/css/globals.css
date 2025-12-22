@@ -15,10 +15,10 @@ main {
 
 @theme {
 
-  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);  
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
   --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --shadow-md: 0px 1px 4px 0px rgba(133, 146, 173, 0.2);
-  --shadow-btn-shadow: rgba(0, 0, 0, 0.05) 0 9px 17.5px;
+  --shadow-md: 0 1px 4px rgba(133, 146, 173, 0.2);
+  --shadow-btn-shadow: 0 9px 17.5px rgba(0, 0, 0, 0.05);
 
   --radius-sm: 4px;
   --radius-md: 7px;
@@ -163,7 +163,7 @@ main {
   --foreground: var(--white);
   --card: var(--dark);
   --card-foreground: var(--white);
-  --popover: var(--darkgray);
+  --popover: #333f55;
   --popover-foreground: var(--white);
   --primary: #5d87ff;
   --primary-foreground: var(--white);
@@ -182,7 +182,7 @@ main {
   --chart-3: var(--success);
   --chart-4: var(--warning);
   --chart-5: var(--error);
-  --sidebar: var(--sidebar);
+  --sidebar: var(--dark);
   --sidebar-foreground: #7c8fac;
   --sidebar-primary: var(--sidebar-primary);
   --sidebar-primary-foreground: var(--sidebar-primary-foreground);

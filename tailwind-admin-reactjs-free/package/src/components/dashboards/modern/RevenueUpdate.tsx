@@ -169,7 +169,7 @@ const RevenueUpdate = () => {
         <div className="sm:flex items-center justify-between mb-6">
           <div>
             <h5 className="card-title">Revenue updates</h5>
-            <p className="text-sm text-bodytext dark:text-darklink font-normal">
+            <p className="text-sm text-muted-foreground font-normal">
               Overview of Profit
             </p>
           </div>

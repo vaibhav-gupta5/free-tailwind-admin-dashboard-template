@@ -20,7 +20,7 @@ const Messages = () => {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <div className="relative">
-            <span className="relative after:absolute after:w-10 after:h-10 after:rounded-full hover:text-primary after:-top-1/2 hover:after:bg-lightprimary text-link dark:text-darklink rounded-full flex justify-center items-center cursor-pointer group-hover/menu:after:bg-lightprimary group-hover/menu:!text-primary">
+            <span className="relative after:absolute after:w-10 after:h-10 after:rounded-full hover:text-primary after:-top-1/2 hover:after:bg-lightprimary text-foreground dark:text-muted-foreground rounded-full flex justify-center items-center cursor-pointer group-hover/menu:after:bg-lightprimary group-hover/menu:!text-primary">
               <Icon icon="tabler:bell-ringing" height={20} />
             </span>
             <span className="rounded-full absolute -end-[6px] -top-[5px] text-[10px] h-2 w-2 bg-primary flex justify-center items-center"></span>
@@ -44,7 +44,7 @@ const Messages = () => {
               >
                 <Link to="#">
                   <div className="flex items-center">
-                    <span className="flex-shrink-0 relative">
+                    <span className="shrink-0 relative">
                       <img
                         src={links.avatar}
                         width={45}
@@ -54,8 +54,8 @@ const Messages = () => {
                       />
                     </span>
                     <div className="ps-4">
-                      <h5 className="mb-1 text-sm  group-hover/link:text-primary">{links.title}</h5>
-                      <span className="text-xs block  truncate text-darklink">
+                      <h5 className="mb-1 text-sm group-hover/link:text-primary">{links.title}</h5>
+                      <span className="text-xs block truncate text-muted-foreground">
                         {links.subtitle}
                       </span>
                     </div>

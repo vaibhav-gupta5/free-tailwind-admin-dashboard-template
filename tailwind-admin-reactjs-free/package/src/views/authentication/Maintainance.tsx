@@ -5,7 +5,7 @@ import { Button } from "src/components/ui/button";
 const Maintainance = () => {
   return (
     <>
-      <div className="h-screen flex items-center  justify-center bg-white dark:bg-darkgray ">
+      <div className="h-screen flex items-center justify-center bg-background">
         <div className="text-center max-w-lg mx-auto">
           <img src={ErrorImg} alt="error" className="mb-4" />
           <h1 className="text-dark dark:text-white text-4xl mb-6">Maintenance Mode!!!</h1>

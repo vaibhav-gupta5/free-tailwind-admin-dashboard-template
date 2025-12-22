@@ -90,15 +90,15 @@ const BlogCard = ({ post }: Btype) => {
           </h5>
 
           <div className="flex gap-3">
-            <div className="flex gap-2 items-center text-darklink text-[15px]">
-              <Icon icon="tabler:eye" height="18" className="text-ld" /> {view}
+            <div className="flex gap-2 items-center text-muted-foreground text-[15px]">
+              <Icon icon="tabler:eye" height="18" className="text-foreground" /> {view}
             </div>
-            <div className="flex gap-2 items-center text-darklink text-[15px]">
-              <Icon icon="tabler:message-2" height="18" className="text-ld" />{" "}
+            <div className="flex gap-2 items-center text-muted-foreground text-[15px]">
+              <Icon icon="tabler:message-2" height="18" className="text-foreground" />{" "}
               {comments?.length}
             </div>
-            <div className="ms-auto flex gap-2 items-center text-darklink text-[15px]">
-              <GoDot size="16" className="text-ld" />
+            <div className="ms-auto flex gap-2 items-center text-muted-foreground text-[15px]">
+              <GoDot size="16" className="text-foreground" />
               <small>{format(new Date(createdAt), "E, MMM d")}</small>
             </div>
           </div>

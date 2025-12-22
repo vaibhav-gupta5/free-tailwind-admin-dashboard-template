@@ -74,7 +74,7 @@ function Search() {
         />
       </div>
       <div
-        className={`absolute w-full  bg-white dark:bg-dark rounded-md top-11 z-10 start-0  shadow-md border border-ld ${
+        className={`absolute w-full  bg-background rounded-md top-11 z-10 start-0 shadow-md border border-border ${
           Boolean(query) ? 'block' : 'hidden'
         }`}>
         <SimpleBar className='h-72 p-4 custom-scroll'>
@@ -100,7 +100,7 @@ function Search() {
             ))
           ) : (
             <div className='flex items-center justify-center h-full'>
-              <h1 className='text-medium font-medium text-ld'>
+              <h1 className='text-medium font-medium'>
                 No Components Found!
               </h1>
             </div>

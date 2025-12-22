@@ -13,7 +13,7 @@ const TwoSteps = () => {
             <div className="mx-auto mb-6">
               <FullLogo />
             </div>
-            <p className="text-darklink text-sm font-medium text-center">
+            <p className="text-muted-foreground text-sm font-medium text-center">
               We sent a verification code to your mobile. Enter the code from
               the mobile in the field below.
             </p>

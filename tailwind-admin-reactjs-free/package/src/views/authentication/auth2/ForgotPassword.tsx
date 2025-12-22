@@ -12,7 +12,7 @@ const ForgotPassword = () => {
           <div className="mx-auto mb-6">
             <FullLogo />
           </div>
-          <p className="text-darklink text-sm text-center my-4">
+          <p className="text-muted-foreground text-sm text-center my-4">
             Please enter the email address associated with your account and We will email you a link
             to reset your password.
           </p>

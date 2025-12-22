@@ -67,7 +67,7 @@ const Header = () => {
           {/* Mobile Toggle Icon */}
           <span
             onClick={() => setIsOpen(true)}
-            className="px-[15px] hover:text-primary dark:hover:text-primary text-link dark:text-darklink relative after:absolute after:w-10 after:h-10 after:rounded-full hover:after:bg-lightprimary  after:bg-transparent rounded-full xl:hidden flex justify-center items-center cursor-pointer"
+            className="px-[15px] hover:text-primary dark:hover:text-primary text-foreground dark:text-muted-foreground relative after:absolute after:w-10 after:h-10 after:rounded-full hover:after:bg-lightprimary  after:bg-transparent rounded-full xl:hidden flex justify-center items-center cursor-pointer"
           >
             <Icon icon="tabler:menu-2" height={20} />
           </span>
@@ -83,32 +83,23 @@ const Header = () => {
 
           <div className="xl:!block !hidden md:!hidden">
             <div className="flex gap-0 items-center">
-              {/* <div className="relative lg:block hidden group w-fit shadow-grid-shadow bg-[radial-gradient(100%_707.08%_at_0%_0%,#15CEBD_0%,#548AFE_33.82%,#E02FD6_72.12%,#FDB54E_100%)] p-0.5 rounded-full">
-                <a
-                  href={'https://tailwind-admin.com/#pricing'}
-                  className="flex items-center gap-2.5 px-3 py-1.5 bg-white dark:bg-dark rounded-full transition-all dark:hover:bg-[radial-gradient(100%_707.08%_at_0%_0%,#15CEBD36_0%,#548AFE36_33.82%,#E02FD636_72.12%,#FDB54E36_100%)] group hover:bg-[radial-gradient(100%_707.08%_at_0%_0%,#15CEBD36_0%,#548AFE36_33.82%,#E02FD636_72.12%,#FDB54E36_100%)]"
-                >
-                  <p className="card-title text-base">Check Pro Version</p>
-                </a>
-              </div> */}
-
               {/* Theme Toggle */}
               {theme === 'light' ? (
                 <div
-                  className=" hover:text-primary px-15 group  dark:hover:text-primary focus:ring-0 rounded-full flex justify-center items-center cursor-pointer text-link dark:text-darklink relative"
+                  className="hover:text-primary px-15 group dark:hover:text-primary focus:ring-0 rounded-full flex justify-center items-center cursor-pointer text-foreground dark:text-muted-foreground relative"
                   onClick={toggleMode}
                 >
-                  <span className="flex items-center justify-center relative after:absolute after:w-10 after:h-10 after:rounded-full after:-top-1/2   group-hover:after:bg-lightprimary">
+                  <span className="flex items-center justify-center relative after:absolute after:w-10 after:h-10 after:rounded-full after:-top-1/2 group-hover:after:bg-lightprimary">
                     <Icon icon="tabler:moon" width="20" />
                   </span>
                 </div>
               ) : (
                 // Dark Mode Button
                 <div
-                  className=" hover:text-primary px-15   dark:hover:text-primary focus:ring-0 rounded-full flex justify-center items-center cursor-pointer text-link dark:text-darklink group relative"
+                  className="hover:text-primary px-15 dark:hover:text-primary focus:ring-0 rounded-full flex justify-center items-center cursor-pointer text-foreground dark:text-muted-foreground group relative"
                   onClick={toggleMode}
                 >
-                  <span className="flex items-center justify-center relative after:absolute after:w-10 after:h-10 after:rounded-full after:-top-1/2   group-hover:after:bg-lightprimary">
+                  <span className="flex items-center justify-center relative after:absolute after:w-10 after:h-10 after:rounded-full after:-top-1/2 group-hover:after:bg-lightprimary">
                     <Icon
                       icon="solar:sun-bold-duotone"
                       width="20"
@@ -131,20 +122,20 @@ const Header = () => {
               <div className="flex justify-center items-center">
                 {theme === 'light' ? (
                   <div
-                    className=" hover:text-primary px-1 sm:px-15 group  dark:hover:text-primary focus:ring-0 rounded-full flex justify-center items-center cursor-pointer text-link dark:text-darklink relative"
+                    className="hover:text-primary px-1 sm:px-15 group  dark:hover:text-primary focus:ring-0 rounded-full flex justify-center items-center cursor-pointer text-foreground dark:text-muted-foreground relative"
                     onClick={toggleMode}
                   >
-                    <span className="flex items-center justify-center relative after:absolute after:w-10 after:h-10 after:rounded-full after:-top-1/2   group-hover:after:bg-lightprimary">
+                    <span className="flex items-center justify-center relative after:absolute after:w-10 after:h-10 after:rounded-full after:-top-1/2 group-hover:after:bg-lightprimary">
                       <Icon icon="tabler:moon" width="20" />
                     </span>
                   </div>
                 ) : (
                   // Dark Mode Button
                   <div
-                    className=" hover:text-primary px-1 sm:px-15   dark:hover:text-primary focus:ring-0 rounded-full flex justify-center items-center cursor-pointer text-link dark:text-darklink group relative"
+                    className="hover:text-primary px-1 sm:px-15 dark:hover:text-primary focus:ring-0 rounded-full flex justify-center items-center cursor-pointer text-foreground dark:text-muted-foreground group relative"
                     onClick={toggleMode}
                   >
-                    <span className="flex items-center justify-center relative after:absolute after:w-10 after:h-10 after:rounded-full after:-top-1/2   group-hover:after:bg-lightprimary">
+                    <span className="flex items-center justify-center relative after:absolute after:w-10 after:h-10 after:rounded-full after:-top-1/2 group-hover:after:bg-lightprimary">
                       <Icon
                         icon="solar:sun-bold-duotone"
                         width="20"

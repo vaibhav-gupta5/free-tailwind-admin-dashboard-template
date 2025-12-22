@@ -59,7 +59,7 @@
 
 .client-reviews .slick-dots li button:before {
   font-size: 10px;
-  color: var(--color-darkgray);
+  color: #333f55;
 }
 
 .client-reviews .slick-dots {

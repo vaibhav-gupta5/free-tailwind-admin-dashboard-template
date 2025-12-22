@@ -10,7 +10,7 @@ const ProfileWelcome = () => {
         </div>
         <div className="flex flex-col gap-0.5">
           <h5 className="card-title">Welcome back! John 👋</h5>
-          <p className="text-link/80 dark:text-white/80">Check your reports</p>
+          <p className="text-muted-foreground">Check your reports</p>
         </div>
       </div>
 

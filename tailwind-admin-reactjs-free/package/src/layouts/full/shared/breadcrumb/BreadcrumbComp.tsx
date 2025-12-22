@@ -18,11 +18,11 @@ interface BreadCrumbType {
 const BreadcrumbComp = ({ title, items = [] }: BreadCrumbType) => {
   return (
     <CardBox
-      className="mb-6 py-4 bg-lightsecondary dark:bg-darkinfo overflow-hidden rounded-md border-none shadow-none! dark:shadow-none! relative"
+      className="mb-6 py-4 bg-lightsecondary overflow-hidden rounded-md border-none shadow-none! dark:shadow-none! relative"
     >
       <div className="grid grid-cols-12 gap-6 items-center">
         <div className="col-span-10">
-          <h4 className="font-semibold text-xl text-dark dark:text-white mb-3">
+          <h4 className="font-semibold text-xl mb-3">
             {title}
           </h4>
 
@@ -35,13 +35,13 @@ const BreadcrumbComp = ({ title, items = [] }: BreadCrumbType) => {
                   {item.to && !isLast ? (
                     <Link
                       to={item.to}
-                      className="opacity-80 text-sm text-link dark:text-darklink leading-none hover:underline"
+                      className="opacity-80 text-sm text-muted-foreground leading-none hover:underline"
                     >
                       {item.title}
                     </Link>
                   ) : (
                     <span
-                      className="text-sm text-link dark:text-darklink leading-none"
+                      className="text-sm text-muted-foreground leading-none"
                       aria-current={isLast ? 'page' : undefined}
                     >
                       {item.title}
@@ -49,7 +49,7 @@ const BreadcrumbComp = ({ title, items = [] }: BreadCrumbType) => {
                   )}
 
                   {!isLast && (
-                    <span className="mx-2.5 p-0.5 rounded-full bg-dark dark:bg-darklink" />
+                    <span className="mx-2.5 p-0.5 rounded-full bg-muted-foreground" />
                   )}
                 </li>
               );
