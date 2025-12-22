@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
 import { usePathname } from 'next/navigation'
-import SidebarContent from './Sidebaritems'
+import SidebarContent from './sidebaritems'
 import SimpleBar from 'simplebar-react'
 import { Icon } from '@iconify/react'
 import FullLogo from '../shared/logo/FullLogo'
@@ -144,7 +144,9 @@ const SidebarLayout = ({ onClose }: { onClose?: () => void }) => {
           <div className='mt-9  overflow-hidden'>
             <div className='flex w-full bg-lightprimary rounded-lg p-6'>
               <div className='lg:w-1/2 w-full'>
-                <h5 className='text-base text-sidebar-foreground'>Haven't Account?</h5>
+                <h5 className='text-base text-sidebar-foreground'>
+                  Haven't Account?
+                </h5>
                 <Button className='whitespace-nowrap mt-2 text-[13px]'>
                   Get Pro
                 </Button>

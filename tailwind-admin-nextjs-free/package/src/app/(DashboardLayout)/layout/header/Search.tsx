@@ -1,7 +1,7 @@
 'use client'
 import { useState, useMemo } from 'react'
 import { Icon } from '@iconify/react'
-import SidebarContent, { MenuItem, ChildItem } from '../sidebar/Sidebaritems'
+import SidebarContent, { MenuItem, ChildItem } from '../sidebar/sidebaritems'
 
 import SimpleBar from 'simplebar-react'
 import { Input } from '@/components/ui/input'
