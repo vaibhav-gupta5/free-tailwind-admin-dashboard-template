@@ -9,6 +9,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from 'src/components/ui/dropdown-menu';
 import { Button } from 'src/components/ui/button';
@@ -25,7 +26,7 @@ const Profile = () => {
 
         <DropdownMenuContent
           align="end"
-          className="w-screen sm:w-[200px] pb-6 pt-4 rounded-sm border border-ld"
+          className="w-screen sm:w-[200px] pb-6 pt-4 rounded-sm"
         >
           <SimpleBar>
             {profileData.profileDD.map((items, index) => (
@@ -52,6 +53,8 @@ const Profile = () => {
               </DropdownMenuItem>
             ))}
           </SimpleBar>
+
+          <DropdownMenuSeparator className='my-2' />
 
           <div className="pt-2 px-4">
             <Button
