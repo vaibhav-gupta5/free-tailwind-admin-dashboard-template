@@ -1,15 +1,15 @@
-import { createContext, useState, useEffect } from "react";
-import React from "react";
-import { notesType } from "src/types/apps/notes";
-import { NotesData } from "src/api/notes/notes-data";
+import { createContext, useState, useEffect } from 'react';
+import React from 'react';
+import { notesType } from 'src/types/apps/notes';
+import { NotesData } from 'src/api/notes/notes-data';
 
-interface NotesContextType {
+export interface NotesContextType {
   notes: notesType[];
   loading: boolean;
-  error: Error | null;
+  error: string | Error | null;
   selectedNoteId: number;
   selectNote: (id: number) => void;
-  addNote: (newNote: notesType) => Promise<void>;
+  addNote: (newNote: Partial<notesType>) => Promise<void>;
   updateNote: (id: number, title: string, color: string) => Promise<void>;
   deleteNote: (id: number) => Promise<void>;
 }
@@ -30,16 +30,15 @@ export const NotesContext = createContext<NotesContextType>(initialContext);
 export const NotesProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [notes, setNotes] = useState<notesType[]>(initialContext.notes);
   const [loading, setLoading] = useState<boolean>(initialContext.loading);
-  const [error, setError] = useState<Error | null>(initialContext.error);
+  const [error, setError] = useState<string | Error | null>(initialContext.error);
   const [selectedNoteId, setSelectedNoteId] = useState<number>(initialContext.selectedNoteId);
-
 
   const fetchNotes = async () => {
     try {
       setLoading(true);
       setNotes(NotesData);
-    } catch (err: any) {
-      setError(err);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err : String(err));
     } finally {
       setLoading(false);
     }
@@ -53,24 +52,27 @@ export const NotesProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setSelectedNoteId(id);
   };
 
-  const addNote = async (newNote: notesType) => {
+  const addNote = async (newNote: Partial<notesType>) => {
     try {
-      setNotes((prev) => [...prev, { ...newNote, id: Date.now() }]);
+      const noteToAdd: notesType = {
+        id: Date.now(),
+        title: newNote.title || '',
+        color: newNote.color || 'primary',
+        datef: new Date().toISOString(),
+        deleted: false,
+      };
+      setNotes((prev) => [...prev, noteToAdd]);
     } catch (err) {
-      console.error("Error adding note:", err);
+      console.error('Error adding note:', err);
     }
   };
 
   // Update a note
   const updateNote = async (id: number, title: string, color: string) => {
     try {
-      setNotes((prev) =>
-        prev.map((note) =>
-          note.id === id ? { ...note, title, color } : note
-        )
-      );
+      setNotes((prev) => prev.map((note) => (note.id === id ? { ...note, title, color } : note)));
     } catch (err) {
-      console.error("Error updating note:", err);
+      console.error('Error updating note:', err);
     }
   };
 
@@ -79,7 +81,7 @@ export const NotesProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     try {
       setNotes((prev) => prev.filter((note) => note.id !== id));
     } catch (err) {
-      console.error("Error deleting note:", err);
+      console.error('Error deleting note:', err);
     }
   };
 

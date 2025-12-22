@@ -11,13 +11,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from 'src/components/ui/tooltip';
-import { NotesContext } from 'src/context/notes-context';
+import { NotesContext, NotesContextType } from 'src/context/notes-context';
 import { notesType } from 'src/types/apps/notes';
 
 const Notelist = () => {
-  const { notes, selectNote, deleteNote }: any = useContext(NotesContext);
+  const { notes, selectNote, deleteNote }: NotesContextType = useContext(NotesContext);
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [activeNoteId, setActiveNoteId] = useState<any | null>(null);
+  const [activeNoteId, setActiveNoteId] = useState<number | null>(null);
 
   useEffect(() => {
     if (notes.length > 0) {
@@ -30,17 +30,17 @@ const Notelist = () => {
   const filterNotes = (notes: notesType[], nSearch: string) => {
     if (nSearch !== '')
       return notes.filter(
-        (t: any) =>
+        (t: notesType) =>
           !t.deleted &&
           t.title.toLocaleLowerCase().concat(' ').includes(nSearch.toLocaleLowerCase()),
       );
 
-    return notes.filter((t) => !t.deleted);
+    return notes.filter((t: notesType) => !t.deleted);
   };
 
   const filteredNotes = filterNotes(notes, searchTerm);
 
-  const handleNoteClick = (noteId: any) => {
+  const handleNoteClick = (noteId: number) => {
     setActiveNoteId(noteId);
     selectNote(noteId);
   };

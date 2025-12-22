@@ -1,17 +1,18 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { TbCheck } from 'react-icons/tb';
 import { Textarea } from 'src/components/ui/textarea';
-import { NotesContext } from 'src/context/notes-context/index';
+import { NotesContext, NotesContextType } from 'src/context/notes-context/index';
+import { notesType } from 'src/types/apps/notes';
 
 interface colorsType {
   lineColor: string;
-  disp: string | any;
+  disp: string;
   id: number;
 }
 
 const NoteContent = () => {
-  const { notes, updateNote, selectedNoteId }: any = useContext(NotesContext);
-  const noteDetails = notes.find((note: { id: any }) => note.id === selectedNoteId);
+  const { notes, updateNote, selectedNoteId }: NotesContextType = useContext(NotesContext);
+  const noteDetails = notes.find((note: notesType) => note.id === selectedNoteId);
 
   // Initialize state for updatedTitle, initialTitle, and isEditing status
   const [initialTitle, setInitialTitle] = useState('');
@@ -27,7 +28,7 @@ const NoteContent = () => {
   }, [noteDetails]);
 
   // Function to handle changes in the title text field
-  const handleTitleChange = (e: { target: { value: React.SetStateAction<string> } }) => {
+  const handleTitleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setUpdatedTitle(e.target.value);
     setIsEditing(true); // Set editing state to true when user starts editing
   };
@@ -42,7 +43,9 @@ const NoteContent = () => {
   const handleBlur = () => {
     setIsEditing(false); // Reset editing state when user finishes editing
     // Call updateNote to save changes with the current color
-    updateNote(selectedNoteId, updatedTitle, noteDetails.color);
+    if (noteDetails) {
+      updateNote(selectedNoteId, updatedTitle, noteDetails.color);
+    }
   };
 
   const colorvariation: colorsType[] = [

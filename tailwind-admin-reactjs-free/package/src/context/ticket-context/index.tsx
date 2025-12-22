@@ -9,7 +9,7 @@ export interface TicketContextType {
   searchTickets: (searchTerm: string) => void;
   ticketSearch: string;
   filter: string;
-  error: any;
+  error: string | Error | null;
   loading: boolean;
   setFilter: (filter: string) => void;
   addTicket: (ticket: TicketType) => void;
@@ -23,14 +23,14 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [ticketSearch, setTicketSearch] = useState<string>('');
   const [filter, setFilter] = useState<string>('total_tickets');
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<any>(null);
+  const [error, setError] = useState<string | Error | null>(null);
 
   // Initialize tickets
   useEffect(() => {
     try {
       setTickets(TicketData);
-    } catch (err) {
-      setError(err);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err : String(err));
     } finally {
       setLoading(false);
     }
@@ -45,7 +45,7 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   // Edit ticket
   const editTicket = (updatedTicket: TicketType) => {
-    const index = TicketData.findIndex(t => t.Id === updatedTicket.Id);
+    const index = TicketData.findIndex((t) => t.Id === updatedTicket.Id);
     if (index !== -1) {
       TicketData[index] = updatedTicket;
       setTickets([...TicketData]);
@@ -54,7 +54,7 @@ export const TicketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   // Delete ticket
   const deleteTicket = (id: number) => {
-    const index = TicketData.findIndex(t => t.Id === id);
+    const index = TicketData.findIndex((t) => t.Id === id);
     if (index !== -1) {
       TicketData.splice(index, 1); // remove from array
       setTickets([...TicketData]);

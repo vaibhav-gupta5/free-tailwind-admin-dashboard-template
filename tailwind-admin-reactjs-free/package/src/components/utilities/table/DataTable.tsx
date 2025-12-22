@@ -18,7 +18,7 @@ import {
   TableHeader,
   TableRow,
 } from 'src/components/ui/table';
-import type { ColumnDef, SortingState } from '@tanstack/react-table';
+import type { CellContext, ColumnDef, SortingState } from '@tanstack/react-table';
 import { Input } from 'src/components/ui/input';
 import { Button } from 'src/components/ui/button';
 import { Icon } from '@iconify/react/dist/iconify.js';
@@ -59,20 +59,28 @@ export function toTitleCase(str: string) {
     .join(' ');
 }
 
-interface DynamicTableProps {
-  data: Array<Record<string, any>>;
+interface DynamicTableProps<T> {
+  data?: T[];
 }
 
-export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
+export const DataTable = <T extends Record<string, unknown>>({
+  data = [],
+}: DynamicTableProps<T>) => {
   const [globalFilter, setGlobalFilter] = useState('');
   const [sorting, setSorting] = useState<SortingState>([]);
+
+  const renderValue = (val: unknown): React.ReactNode => {
+    if (val === null || val === undefined) return '-';
+    if (typeof val === 'object') return JSON.stringify(val);
+    return String(val);
+  };
 
   const paginationOptions = useMemo(() => {
     const sizes = [5, 10, 20, 50];
     return sizes.filter((size) => size <= data.length);
   }, [data.length]);
 
-  const columns = useMemo<ColumnDef<any>[]>(() => {
+  const columns = useMemo<ColumnDef<T, unknown>[]>(() => {
     if (!data.length) return [];
 
     const keys = Object.keys(data[0]).filter((key) => {
@@ -83,7 +91,7 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
     const baseColumns = keys.map((col) => ({
       accessorKey: col,
       header: toTitleCase(col.replace(/([A-Z])/g, ' $1').trim()),
-      cell: (info: any) => {
+      cell: (info: CellContext<T, unknown>) => {
         const value = info.getValue();
 
         if (
@@ -97,7 +105,7 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
             <Badge
               className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap ${cls}`}
             >
-              {value}
+              {renderValue(value)}
             </Badge>
           );
         }
@@ -147,12 +155,13 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
         if (col.toLowerCase().includes('id')) {
           return (
             <span className="text-gray-900 dark:text-white font-medium max-w-50 truncate whitespace-nowrap">
-              {value ?? '-'}
+              {renderValue(value)}
             </span>
           );
         }
 
         if (typeof value === 'object' && value !== null) {
+          const typedValue = value as Record<string, unknown>;
           const {
             image,
             imageUrl,
@@ -164,7 +173,7 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
             profileImage,
             icon,
             ...rest
-          } = value;
+          } = typedValue;
           const keys = Object.keys(rest);
 
           return (
@@ -180,15 +189,15 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
               icon ? (
                 <img
                   src={
-                    image ??
-                    imageUrl ??
-                    thumbnailUrl ??
-                    thumbnail ??
-                    image_url ??
-                    avatar ??
-                    qrCode ??
-                    profileImage ??
-                    icon
+                    (image as string) ??
+                    (imageUrl as string) ??
+                    (thumbnailUrl as string) ??
+                    (thumbnail as string) ??
+                    (image_url as string) ??
+                    (avatar as string) ??
+                    (qrCode as string) ??
+                    (profileImage as string) ??
+                    (icon as string)
                   }
                   width={36}
                   height={36}
@@ -204,7 +213,7 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
                   const val = rest[k];
                   let displayValue;
 
-                  const isTimestamp = (v: any) => {
+                  const isTimestamp = (v: unknown) => {
                     if (typeof v !== 'string') return false;
                     return /^\d{4}-\d{2}-\d{2}(T.*)?$/.test(v);
                   };
@@ -229,7 +238,7 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
                           : 'text-sm text-gray-500 dark:text-gray-400 max-w-50 truncate whitespace-nowrap pe-6'
                       }
                     >
-                      {displayValue}
+                      {renderValue(displayValue)}
                     </span>
                   );
                 })}
@@ -265,7 +274,7 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
                 {value ? String(value)[0]?.toUpperCase() : '?'}
               </Badge>
               <span className="text-gray-900 dark:text-white font-semibold max-w-50 truncate whitespace-nowrap">
-                {value}
+                {renderValue(value)}
               </span>
             </div>
           );
@@ -273,7 +282,7 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
 
         return (
           <span className="text-gray-900 dark:text-white font-medium max-w-50 truncate block ">
-            {value ?? '-'}
+            {renderValue(value)}
           </span>
         );
       },
@@ -281,39 +290,17 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
       enableGlobalFilter: true,
     }));
 
-    const actionColumn: ColumnDef<any> = {
+    const actionColumn: ColumnDef<T, unknown> = {
       id: 'action',
       header: 'Action',
       enableSorting: false,
-      cell: ({}: any) => {
+      cell: ({}) => {
         return (
           <div className="flex items-center gap-2">
-            <Button
-              size={'sm'}
-              variant={'lightprimary'}
-              className="!size-8 rounded-full"
-              //   onClick={() =>
-              //     alert(
-              //       `You can customize your own edit function :\n ${JSON.stringify(
-              //         rowData
-              //       )}`
-              //     )
-              //   }
-            >
+            <Button size={'sm'} variant={'lightprimary'} className="size-8! rounded-full">
               <Pencil className="size-5" />
             </Button>
-            <Button
-              size={'sm'}
-              variant={'lighterror'}
-              className="!size-8 rounded-full"
-              //   onClick={() =>
-              //     alert(
-              //       `You can customize your own delete function :\n ${JSON.stringify(
-              //         rowData
-              //       )}`
-              //     )
-              //   }
-            >
+            <Button size={'sm'} variant={'lighterror'} className="size-8! rounded-full">
               <Trash2 className="size-5" />
             </Button>
           </div>
@@ -346,7 +333,8 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
     const headers = columns.map((col) => String(col.header));
     const rows = data.map((item) =>
       columns.map((col) => {
-        const accessorKey = (col as any).accessorKey;
+        const column = col as unknown as { accessorKey?: string };
+        const accessorKey = column.accessorKey;
         const value = accessorKey ? item[accessorKey] : '';
         if (Array.isArray(value)) return `"[array]"`;
         return `"${String(value ?? '').replace(/"/g, '""')}"`;
@@ -422,22 +410,15 @@ export const DataTable: React.FC<DynamicTableProps> = ({ data }) => {
 
                 <TableBody>
                   {table.getRowModel().rows.length > 0 ? (
-                    table
-                      .getRowModel()
-                      .rows.map(
-                        (row: {
-                          id: React.Key | null | undefined;
-                          getVisibleCells: () => any[];
-                        }) => (
-                          <TableRow key={row.id} className="hover:bg-primary/10 transition-colors">
-                            {row.getVisibleCells().map((cell) => (
-                              <TableCell key={cell.id} className="text-gray-700 dark:text-white/70">
-                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                              </TableCell>
-                            ))}
-                          </TableRow>
-                        ),
-                      )
+                    table.getRowModel().rows.map((row) => (
+                      <TableRow key={row.id} className="hover:bg-primary/10 transition-colors">
+                        {row.getVisibleCells().map((cell) => (
+                          <TableCell key={cell.id} className="text-gray-700 dark:text-white/70">
+                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                          </TableCell>
+                        ))}
+                      </TableRow>
+                    ))
                   ) : (
                     <TableRow>
                       <TableCell

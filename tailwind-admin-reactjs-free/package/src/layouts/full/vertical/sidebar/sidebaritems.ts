@@ -1,10 +1,10 @@
 export interface ChildItem {
   id?: number | string;
   name?: string;
-  icon?: any;
+  icon?: string;
   children?: ChildItem[];
-  item?: any;
-  url?: any;
+  item?: unknown;
+  url?: string;
   color?: string;
   disabled?: boolean;
   subtitle?: string;
@@ -16,12 +16,12 @@ export interface ChildItem {
 export interface MenuItem {
   heading?: string;
   name?: string;
-  icon?: any;
+  icon?: string;
   id?: number;
   to?: string;
   items?: MenuItem[];
   children?: ChildItem[];
-  url?: any;
+  url?: string;
   disabled?: boolean;
   subtitle?: string;
   badgeType?: string;

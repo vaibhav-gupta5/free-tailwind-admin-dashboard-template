@@ -3,12 +3,13 @@ import { orderBy } from 'lodash';
 import BlogCard from './BlogCard';
 import { BlogContext } from '../../../context/blog-context';
 import BlogFeaturedCard from './BlogFeaturedCard';
+import { BlogPostType } from 'src/types/apps/blog';
 
 const BlogListing = () => {
   const { posts, sortBy } = useContext(BlogContext);
 
   // Function to filter blog posts based on sorting criteria
-  const filterBlogs = (posts: any[], sortBy: string) => {
+  const filterBlogs = (posts: BlogPostType[], sortBy: string) => {
     let filteredPosts = [...posts];
 
     if (sortBy === 'newest') {
@@ -24,7 +25,7 @@ const BlogListing = () => {
   };
 
   // Function to filter featured posts
-  const filterFeaturedPosts = (posts: any[]) => {
+  const filterFeaturedPosts = (posts: BlogPostType[]) => {
     return posts.filter((post) => post.featured);
   };
 

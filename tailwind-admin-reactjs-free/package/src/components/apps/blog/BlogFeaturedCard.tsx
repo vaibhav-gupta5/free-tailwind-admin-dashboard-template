@@ -16,7 +16,15 @@ interface Btype {
 }
 
 const BlogFeaturedCard = ({ post, index }: Btype) => {
-  const { coverImg, title, view, comments, category, author, createdAt }: any = post;
+  const {
+    coverImg = '',
+    title = '',
+    view = 0,
+    comments = [],
+    category = '',
+    author,
+    createdAt = new Date(),
+  } = post
 
   const linkTo = title
     .toLowerCase()

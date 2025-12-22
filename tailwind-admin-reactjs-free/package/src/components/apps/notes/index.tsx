@@ -9,9 +9,9 @@ import { Button } from 'src/components/ui/button';
 import { Sheet, SheetContent } from 'src/components/ui/sheet';
 
 interface colorsType {
-  lineColor: string;
-  disp: string | any;
-  id: number;
+  id: number
+  disp: string
+  lineColor?: string
 }
 
 const NotesApp = () => {
@@ -79,7 +79,7 @@ const NotesApp = () => {
                   <Button
                     color={'lightprimary'}
                     onClick={() => setIsOpen(true)}
-                    className="btn-circle p-0 lg:!hidden flex "
+                    className="btn-circle p-0 lg:hidden! flex "
                   >
                     <Icon icon="tabler:menu-2" height={18} />
                   </Button>

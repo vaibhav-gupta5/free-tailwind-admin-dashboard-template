@@ -4,9 +4,10 @@ import CardBox from "../../shared/CardBox"
 
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Chart from 'react-apexcharts'
+import { ApexOptions } from "apexcharts";
 
 const MonthlyEarning = () => {
-    const ChartData: any = {
+    const ChartData: ApexOptions = {
         series: [
             {
                 name: 'monthly earnings',

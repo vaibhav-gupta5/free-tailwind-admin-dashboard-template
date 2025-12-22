@@ -1,11 +1,12 @@
 import { useContext } from 'react';
-import { TicketContext } from 'src/context/ticket-context/index';
+import { TicketContext, TicketContextType } from 'src/context/ticket-context/index';
+import { TicketType } from 'src/types/ticket';
 
 const TicketFilter = () => {
-  const { tickets, setFilter }: any = useContext(TicketContext);
-  const pendingC = tickets.filter((t: { Status: string }) => t.Status === 'Pending').length;
-  const openC = tickets.filter((t: { Status: string }) => t.Status === 'Open').length;
-  const closeC = tickets.filter((t: { Status: string }) => t.Status === 'Closed').length;
+  const { tickets, setFilter }: TicketContextType = useContext(TicketContext);
+  const pendingC = tickets.filter((t: TicketType) => t.Status === 'Pending').length;
+  const openC = tickets.filter((t: TicketType) => t.Status === 'Open').length;
+  const closeC = tickets.filter((t: TicketType) => t.Status === 'Closed').length;
   return (
     <>
       <div className="grid grid-cols-12 gap-6">

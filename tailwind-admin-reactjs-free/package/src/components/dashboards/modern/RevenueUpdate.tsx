@@ -8,11 +8,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from 'src/components/ui/select';
+import { ApexOptions } from 'apexcharts';
 
 const RevenueUpdate = () => {
   const [selectedMonth, setSelectedMonth] = useState('Year 2025');
 
-  const chartDataByMonth: Record<string, any> = {
+  // Strongly typed chart data
+  interface MonthlyChartData {
+    series: ApexAxisChartSeries;
+    xaxis: ApexOptions['xaxis'];
+  }
+
+  const chartDataByMonth: Record<string, MonthlyChartData> = {
     'Year 2025': {
       series: [
         {
@@ -99,7 +106,7 @@ const RevenueUpdate = () => {
     },
   };
 
-  const baseChartOptions = {
+  const baseChartOptions: ApexOptions = {
     chart: {
       toolbar: { show: false },
       type: 'bar' as const,
@@ -119,7 +126,7 @@ const RevenueUpdate = () => {
         borderRadius: 6,
         borderRadiusApplication: 'end',
         borderRadiusWhenStacked: 'all',
-      } as any,
+      },
     },
     dataLabels: { enabled: false },
     legend: { show: false },
@@ -147,16 +154,12 @@ const RevenueUpdate = () => {
     },
   };
 
-  const ChartData = {
+  const ChartData: ApexOptions = {
     ...baseChartOptions,
     xaxis: {
       ...chartDataByMonth[selectedMonth].xaxis,
-      axisBorder: {
-        show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
+      axisBorder: { show: false },
+      axisTicks: { show: false },
     },
   };
 
@@ -171,7 +174,10 @@ const RevenueUpdate = () => {
             </p>
           </div>
           <div className="sm:mt-0 mt-4">
-            <Select value={selectedMonth} onValueChange={(val: any) => setSelectedMonth(val)}>
+            <Select
+              value={selectedMonth}
+              onValueChange={(val) => setSelectedMonth(val as keyof typeof chartDataByMonth)}
+            >
               <SelectTrigger className="w-[140px]">
                 <SelectValue placeholder="Select Year" />
               </SelectTrigger>

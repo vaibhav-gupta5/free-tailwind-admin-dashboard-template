@@ -26,25 +26,25 @@ const BlogDetailData = () => {
   const { posts, setLoading, addComment }: BlogContextProps = useContext(BlogContext);
   const location = useLocation();
   const pathName = location.pathname;
-  const getTitle: string | any = pathName.split('/').pop();
+  const getTitle = pathName.split('/').pop();
   const post = posts.find(
     (p) =>
       p.title
-        .toLowerCase()
+        ?.toLowerCase()
         .replace(/ /g, '-')
         .replace(/[^\w-]+/g, '') === getTitle,
   );
   const [replyTxt, setReplyTxt] = React.useState('');
 
   const onSubmit = () => {
-    if (!post || !post.id) return;
-    const newComment = {
+    if (!post?.id) return;
+    const newComment: BlogType & { postId: number } = {
       id: uniqueId('#comm_'),
       profile: {
         id: uniqueId('#USER_'),
         avatar: post.author?.avatar || '',
         name: post.author?.name || '',
-        time: 'Now',
+        time: new Date().toISOString(),
       },
       comment: replyTxt,
       replies: [],
@@ -88,11 +88,11 @@ const BlogDetailData = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Avatar className="h-10 w-10">
-                        <AvatarImage src={post?.author.avatar} alt={post?.author.name} />
+                        <AvatarImage src={post.author?.avatar} alt={post.author?.name} />
                         <AvatarFallback>{post?.author?.name?.[0] || '?'}</AvatarFallback>
                       </Avatar>
                     </TooltipTrigger>
-                    <TooltipContent>{post?.author.name}</TooltipContent>
+                    <TooltipContent>{post.author?.name}</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               </div>
@@ -193,7 +193,7 @@ const BlogDetailData = () => {
                 </div>
               </div>
               <div>
-                {post?.comments?.map((comment: BlogType | any) => {
+                {post?.comments?.map((comment: BlogType) => {
                   return <BlogComment key={comment.id} comment={comment} />;
                 })}
               </div>

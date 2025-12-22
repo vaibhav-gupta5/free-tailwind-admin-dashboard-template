@@ -9,8 +9,8 @@ const BCrumb = [
     title: 'Home',
   },
   {
-    href: '',
-    text: 'Iconify Icons',
+    to: '',
+    title: 'Iconify Icons',
   },
 ];
 

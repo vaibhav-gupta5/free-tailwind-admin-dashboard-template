@@ -133,7 +133,7 @@ const SearchLinks: SearchType[] = [
 //   Message Data
 interface MessageType {
   title: string;
-  avatar: any;
+  avatar: string;
   subtitle: string;
 }
 
@@ -174,7 +174,7 @@ const MessagesLink: MessageType[] = [
 //   Notification Data
 interface NotificationType {
   title: string;
-  icon: any;
+  icon: string;
   subtitle: string;
   bgcolor: string;
   color: string;
@@ -235,7 +235,7 @@ const Notification: NotificationType[] = [
 //  Profile Data
 interface ProfileType {
   title: string;
-  img: any;
+  img: string;
   subtitle: string;
   url: string;
   icon: string

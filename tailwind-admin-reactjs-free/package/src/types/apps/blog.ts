@@ -10,21 +10,19 @@ export interface BlogType {
   profile?: Profile;
   time?: Date;
   comment?: string;
-  replies?: any[];
+  replies?: BlogType[];
 }
 
 export interface BlogPostType {
-  id?: number|any;
-  title?: any;
-  content?: string |any;
-  coverImg?: string |any;
+  id: number;
+  title?: string;
+  content?: string;
+  coverImg?: string;
   createdAt?: Date;
   view?: number;
   share?: number;
-  category?: string |any;
+  category?: string;
   featured?: boolean;
-  author?: Profile | any;
-  comments?: any[];
+  author?: Profile;
+  comments?: BlogType[];
 }
-
-

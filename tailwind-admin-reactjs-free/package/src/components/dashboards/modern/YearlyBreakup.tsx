@@ -1,14 +1,14 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import CardBox from "src/components/shared/CardBox";
 import Chart from 'react-apexcharts';
+import { ApexOptions } from "apexcharts";
 
 const YearlyBreakup = () => {
 
-    const ChartData: any = {
+    const ChartData: ApexOptions = {
         series: [
             38, 40, 25
         ],
-        color: "#adb5bd",
         labels: ["2023", "2025", "2024"],
         chart: {
             type: "donut",

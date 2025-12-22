@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { format } from 'date-fns';
 import { Icon } from '@iconify/react';
 import { useNavigate } from 'react-router';
-import { TicketContext } from 'src/context/ticket-context';
+import { TicketContext, TicketContextType } from 'src/context/ticket-context';
 import { TicketType } from 'src/types/ticket';
 import { Button } from 'src/components/ui/button';
 import { Input } from 'src/components/ui/input';
@@ -26,7 +26,7 @@ import {
 } from 'src/components/ui/tooltip';
 
 const TicketListing = () => {
-  const { tickets, deleteTicket, searchTickets, ticketSearch, filter }: any =
+  const { tickets, deleteTicket, searchTickets, ticketSearch, filter }: TicketContextType =
     useContext(TicketContext);
 
   const navigate = useNavigate();

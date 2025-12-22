@@ -13,14 +13,18 @@ import {
   DialogTitle,
 } from 'src/components/ui/dialog';
 import { Textarea } from 'src/components/ui/textarea';
-import { NotesContext } from 'src/context/notes-context';
+import { NotesContext, NotesContextType } from 'src/context/notes-context';
+
+interface Color {
+  disp: string;
+}
 
 interface Props {
-  colors: any[];
+  colors: Color[];
 }
 
 const AddNotes = ({ colors }: Props) => {
-  const { addNote }: any = useContext(NotesContext);
+  const { addNote }: NotesContextType = useContext(NotesContext);
 
   const [openNoteModal, setOpenNoteModal] = useState(false);
   const [scolor, setScolor] = React.useState<string>('primary');

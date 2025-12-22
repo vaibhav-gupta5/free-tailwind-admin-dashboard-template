@@ -9,8 +9,20 @@ import { useTheme } from 'src/components/provider/theme-provider';
 import { AMLogo, AMMenu, AMMenuItem, AMSidebar, AMSubmenu } from 'tailwind-sidebar';
 import 'tailwind-sidebar/styles.css';
 
+interface SidebarItemType {
+  heading?: string
+  id?: number | string
+  name?: string
+  title?: string
+  icon?: string
+  url?: string
+  children?: SidebarItemType[]
+  disabled?: boolean
+  isPro?: boolean
+}
+
 const renderSidebarItems = (
-  items: any[],
+  items: SidebarItemType[],
   currentPath: string,
   onClose?: () => void,
   isSubItem: boolean = false,
