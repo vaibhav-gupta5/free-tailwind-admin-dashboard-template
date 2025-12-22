@@ -1,34 +1,38 @@
-"use client"
+'use client';
 
-import * as React from "react"
-import { useContext, useState } from "react"
-import { TbCheck } from "react-icons/tb"
-import { Button } from "src/components/ui/button"
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "src/components/ui/dialog"
-import { Textarea } from "src/components/ui/textarea"
-import { NotesContext } from "src/context/NotesContext"
+import * as React from 'react';
+import { useContext, useState } from 'react';
+import { TbCheck } from 'react-icons/tb';
+import { Button } from 'src/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from 'src/components/ui/dialog';
+import { Textarea } from 'src/components/ui/textarea';
+import { NotesContext } from 'src/context/notes-context';
 
 interface Props {
-  colors: any[]
+  colors: any[];
 }
 
 const AddNotes = ({ colors }: Props) => {
-  const { addNote }: any = useContext(NotesContext)
+  const { addNote }: any = useContext(NotesContext);
 
-  const [openNoteModal, setOpenNoteModal] = useState(false)
-  const [scolor, setScolor] = React.useState<string>("primary")
-  const [title, setTitle] = React.useState("")
+  const [openNoteModal, setOpenNoteModal] = useState(false);
+  const [scolor, setScolor] = React.useState<string>('primary');
+  const [title, setTitle] = React.useState('');
 
   const setColor = (e: string) => {
-    setScolor(e)
-  }
+    setScolor(e);
+  };
 
   return (
     <>
-      <Button
-        onClick={() => setOpenNoteModal(true)}
-        className="rounded-md"
-      >
+      <Button onClick={() => setOpenNoteModal(true)} className="rounded-md">
         Add Note
       </Button>
 
@@ -36,9 +40,7 @@ const AddNotes = ({ colors }: Props) => {
         <DialogContent className="sm:max-w-lg">
           <DialogHeader>
             <DialogTitle>Add New Note</DialogTitle>
-            <DialogDescription>
-              Write your note and select a color.
-            </DialogDescription>
+            <DialogDescription>Write your note and select a color.</DialogDescription>
           </DialogHeader>
 
           <div className="space-y-4">
@@ -60,9 +62,7 @@ const AddNotes = ({ colors }: Props) => {
                     className={`h-7 w-7 flex justify-center items-center rounded-full cursor-pointer bg-${color.disp}`}
                     onClick={() => setColor(color.disp)}
                   >
-                    {scolor === color.disp ? (
-                      <TbCheck size={18} className="text-white" />
-                    ) : null}
+                    {scolor === color.disp ? <TbCheck size={18} className="text-white" /> : null}
                   </div>
                 ))}
               </div>
@@ -72,12 +72,12 @@ const AddNotes = ({ colors }: Props) => {
           <DialogFooter className="flex gap-2 sm:justify-end">
             <Button
               onClick={(e) => {
-                e.preventDefault()
-                addNote({ title, color: scolor })
-                setOpenNoteModal(false)
-                setTitle("")
+                e.preventDefault();
+                addNote({ title, color: scolor });
+                setOpenNoteModal(false);
+                setTitle('');
               }}
-              disabled={title === ""}
+              disabled={title === ''}
               className="rounded-md"
             >
               Save
@@ -93,7 +93,7 @@ const AddNotes = ({ colors }: Props) => {
         </DialogContent>
       </Dialog>
     </>
-  )
-}
+  );
+};
 
-export default AddNotes
+export default AddNotes;

@@ -1,47 +1,49 @@
-"use client"
+'use client';
 
-import { Icon } from "@iconify/react"
-import { useState, useContext, useEffect } from "react"
-import { Alert, AlertDescription, AlertTitle } from "src/components/ui/alert"
-import { Button } from "src/components/ui/button"
-import { Input } from "src/components/ui/input"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "src/components/ui/tooltip"
-import { NotesContext } from "src/context/NotesContext"
-import { notesType } from "src/types/apps/notes"
+import { Icon } from '@iconify/react';
+import { useState, useContext, useEffect } from 'react';
+import { Alert, AlertDescription, AlertTitle } from 'src/components/ui/alert';
+import { Button } from 'src/components/ui/button';
+import { Input } from 'src/components/ui/input';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from 'src/components/ui/tooltip';
+import { NotesContext } from 'src/context/notes-context';
+import { notesType } from 'src/types/apps/notes';
 
 const Notelist = () => {
-  const { notes, selectNote, deleteNote }: any = useContext(NotesContext)
-  const [searchTerm, setSearchTerm] = useState<string>("")
-  const [activeNoteId, setActiveNoteId] = useState<any | null>(null)
+  const { notes, selectNote, deleteNote }: any = useContext(NotesContext);
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [activeNoteId, setActiveNoteId] = useState<any | null>(null);
 
   useEffect(() => {
     if (notes.length > 0) {
       // Set the first note as active
-      const firstNoteId = notes[0].id
-      setActiveNoteId(firstNoteId)
+      const firstNoteId = notes[0].id;
+      setActiveNoteId(firstNoteId);
     }
-  }, [notes])
+  }, [notes]);
 
   const filterNotes = (notes: notesType[], nSearch: string) => {
-    if (nSearch !== "")
+    if (nSearch !== '')
       return notes.filter(
         (t: any) =>
           !t.deleted &&
-          t.title
-            .toLocaleLowerCase()
-            .concat(" ")
-            .includes(nSearch.toLocaleLowerCase())
-      )
+          t.title.toLocaleLowerCase().concat(' ').includes(nSearch.toLocaleLowerCase()),
+      );
 
-    return notes.filter((t) => !t.deleted)
-  }
+    return notes.filter((t) => !t.deleted);
+  };
 
-  const filteredNotes = filterNotes(notes, searchTerm)
+  const filteredNotes = filterNotes(notes, searchTerm);
 
   const handleNoteClick = (noteId: any) => {
-    setActiveNoteId(noteId)
-    selectNote(noteId)
-  }
+    setActiveNoteId(noteId);
+    selectNote(noteId);
+  };
 
   return (
     <div>
@@ -62,17 +64,17 @@ const Notelist = () => {
           filteredNotes.map((note) => (
             <div key={note.id}>
               <div
-                className={`cursor-pointer relative p-4 rounded-md bg-light${note.color} dark:bg-dark${note.color}
-                ${activeNoteId === note.id ? "scale-100" : "scale-95"} transition-transform duration-200`}
+                className={`cursor-pointer relative p-4 rounded-md bg-light${
+                  note.color
+                } dark:bg-dark${note.color}
+                ${
+                  activeNoteId === note.id ? 'scale-100' : 'scale-95'
+                } transition-transform duration-200`}
                 onClick={() => handleNoteClick(note.id)}
               >
-                <h6 className={`text-base truncate text-${note.color}`}>
-                  {note.title}
-                </h6>
+                <h6 className={`text-base truncate text-${note.color}`}>{note.title}</h6>
                 <div className="flex items-center justify-between">
-                  <p className="text-xs text-ld">
-                    {new Date(note.datef).toLocaleDateString()}
-                  </p>
+                  <p className="text-xs text-ld">{new Date(note.datef).toLocaleDateString()}</p>
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
@@ -97,19 +99,14 @@ const Notelist = () => {
           ))
         ) : (
           <Alert variant="destructive" className="flex items-center gap-2">
-            <Icon
-              icon="solar:info-circle-linear"
-              className="h-5 w-5"
-            />
+            <Icon icon="solar:info-circle-linear" className="h-5 w-5" />
             <AlertTitle>No Notes Found!</AlertTitle>
-            <AlertDescription>
-              Try adjusting your search.
-            </AlertDescription>
+            <AlertDescription>Try adjusting your search.</AlertDescription>
           </Alert>
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Notelist
+export default Notelist;

@@ -20,7 +20,7 @@ const Maintainance = Loadable(lazy(() => import('../views/authentication/Maintai
 const Modern = Loadable(lazy(() => import('../views/dashboards/Modern')));
 
 //pages
-const UserProfile = Loadable(lazy(() => import('../views/pages/user-profile')));
+const UserProfile = Loadable(lazy(() => import('../views/pages/user-profile/UserProfile')));
 
 /* ****Apps***** */
 const Notes = Loadable(lazy(() => import('../views/apps/notes/Notes')));

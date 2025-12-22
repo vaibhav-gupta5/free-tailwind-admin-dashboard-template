@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Icon } from '@iconify/react';
-import SidebarContent from '../sidebar/Sidebaritems';
+import SidebarContent from '../sidebar/sidebaritems';
 import { Link } from 'react-router';
 import SimpleBar from 'simplebar-react';
 import { Input } from 'src/components/ui/input';

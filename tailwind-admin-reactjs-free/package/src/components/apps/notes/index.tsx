@@ -4,7 +4,7 @@ import NotesSidebar from 'src/components/apps/notes/NotesSidebar';
 import NoteContent from 'src/components/apps/notes/NoteContent';
 import AddNotes from 'src/components/apps/notes/AddNotes';
 import { Icon } from '@iconify/react';
-import { NotesProvider } from 'src/context/NotesContext/index';
+import { NotesProvider } from 'src/context/notes-context/index';
 import { Button } from 'src/components/ui/button';
 import { Sheet, SheetContent } from 'src/components/ui/sheet';
 

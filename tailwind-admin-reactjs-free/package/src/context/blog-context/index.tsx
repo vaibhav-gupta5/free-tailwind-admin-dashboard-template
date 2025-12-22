@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, ReactNode, Dispatch, SetStateAction } from 'react';
 import React from "react";
 import { BlogPostType, BlogType } from 'src/types/apps/blog';
-import { BlogPost } from "src/api/blog/blogData";
+import { BlogPost } from "src/api/blog/blog-data";
 
 // Define BlogContextProps interface
 export interface BlogContextProps {

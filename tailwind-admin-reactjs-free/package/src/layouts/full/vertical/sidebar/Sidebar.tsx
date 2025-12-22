@@ -1,4 +1,4 @@
-import SidebarContent from './Sidebaritems';
+import SidebarContent from './sidebaritems';
 import SimpleBar from 'simplebar-react';
 import { Icon } from '@iconify/react';
 import rocket from 'src/assets/images/backgrounds/rocket.png';

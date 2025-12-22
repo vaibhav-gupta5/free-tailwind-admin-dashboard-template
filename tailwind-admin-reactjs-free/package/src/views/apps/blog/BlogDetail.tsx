@@ -1,19 +1,15 @@
-
-
 import BlogDetailData from 'src/components/apps/blog/detail';
 
-import { BlogProvider } from 'src/context/BlogContext/index';
+import { BlogProvider } from 'src/context/blog-context/index';
 import BreadcrumbComp from 'src/layouts/full/shared/breadcrumb/BreadcrumbComp';
-
-
 
 const BCrumb = [
   {
-    to: "/",
-    title: "Home",
+    to: '/',
+    title: 'Home',
   },
   {
-    title: "Blog Detail",
+    title: 'Blog Detail',
   },
 ];
 const BlogDetail = () => {
@@ -24,7 +20,7 @@ const BlogDetail = () => {
         <BlogDetailData />
       </BlogProvider>
     </>
-  )
-}
+  );
+};
 
-export default BlogDetail
+export default BlogDetail;

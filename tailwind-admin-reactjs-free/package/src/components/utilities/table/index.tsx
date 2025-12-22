@@ -18,7 +18,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from 'src/components/ui/dropdown-menu';
-import { TablePerformersData } from './tableData';
+import { TablePerformersData } from './table-data';
 
 const TableComp = () => {
   /*Table Action*/

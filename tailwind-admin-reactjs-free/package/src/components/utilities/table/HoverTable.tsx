@@ -7,7 +7,7 @@ import {
   TableRow,
 } from 'src/components/ui/table';
 import { Badge } from 'src/components/ui/badge';
-import { TablePerformersData } from './tableData';
+import { TablePerformersData } from './table-data';
 import CardBox from 'src/components/shared/CardBox';
 import {
   DropdownMenu,

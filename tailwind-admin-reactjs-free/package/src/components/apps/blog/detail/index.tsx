@@ -7,7 +7,7 @@ import { format } from 'date-fns';
 import { uniqueId } from 'lodash';
 import CardBox from 'src/components/shared/CardBox';
 import BlogComment from './BlogCommnets';
-import { BlogContext, BlogContextProps } from '../../../../context/BlogContext/index';
+import { BlogContext, BlogContextProps } from '../../../../context/blog-context/index';
 import { useLocation } from 'react-router';
 import { BlogType } from 'src/types/apps/blog';
 import { Badge } from 'src/components/ui/badge';

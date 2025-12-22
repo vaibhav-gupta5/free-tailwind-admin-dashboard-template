@@ -1,7 +1,7 @@
 'use client';
 
 import { Icon } from '@iconify/react';
-import * as profileData from './Data';
+import * as profileData from './data';
 import SimpleBar from 'simplebar-react';
 import { Link } from 'react-router';
 import profileimg from 'src/assets/images/profile/user-1.jpg';

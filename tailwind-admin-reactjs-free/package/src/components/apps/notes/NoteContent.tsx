@@ -1,8 +1,7 @@
-
-import React, { useContext, useState, useEffect } from "react";
-import { TbCheck } from "react-icons/tb";
-import { Textarea } from "src/components/ui/textarea";
-import { NotesContext } from 'src/context/NotesContext/index';
+import React, { useContext, useState, useEffect } from 'react';
+import { TbCheck } from 'react-icons/tb';
+import { Textarea } from 'src/components/ui/textarea';
+import { NotesContext } from 'src/context/notes-context/index';
 
 interface colorsType {
   lineColor: string;
@@ -10,12 +9,9 @@ interface colorsType {
   id: number;
 }
 
-
 const NoteContent = () => {
-
-
   const { notes, updateNote, selectedNoteId }: any = useContext(NotesContext);
-  const noteDetails = notes.find((note: { id: any; }) => note.id === selectedNoteId);
+  const noteDetails = notes.find((note: { id: any }) => note.id === selectedNoteId);
 
   // Initialize state for updatedTitle, initialTitle, and isEditing status
   const [initialTitle, setInitialTitle] = useState('');
@@ -31,7 +27,7 @@ const NoteContent = () => {
   }, [noteDetails]);
 
   // Function to handle changes in the title text field
-  const handleTitleChange = (e: { target: { value: React.SetStateAction<string>; }; }) => {
+  const handleTitleChange = (e: { target: { value: React.SetStateAction<string> } }) => {
     setUpdatedTitle(e.target.value);
     setIsEditing(true); // Set editing state to true when user starts editing
   };
@@ -52,28 +48,28 @@ const NoteContent = () => {
   const colorvariation: colorsType[] = [
     {
       id: 1,
-      lineColor: "warning",
-      disp: "warning",
+      lineColor: 'warning',
+      disp: 'warning',
     },
     {
       id: 2,
-      lineColor: "primary",
-      disp: "primary",
+      lineColor: 'primary',
+      disp: 'primary',
     },
     {
       id: 3,
-      lineColor: "error",
-      disp: "error",
+      lineColor: 'error',
+      disp: 'error',
     },
     {
       id: 4,
-      lineColor: "success",
-      disp: "success",
+      lineColor: 'success',
+      disp: 'success',
     },
     {
       id: 5,
-      lineColor: "secondary",
-      disp: "secondary",
+      lineColor: 'secondary',
+      disp: 'secondary',
     },
   ];
 
@@ -112,9 +108,7 @@ const NoteContent = () => {
             </div>
           </div>
         ) : (
-          <div className="text-center w-full py-6 text-2xl text-darklink">
-            Select a Note
-          </div>
+          <div className="text-center w-full py-6 text-2xl text-darklink">Select a Note</div>
         )}
       </div>
     </>
