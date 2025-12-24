@@ -5,7 +5,7 @@
 </p>
 
 # 🚀 Free Tailwind Admin Dashboard Template (Shadcn UI) 
-### Multi-Framework UI Kit for **Next.js, React, Angular & Vue**
+### Multi-Framework UI Kit for **Next.js, React, Angular 21 & Vue**
 
 A **free, open-source Tailwind CSS admin dashboard template** built for modern web developers.  
 Use it to rapidly build dashboards, SaaS apps, admin panels, CRM systems, and internal tools.
@@ -18,7 +18,7 @@ Use it to rapidly build dashboards, SaaS apps, admin panels, CRM systems, and in
 ✅ Supports:
 - **Next.js** : <a href="https://next-free.tailwind-admin.com/" target="_blank">Live Demo</a>
 - **React** : <a href="https://react-free.tailwind-admin.com/" target="_blank">Live Demo</a>
-- **Angular** : <a href="https://angular-free.tailwind-admin.com/" target="_blank">Live Demo</a>
+- **Angular 21** : <a href="https://angular-free.tailwind-admin.com/" target="_blank">Live Demo</a>
 - **Vue** : <a href="https://vue-free.tailwind-admin.com/" target="_blank">Live Demo</a>
 
 
