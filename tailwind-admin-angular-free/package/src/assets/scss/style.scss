@@ -16,21 +16,14 @@
 
 //container layout
 @use "layouts/transitions";
-@use "helpers/color";
-@use "helpers/icon-size";
 @use "container";
 @use "layouts/layouts";
-@use "grid/grid";
 
-// horizontal
-@use "horizontal/horizontal";
+// dark
 @use "dark/dark";
 
 @use "pages/auth";
 @use "pages/dashboards";
-
-// RTL Theme
-@use "rtl/rtl";
 
 @use 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel' as *;
 @use 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default' as *;

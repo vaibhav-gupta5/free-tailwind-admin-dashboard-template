@@ -6,15 +6,6 @@
   box-sizing: border-box;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-}
-
 body {
   font-family: $font-family;
   line-height: 1.334rem;
@@ -44,7 +35,7 @@ body {
 }
 
 .pageWrapper {
-  padding: 24px 24px 0px;
+  padding: 24px;
   min-height: calc(100vh - 130px);
 
   margin: 0 auto;
@@ -52,10 +43,6 @@ body {
   &.maxWidth {
     max-width: $boxedWidth;
   }
-}
-
-.w-auto {
-  width: auto !important;
 }
 
 .img-fluid {
@@ -67,84 +54,11 @@ body {
   color: var(--mat-sys-surface-container-lowest);
 }
 
-.shadow-none {
-  box-shadow: none !important;
-}
-
-.rounded {
-  border-radius: $border-radius !important;
-}
-
-.rounded-circle {
-  border-radius: 50% !important;
-}
-
-.rounded-pill {
-  border-radius: 25px !important;
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.text-decoration-underline {
-  text-decoration: underline;
-}
-
-.text-decoration-none {
-  text-decoration: none;
-}
-
-.table-responsive {
-  overflow-x: auto;
-
-  td,
-  mat-cell {
-    white-space: nowrap;
-    padding: 16px;
-  }
-}
-
-.op-5 {
-  opacity: 0.5;
-}
-
-.cursor-pointer {
-  cursor: pointer;
-}
-
-.avatar-group {
-  img {
-    border: 2px solid $white;
-    margin-right: -5px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
-
 a {
   color: var(--mat-sys-on-background);
 
   &:hover {
     color: $primary;
-  }
-}
-
-.checkpro-btn {
-  display: inline-block;
-  border-radius: 9999px;
-  border: 2px solid transparent;
-  background-image: linear-gradient(var(--mat-sys-surface-container-low), var(--mat-sys-surface-container-low)), linear-gradient(90deg, #15cebd, #548afe, #e02fd6, #fdb54e);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover {
-    color: #000;
-    background-image: radial-gradient(100% 707.08% at 0 0, #15cebd36 0, #548afe36 33.82%, #e02fd636 72.12%, #fdb54e36 100%);
   }
 }
 
@@ -164,21 +78,6 @@ a {
   }
 }
 
-pre {
-  margin: 0;
-  white-space: nowrap;
-}
-
-td.hljs-ln-line.hljs-ln-numbers {
-  padding-right: 10px;
-}
-
-@media (min-width: 768px) {
-  html .flex-sm-row {
-    flex-direction: row !important;
-  }
-}
-
 .mat-drawer[style*="visibility: hidden"] {
   display: none;
 }
@@ -190,13 +89,4 @@ td.hljs-ln-line.hljs-ln-numbers {
 
 .rounded-bars .apexcharts-bar-series.apexcharts-plot-series .apexcharts-series path {
   clip-path: inset(0 0 5% round 20px);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0px;
 }
